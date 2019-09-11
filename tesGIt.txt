@@ -1,9 +1,1 @@
-Mencoba Github
-<<<<<<< HEAD
-
-1234
-=======
-diubah gan
-1. diubah lagi
-2. masih dicoba
->>>>>>> parent of c09d7be... reverse ke commit 2
+tes dicoba git nya
