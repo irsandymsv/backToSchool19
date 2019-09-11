@@ -1,6 +1,3 @@
-<<<<<<< HEAD
 Mencoba Github
-diubah gan
-=======
-Mencoba Github
->>>>>>> parent of df8ccee... coba diubah isi tesGIt.txt
+
+1234
