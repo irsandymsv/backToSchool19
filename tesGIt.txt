@@ -1,4 +1,6 @@
+<<<<<<< HEAD
 Mencoba Github
 diubah gan
-1. diubah lagi
-2. masih dicoba
+=======
+Mencoba Github
+>>>>>>> parent of df8ccee... coba diubah isi tesGIt.txt
