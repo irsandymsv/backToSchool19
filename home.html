@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Back to School | Home</title>
+
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/fontawesome.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/solid.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/brands.css">
+
+	<style type="text/css">
+		body{
+			margin: 0;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		.top-menu{
+			background-color: navy;
+			overflow: hidden;
+		}
+
+		.top-menu a{
+			float: right;
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 17px;
+		}
+
+		#logo{
+			float: left;
+		}
+
+		.top-menu a:hover{
+			background-color: orange;
+			color: navy;
+		}
+
+		.top-menu a.active{
+			background-color: orange;
+			color: navy;
+		}
+
+		#menu-icon{
+			display: none;
+		}
+
+		@media screen and (max-width: 600px){
+			.top-menu a:not(:first-child) {display: none;}
+			.top-menu a#menu-icon{
+				float: right;
+				display: block;
+			}
+		}
+
+		@media screen and (max-width: 600px) {
+			.top-menu.responsive {position: relative;}
+			.top-menu.responsive a#menu-icon{
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+
+			.top-menu.responsive a{
+				float: none;
+				display: block;
+				text-align: center;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="top-menu" id="menu-atas">
+		<a href="#" id="logo">Logo</a>
+		<a href="javascript:void(0);" id="menu-icon"><i class="fas fa-bars"></i></a>
+		<a href="#">Register</a>
+		<a href="#">Login</a>
+		<a href="#">Tentang Kami</a>
+		<a href="#">Layanan</a>
+		<a href="#" class="active">Beranda</a>
+	</div>
+
+	<div class="main-picture">
+		
+	</div>
+
+	<div class="main-body">
+		
+	</div>
+
+	<div class="footer">
+		
+	</div>
+
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		$('#menu-icon').click(function(event) {
+			// var top_menu = $('#menu-atas');
+			if ($('#menu-atas').attr('class') === "top-menu") {
+				console.log('tes ga');
+				$('#menu-atas').addClass('responsive');
+			} else {
+				$('#menu-atas').attr('class', 'top-menu');
+			}
+		});
+	</script>
+</body>
+</html>
