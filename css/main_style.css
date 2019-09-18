@@ -1,0 +1,118 @@
+body{
+	margin: 0;
+	font-family: Verdana, sans-serif, Arial;
+}
+
+.baris:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+[class*="kol-"]{
+	width: 100%;
+	/*background-color: green;*/
+}
+
+
+.btn {
+	padding: 12px 18px;
+	font-size: 16px;
+	text-decoration: none;
+	border: none;
+	color: white;
+	cursor: pointer;
+}
+
+.btn_utama{
+	background-color: #0059b3;
+}
+
+.btn_utama:hover{
+	background-color: #0066cc;
+}
+
+.btn_kedua{
+	background-color: orange;
+	color: navy;
+}
+
+.btn_kedua:hover{
+	background-color: yellow;
+}
+
+.btn_bsr{
+	padding: 24px 52px;
+	font-size: 36px;
+}
+
+.btn_link{
+	text-decoration: none;
+	color: midnightblue;
+}
+
+.btn_link:hover{
+	color: #005792;
+}
+
+.main-body{
+	/*background-color: #dfe4ea;*/
+	background-color: #f9ca24;
+	/*padding: 10px;*/
+}
+
+.main-body:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.card{
+	width: 75%;
+	padding: 20px;
+	margin: auto;
+	margin-bottom: 40px;
+	background-color: rgba(225, 225, 225, 0.5);
+	overflow: hidden;
+}
+
+
+/*Media Quary*/
+@media only screen and (min-width: 600px){
+	.kol-m-1{ float: left; width: 8.33%; }
+	.kol-m-2{ float: left; width: 16.66%; }
+	.kol-m-3{ float: left; width: 25%; }
+	.kol-m-4{ float: left; width: 33.33%; }
+	.kol-m-5{ float: left; width: 41.66%; }
+	.kol-m-6{ float: left; width: 50%; }
+	.kol-m-7{ float: left; width: 58.33%; }
+	.kol-m-8{ float: left; width: 66.66%; }
+	.kol-m-9{ float: left; width: 75%; }
+	.kol-m-10{ float: left; width: 83.33%; }
+	.kol-m-11{ float: left; width: 91.66%; }
+	.kol-m-12{ float: left; width: 100%; }
+
+	.card{
+		width: 60%;
+	}
+}
+
+@media only screen and (min-width: 768px){
+	.kol-1{ float: left; width: 8.33%; }
+	.kol-2{ float: left; width: 16.66%; }
+	.kol-3{ float: left; width: 25%; }
+	.kol-4{ float: left; width: 33.33%; }
+	.kol-5{ float: left; width: 41.66%; }
+	.kol-6{ float: left; width: 50%; }
+	.kol-7{ float: left; width: 58.33%; }
+	.kol-8{ float: left; width: 66.66%; }
+	.kol-9{ float: left; width: 75%; }
+	.kol-10{ float: left; width: 83.33%; }
+	.kol-11{ float: left; width: 91.66%; }
+	.kol-12{ float: left; width: 100%; }
+
+	.card{
+		width: 50%;
+	}
+}
+

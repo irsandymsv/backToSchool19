@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register | Back to School</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="css/main_style.css">
+	<link rel="stylesheet" type="text/css" href="css/top_menu.css">
+	<link rel="stylesheet" type="text/css" href="css/footer.css"></ink>
+
+	<!-- FontAwesome CSS -->
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/fontawesome.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/solid.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/brands.css">
+
+	<style type="text/css">
+		#logo_wrap{
+			width: 25%;
+			margin: 0 auto;
+			padding: 10px;
+		}
+
+		#logo_wrap img{
+			width: 100%;
+			height: auto;
+		}
+
+		#logo_wrap h4{
+			text-align: center;
+		}
+
+		#judul_form{
+			text-align: center;
+			color: midnightblue;
+		}
+
+		input, select{
+			width: 100%;
+			border: none;
+			padding: 5px;
+			font-size: 16px;
+		}
+
+		input[type="radio"]{
+			width: 10%;
+			padding: 0;
+		}
+
+		#form_register{
+			margin: auto;
+			padding: 10px;
+		}
+
+		#form_register h4{
+			margin-bottom: 5px;
+		}
+
+		.radio_label{
+			cursor: pointer;
+			margin-right: 25px;
+			/*background-color: red;*/
+		}
+
+		.btn_utama{
+			margin-top: 20px;
+			float: right;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="top-menu" id="menu-atas">
+		<a href="home.html" id="logo" title="Backtoschool">
+			<div id="img_logo"> 
+				<img src="image/LOGO.png">
+			</div>
+		</a>
+		<a href="javascript:void(0);" id="menu-icon"><i class="fas fa-bars"></i></a>
+		<div class="mainMenu" id="main_menu">
+			<a href="home.html">Beranda</a>	
+			<div id="drop">
+				<button href="#" id="btn_dropdown">Layanan <i class="fas fa-caret-down"></i></button>
+				<div id="isi_dropdown">
+					<a href="les_streaming-intro.html">Les Straming</a>
+					<a href="pesan_tutor-intro.html">Pesan Tutor (Privat)</a>
+				</div>	
+			</div>
+			<a href="about.html">Tentang Kami </a>
+			<a href="login.html">Login</a>
+			<a href="daftar.html" class="active">Register</a>
+		</div>	
+	</div>
+
+	<div class="main-body">
+		<div id="logo_wrap">
+			<img src="image/LOGO.png">
+			<h4><i>Mari Belajar dengan Teknologi</i></h4>
+		</div>
+
+		<div class="card">
+			<form action="#" id="form_register">
+				<div id="judul_form">
+					<h2>Daftar Akun Baru</h2>
+				</div>
+				<h4 class="label_daftar">Nama Lengkap</h4>
+				<input type="text" name="nama" autofocus="">
+
+				<h4 class="label_daftar">Email</h4>
+				<input type="email" name="email">
+
+				<h4 class="label_daftar">Password</h4>
+				<input type="password" name="password">
+
+				<h4 class="label_daftar">Konfirmasi Password</h4>
+				<input type="password" name="kofim_password">
+
+				<h4 class="label_daftar">Nomor Handphone</h4>
+				<input type="text" name="no_hp">
+				
+				<h4 class="label_daftar">Jenis Kelamin</h4>
+				<div class="baris">
+					<label class="radio_label kol-4 kol-m-6">
+						<input type="radio" class="" name="gender" value="Laki-laki"> Laki-laki
+					</label>
+				
+					<label class="radio_label kol-4 kol-m-6">
+						<input type="radio" name="gender" value="Perempuan"> Perempuan
+					</label>	
+				</div>
+				
+
+				<h4 class="label_daftar">Kelas</h4>
+				<select name="kelas">
+					<option>-- Pilih Kelas --</option>
+					<option value="SD Kelas 4">SD Kelas 4</option>
+					<option value="SD Kelas 5">SD Kelas 5</option>
+					<option value="SD Kelas 6">SD Kelas 6</option>
+					<option value="SMP Kelas 7">SMP Kelas 7</option>
+					<option value="SMP Kelas 8">SMP Kelas 8</option>
+					<option value="SMP Kelas 9">SMP Kelas 9</option>
+					<option value="SMA Kelas 10 IPA">SMA Kelas 10 IPA</option>
+					<option value="SMA Kelas 10 IPS">SMA Kelas 10 IPS</option>
+					<option value="SMA Kelas 11 IPA">SMA Kelas 11 IPA</option>
+					<option value="SMA Kelas 11 IPS">SMA Kelas 11 IPS</option>
+					<option value="SMA Kelas 12 IPA">SMA Kelas 12 IPA</option>
+					<option value="SMA Kelas 12 IPS">SMA Kelas 12 IPS</option>
+				</select>
+				
+				<br><br>
+				<button type="submit" class="btn btn_utama">Daftar</button>
+			</form>
+			<div id="div_register">
+				<!-- <p>Belum punya akun? <a href="#" class="btn_link">Daftar</a></p> -->
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="foot-col">
+			<div class="foot-col-in">
+				<h4>Tentang Backtoschool</h4>
+				<li><a href="#">Tentang kami</a></li>
+				<li><a href="#">Kontak kami</a></li>
+			</div>
+			
+			<div class="foot-col-in">
+				<h4>Layanan Kami</h4>
+				<li><a href="#">Les Streaming</a></li>
+				<li><a href="#">Pesan Tutor</a></li>
+				
+			</div>
+		</div>
+		
+		<div class="foot-col">
+			<div class="foot-col-in">
+				<h4>Lainnya</h4>
+				<li><a href="#">Syarat dan Ketentuan</a></li>
+				<li><a href="#">Kebijakan Privasi</a></li>
+			</div>
+
+			<div class="foot-col-in">
+				<h4>Ikuti kami di</h4>
+				<div id="social_media">
+					<a href="#"><i class="fab fa-facebook"></i></a>&ensp;
+					<a href="#"><i class="fab fa-twitter"></i></a>&ensp;
+					<a href="#"><i class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="bottom-line">
+		<b>&copy; 2019 Backtoschool All Right Reserved</b>
+	</div>
+
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/top_menu.js"></script>
+</body>
+</html>

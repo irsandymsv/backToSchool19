@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login | Back to School</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="css/top_menu.css">
+	<link rel="stylesheet" type="text/css" href="css/main_style.css">
+	<link rel="stylesheet" type="text/css" href="css/footer.css"></ink>
+
+	<!-- FontAwesome CSS -->
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/fontawesome.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/solid.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/brands.css">
+
+	<style type="text/css">
+		#logo_wrap{
+			width: 25%;
+			margin: 0 auto;
+			padding: 10px;
+		}
+
+		#logo_wrap img{
+			width: 100%;
+			height: auto;
+		}
+
+		#logo_wrap h4{
+			text-align: center;
+		}
+
+		.card{
+			text-align: center;
+		}
+
+		#judul_form{
+			color: midnightblue;
+		}
+
+		input{
+			width: 50%;
+			margin-bottom: 20px;
+			border: none;
+			padding: 10px;
+			font-size: 16px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="top-menu" id="menu-atas">
+		<a href="home.html" id="logo" title="Backtoschool">
+			<div id="img_logo"> 
+				<img src="image/LOGO.png">
+			</div>
+		</a>
+		<a href="javascript:void(0);" id="menu-icon"><i class="fas fa-bars"></i></a>
+		<div class="mainMenu" id="main_menu">
+			<a href="home.html">Beranda</a>	
+			<div id="drop">
+				<button href="#" id="btn_dropdown">Layanan <i class="fas fa-caret-down"></i></button>
+				<div id="isi_dropdown">
+					<a href="les_streaming-intro.html">Les Straming</a>
+					<a href="pesan_tutor-intro.html">Pesan Tutor (Privat)</a>
+				</div>	
+			</div>
+			<a href="about.html">Tentang Kami </a>
+			<a href="login.html" class="active">Login</a>
+			<a href="daftar.html">Register</a>
+		</div>	
+	</div>
+
+	<div class="main-body">
+		<div id="logo_wrap">
+			<img src="image/LOGO.png">
+			<h4><i>Mari Belajar dengan Teknologi</i></h4>
+		</div>
+
+		<div class="card">
+			<form action="home.html">
+				<div id="judul_form">
+					<h2>Masuk</h2>
+				</div>
+				<input type="email" name="email" placeholder="Email" autofocus=""><br>
+				<input type="password" name="password" placeholder="password"><br>
+				<button type="submit" class="btn btn_utama">Masuk</button>
+			</form>
+			<div id="div_register">
+				<p>Belum punya akun? <a href="daftar.html" class="btn_link">Daftar</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="foot-col">
+			<div class="foot-col-in">
+				<h3>Tentang Backtoschool</h3>
+				<li><a href="#">Tentang kami</a></li>
+				<li><a href="#">Kontak kami</a></li>
+			</div>
+			
+			<div class="foot-col-in">
+				<h3>Layanan Kami</h3>
+				<li><a href="#">Les Streaming</a></li>
+				<li><a href="#">Pesan Tutor</a></li>
+				
+			</div>
+		</div>
+		
+		<div class="foot-col">
+			<div class="foot-col-in">
+				<h3>Lainnya</h3>
+				<li><a href="#">Syarat dan Ketentuan</a></li>
+				<li><a href="#">Kebijakan Privasi</a></li>
+			</div>
+
+			<div class="foot-col-in">
+				<h3>Ikuti kami di</h3>
+				<div id="social_media">
+					<a href="#"><i class="fab fa-facebook"></i></a>&ensp;
+					<a href="#"><i class="fab fa-twitter"></i></a>&ensp;
+					<a href="#"><i class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="bottom-line">
+		<b>&copy; 2019 Backtoschool All Right Reserved</b>
+	</div>
+
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/top_menu.js"></script>
+</body>
+</html>
