@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register | Back to School</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="css/main_style.css">
+	<link rel="stylesheet" type="text/css" href="css/top_menu.css">
+	<link rel="stylesheet" type="text/css" href="css/footer.css"></ink>
+
+	<!-- FontAwesome CSS -->
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/fontawesome.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/solid.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/brands.css">
+
+	<style type="text/css">
+		.main-body{
+			padding: 40px;
+		}
+
+		#judul_layanan{
+			color: navy;
+		}
+
+		#isi_layanan{
+			font-size: 20px;
+		}
+
+		#deskripsi_layanan{
+			margin-bottom: 40px;
+		}
+
+		#menu_layanan{
+			margin: auto;
+			width: 90%;
+			display: flex;
+		}
+
+		@media only screen and (max-width: 767px){
+			#menu_layanan{
+				display: block;
+			}
+		}
+
+		#menu_layanan h3{
+			text-align: center;
+		}
+
+		#list_fasilitas li{
+			padding-top: 5px;
+		}
+
+		.menu{
+			flex: 1;
+			padding: 10px 20px;
+			margin-left: 10px;
+			margin-top: 5px;
+			background-color: midnightblue;
+			color: white;
+			overflow: hidden;
+		}
+
+		#harga table{
+			width: 80%;
+		}
+
+		#harga table td{
+			padding: 5px;
+		}
+
+		input, select{
+			width: 100%;
+			padding: 5px;
+		}
+
+		#btn_submit{
+			float: right;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="top-menu" id="menu-atas">
+		<a href="home.html" id="logo" title="Backtoschool">
+			<div id="img_logo"> 
+				<img src="image/LOGO.png">
+			</div>
+		</a>
+		<a href="javascript:void(0);" id="menu-icon"><i class="fas fa-bars"></i></a>
+		<div class="mainMenu" id="main_menu">
+			<a href="home.html">Beranda</a>	
+			<div id="drop">
+				<button href="#" id="btn_dropdown" class="active">Layanan <i class="fas fa-caret-down"></i></button>
+				<div id="isi_dropdown">
+					<a href="les_streaming-intro.html">Les Straming</a>
+					<a href="pesan_tutor-intro.html" class="active">Pesan Tutor (Privat)</a>
+				</div>	
+			</div>
+			<a href="about.html">Tentang Kami </a>
+			<a href="login.html">Login</a>
+			<a href="daftar.html" >Register</a>
+		</div>	
+	</div>
+
+	<div class="main-body">
+		<div id="judul_layanan">
+			<h1>Pesan Tutor</h1>
+		</div>
+
+		<div id="isi_layanan" class="baris">
+			<div id="deskripsi_layanan">
+				<P>
+					Layanan ini diperuntukkan bagi siswa yang membutuhkan bimbingan belajar secara privat. Anda dapat menentukan sendiri hari, jam, durasi, serta jumlah pertemuan sesuai keinginan anda. Tersedia bagi jenjang pendidikan mulai SD kelas 4 hingga SMA kelas 3 (XII), dengan berbagai pilihan mata pelajaran. Maksimal berkelompok hingga 5 orang.
+				</P>
+			</div>
+
+			<div id="menu_layanan" class="baris">
+				<div id="fasilitas" class="menu kol-5">
+					<h3>FASILITAS</h3>
+					<ol id="list_fasilitas">
+						<li>Tutor berpengalaman</li>
+						<li>Pilih hari dan jam sesuai keinginan</li>
+						<li>Dapat berkelompok maksimal 5 orang</li>
+					</ol>
+				</div>
+
+				<div id="harga" class="menu kol-5">
+					<h3>HARGA</h3>
+					<h2>Rp 100K/<small>pertemuan</small></h2>
+
+					<form action="#">
+						<table>
+							<tr>
+								<td>Jenjang/Kelas</td>
+								<td>
+									<select>
+										<option value="">-- Pilih --</option>
+										<option value="SD Kelas 4">SD Kelas 4</option>
+										<option value="SD Kelas 5">SD Kelas 5</option>
+										<option value="SD Kelas 6">SD Kelas 6</option>
+										<option value="SMP Kelas 7">SMP Kelas 7</option>
+										<option value="SMP Kelas 8">SMP Kelas 8</option>
+										<option value="SMP Kelas 9">SMP Kelas 9</option>
+										<option value="SMA Kelas 10 IPA">SMA Kelas 10 IPA</option>
+										<option value="SMA Kelas 10 IPS">SMA Kelas 10 IPS</option>
+										<option value="SMA Kelas 11 IPA">SMA Kelas 11 IPA</option>
+										<option value="SMA Kelas 11 IPS">SMA Kelas 11 IPS</option>
+										<option value="SMA Kelas 12 IPA">SMA Kelas 12 IPA</option>
+										<option value="SMA Kelas 12 IPS">SMA Kelas 12 IPS</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>Mata Pelajaran</td>
+								<td>
+									<select>
+										<option value="">-- Pilih --</option>
+										<option value="Matematika">Matematika</option>
+										<option value="IPA">IPA</option>
+										<option value="B.Indonesia">B.Indonesia</option>
+										<option value="B.inggris">B.inggris</option>
+										<option value="Biologi">Biologi</option>
+										<option value="Fisika">Fisika</option>
+										<option value="Kimia">Kimia</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>Jumlah Pertemuan</td>
+								<td>
+									<input type="number" name="jml_pertemuan">
+								</td>
+							</tr>
+						</table>
+						<button class="btn btn_kedua" type="submit" id="btn_submit">PESAN</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="foot-col">
+			<div class="foot-col-in">
+				<h4>Tentang Backtoschool</h4>
+				<li><a href="#">Tentang kami</a></li>
+				<li><a href="#">Kontak kami</a></li>
+			</div>
+			
+			<div class="foot-col-in">
+				<h4>Layanan Kami</h4>
+				<li><a href="#">Les Streaming</a></li>
+				<li><a href="#">Pesan Tutor</a></li>
+				
+			</div>
+		</div>
+		
+		<div class="foot-col">
+			<div class="foot-col-in">
+				<h4>Lainnya</h4>
+				<li><a href="#">Syarat dan Ketentuan</a></li>
+				<li><a href="#">Kebijakan Privasi</a></li>
+			</div>
+
+			<div class="foot-col-in">
+				<h4>Ikuti kami di</h4>
+				<div id="social_media">
+					<a href="#"><i class="fab fa-facebook"></i></a>&ensp;
+					<a href="#"><i class="fab fa-twitter"></i></a>&ensp;
+					<a href="#"><i class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="bottom-line">
+		<b>&copy; 2019 Backtoschool All Right Reserved</b>
+	</div>
+
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/top_menu.js"></script>
+</body>
+</html>

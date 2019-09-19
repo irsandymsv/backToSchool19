@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register | Back to School</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="css/main_style.css">
+	<link rel="stylesheet" type="text/css" href="css/top_menu.css">
+	<link rel="stylesheet" type="text/css" href="css/footer.css"></ink>
+
+	<!-- FontAwesome CSS -->
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/fontawesome.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/solid.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/brands.css">
+
+	<style type="text/css">
+		.main-body{
+			padding: 40px;
+		}
+
+		#judul_layanan{
+			color: navy;
+		}
+
+		#isi_layanan{
+			font-size: 20px;
+		}
+
+		#deskripsi_layanan{
+			margin-bottom: 40px;
+		}
+
+		#vid_layanan{
+			width: 60%;
+			padding: 5px;
+			margin: auto;
+			border: 5px solid midnightblue;
+			/*background-color: midnightblue;*/
+			overflow: hidden;
+		}
+
+		#vid_layanan video{
+			width: 100%;
+			height: auto;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="top-menu" id="menu-atas">
+		<a href="home.html" id="logo" title="Backtoschool">
+			<div id="img_logo"> 
+				<img src="image/LOGO.png">
+			</div>
+		</a>
+		<a href="javascript:void(0);" id="menu-icon"><i class="fas fa-bars"></i></a>
+		<div class="mainMenu" id="main_menu">
+			<a href="home.html">Beranda</a>	
+			<div id="drop">
+				<button href="#" id="btn_dropdown" class="active">Layanan <i class="fas fa-caret-down"></i></button>
+				<div id="isi_dropdown">
+					<a href="les_streaming-intro.html" class="active">Les Straming</a>
+					<a href="pesan_tutor-intro.html">Pesan Tutor (Privat)</a>
+				</div>	
+			</div>
+			<a href="about.html">Tentang Kami </a>
+			<a href="login.html">Login</a>
+			<a href="daftar.html" >Register</a>
+		</div>	
+	</div>
+
+	<div class="main-body">
+		<div id="judul_layanan">
+			<h1>Les Streaming</h1>
+		</div>
+
+		<div id="isi_layanan" class="baris">
+			<div id="deskripsi_layanan">
+				<P>
+					Layanan ini membawakan materi-materi belajar dalam bentuk video. Siswa dapat menonton secara streaming berbagai video pembelajaran yagn disediakan. Selain materi belajar, video juga dilengkapi contoh soal dan pembahasan agar memudahkan siswa dalam memahami materi. Ditemani pengajar yang ahli di bidangnya, video belajar dikemas secara menarik dan menyenangkan.
+				</P>
+			</div>
+
+			<div id="vid_layanan">
+				<video src="../sample.mkv" controls=""></video>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="foot-col">
+			<div class="foot-col-in">
+				<h4>Tentang Backtoschool</h4>
+				<li><a href="#">Tentang kami</a></li>
+				<li><a href="#">Kontak kami</a></li>
+			</div>
+			
+			<div class="foot-col-in">
+				<h4>Layanan Kami</h4>
+				<li><a href="#">Les Streaming</a></li>
+				<li><a href="#">Pesan Tutor</a></li>
+				
+			</div>
+		</div>
+		
+		<div class="foot-col">
+			<div class="foot-col-in">
+				<h4>Lainnya</h4>
+				<li><a href="#">Syarat dan Ketentuan</a></li>
+				<li><a href="#">Kebijakan Privasi</a></li>
+			</div>
+
+			<div class="foot-col-in">
+				<h4>Ikuti kami di</h4>
+				<div id="social_media">
+					<a href="#"><i class="fab fa-facebook"></i></a>&ensp;
+					<a href="#"><i class="fab fa-twitter"></i></a>&ensp;
+					<a href="#"><i class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="bottom-line">
+		<b>&copy; 2019 Backtoschool All Right Reserved</b>
+	</div>
+
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/top_menu.js"></script>
+</body>
+</html>
