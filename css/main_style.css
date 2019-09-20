@@ -41,6 +41,14 @@ body{
 	background-color: yellow;
 }
 
+.btn_sukses{
+	background-color: #00b33c;
+}
+
+.btn_sukses:hover{
+	background-color: #00cc44;
+}
+
 .btn_bsr{
 	padding: 24px 52px;
 	font-size: 36px;
@@ -57,8 +65,10 @@ body{
 
 .main-body{
 	/*background-color: #dfe4ea;*/
-	background-color: #f9ca24;
-	/*padding: 10px;*/
+	/*background-color: #f9ca24;*/
+	background-color: #ffdb4d;
+	overflow: hidden;
+	/*padding: 0px;*/
 }
 
 .main-body:after{

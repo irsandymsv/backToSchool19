@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard | Back to School</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="css/top_menu.css">
+	<link rel="stylesheet" type="text/css" href="css/main_style.css">
+	<link rel="stylesheet" type="text/css" href="css/footer.css"></ink>
+
+	<!-- FontAwesome CSS -->
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/fontawesome.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/solid.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/brands.css">
+
+	<style type="text/css">
+		.main-body{
+			display: table;
+			width: 100%;
+		}
+
+		.sidebar{
+			height: 100%;
+			width: 250px;
+			/*float: left;*/
+			display: table-cell;
+			/*position: absolute;*/
+			left: 0;
+			z-index: 1;
+			/*padding-bottom: 100%;
+			margin-bottom: -100%;*/
+			overflow: hidden;
+			/*background-color: #24478f;*/
+			background-color: #006699;
+			overflow-x: hidden;
+			transition: 0.5s;
+		}
+
+		.main-content{
+			padding: 40px;
+			display: table-cell;
+			/*float: left;*/
+			/*width: 70%;*/
+			/*margin-left: 250px;*/
+			/*transition: margin-left .5s;*/
+		}
+
+		.side-menu a, .btn_side_dropdown, #close_side a{
+			padding: 6px 8px 6px 16px;
+			text-decoration: none;
+			font-size: 18px;
+			color: white;
+			display: block;
+			transition: 0.5s;
+			border: none;
+			background: no-repeat;
+			width: 100%;
+			text-align: left;
+			cursor: pointer;
+			outline: none; 
+		}
+
+		.side-menu a:hover, .btn_side_dropdown:hover, #close_side a:hover{
+			/*background-color: #2e5cb8;*/
+			background-color: #0088cc;
+		}
+
+		.btn_side_dropdown .fa-caret-down{
+			float: right;
+			padding-right: 35px;
+		}
+
+		a.side_active {
+			/*background-color: #00a3cc;*/
+			background-color: #00ace6;
+		}
+
+		.isi_side_dropdown{
+			display: none;
+			/*background-color: #003366;*/
+			background-color: #004466;
+			margin-left: 5px;
+			margin-bottom: 15px;
+		}
+
+		.single_link{
+			margin-top: 20px;
+		}
+
+		#btn_side_dropdown_2{
+			margin-top: 20px;
+		}
+
+		#close_side{
+			float: right;
+			margin-top: 0;
+			overflow: hidden;
+		}
+
+		#close_side a {
+			font-size: 24px;
+		}
+
+		.user_avatar{
+			width: 100%;
+			padding: 10px;
+			margin-top: 45px;
+			/*background-color: darkblue;*/
+			margin-bottom: 10px;
+		}
+
+		#avatar_pic{
+			margin-right: 10px;
+		}
+
+		#avatar_pic img{
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+			border-radius: 50%;
+		}
+
+		#username{
+			color: white;
+			/*background-color: yellow;*/
+		}
+
+		#open_sideMenu{
+			display: none;
+			position: absolute;
+			left: 0;
+			width: 10%;
+			padding: 0;
+		}
+
+		#open_sideMenu button{
+			font-size: 20px;
+			padding: 10px 12px;
+		}
+
+		.btn_sukses{
+			padding: 4px 8px;
+			font-size: 20px;
+		}
+
+		.layanan_user{
+			margin-bottom: 50px;
+			padding-top: 0;
+		}
+
+		.judul_layanan a{
+			display: inline-block;
+		}
+
+		.item_les{
+			margin-right: 15px;
+			margin-top: 8px;
+			padding: 7px;
+			font-size: 1vw;
+			overflow: hidden;
+			background-color: white;
+			color: black;
+		}
+
+		.link_layanan{
+			text-decoration: none;
+		}
+
+		.thumbnail_les{
+			max-width: 350px;
+			max-height: 280px;
+			position: relative;
+			text-align: center;
+		}
+
+		.thumbnail_les img{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.thumbnail_les i{
+			font-size: 4vw;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.thumbnail_les:hover{
+			color: navy;
+		}
+
+		.waktu_les{
+			float: right;
+			padding: 0;
+			margin-top: 0;
+		}
+
+		.item_tutor{
+			margin-right: 15px;
+			margin-top: 8px;
+			font-size: 2vw;
+			padding: 5px;
+			text-align: center;
+			background-color: white;
+		}
+
+		/*.item_tutor table{
+			margin: auto;
+			border-collapse: collapse;
+		}
+
+		.item_tutor table tr td{
+			font-size: 2vw;
+			padding: 20px;
+			width: 50%;
+		}*/
+
+		.pelajaran_tutor{
+			font-size: 2vw;
+			/*overflow: hidden;*/
+			padding: 5px;
+			/*background-color: red;*/
+		}
+
+		.ket_tutor{
+			font-size: 2vw;
+			text-align: center;
+			padding: 5px;
+			/*margin-left: 20px;*/
+			margin-top: -20px;
+			/*overflow: hidden;*/
+			/*background-color: green;*/
+		}
+
+		.tgl_tutor{
+			/*text-align: center;*/
+			/*padding: 5px;*/
+			/*border: 0.5px solid black;*/
+		}
+
+		.jml_tutor{
+			float: right;
+			/*font-size: 2vw;*/
+			/*padding: 5px;*/
+			/*border: 0.5px solid black;*/
+		}
+
+		@media only screen and (max-width: 600px){
+			#avatar_pic{
+				width: 33.33%;
+			}
+
+			#username{
+				width: 50%;
+			}
+		}
+	</style>
+</head>
+<body>
+
+	<div class="top-menu" id="menu-atas">
+		<a href="home.html" id="logo" title="Backtoschool">
+			<div id="img_logo"> 
+				<img src="image/LOGO.png">
+			</div>
+		</a>
+		<a href="javascript:void(0);" id="menu-icon"><i class="fas fa-bars"></i></a>
+		<div class="mainMenu" id="main_menu">
+			<a href="home.html">Beranda</a>	
+			<div id="drop">
+				<button id="btn_dropdown">Layanan <i class="fas fa-caret-down"></i></button>
+				<div id="isi_dropdown">
+					<a href="les_streaming-intro.html">Les Straming</a>
+					<a href="pesan_tutor-intro.html">Pesan Tutor (Privat)</a>
+				</div>	
+			</div>
+			<a href="about.html">Tentang Kami </a>
+			<a href="home.html"><i class="fas fa-sign-out-alt"></i></a>
+		</div>	
+	</div>
+
+	<div class="main-body">
+		<div id="open_sideMenu">
+			<button id="btn_openSide" class="btn btn_utama"><i class="fas fa-bars"></i></button>
+		</div>
+
+		<div class="sidebar">
+			<div id="close_side">
+				<a href="javascript:void(0)" id="btn_closeSide">&times;</a>
+			</div>
+
+			<div class="user_avatar baris">
+				<div id="avatar_pic" class="kol-4 kol-m-4">
+					<img src="image/emot_file.jpg">
+				</div>
+				<div id="username" class="kol-7 kol-m-7">
+					<h3>User</h3>
+				</div>
+			</div>
+
+			<div class="side-menu">
+				<a href="#" class="btn_side_dropdown side_active" id="btn_side_dropdown_1">Dashboard <i class="fas fa-caret-down"></i></a>
+				<div class="isi_side_dropdown">
+					<a href="#">Les Streaming</a>
+					<a href="#">Pesan Tutor</a>	
+				</div>
+				<a href="#" class="single_link">Pembayaran</a>
+				<a href="#">Profil</a>
+				<a href="#" class="btn_side_dropdown" id="btn_side_dropdown_2">Layanan <i class="fas fa-caret-down"></i></a>
+				<div class="isi_side_dropdown">
+					<a href="#">Les Streaming</a>
+					<a href="#">Pesan Tutor</a>	
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="main-content">
+			<div class="layanan_user">
+				<div class="judul_layanan">
+					<a href="#" class="btn btn_link"><h2>Les Streaming</h2></a> 
+					<a href="#" class="btn btn_sukses">+</a>	
+				</div>
+				
+				<div class="baris">
+					<a href="#" class="link_layanan">
+						<div class="item_les kol-3 kol-m-3">
+							<div class="thumbnail_les">
+								<img src="image/thumbnail/thumb3.jpg">
+								<i class="fas fa-play"></i>
+							</div>	
+							<div class="desc_les">
+								<h4>Geometri-Matematika SMA-10</h4>
+								<p class="waktu_les"><i class="fas fa-calendar-alt"></i> 15 Sep 2019</p>
+							</div>
+						</div>
+					</a>
+					
+
+					<div class="item_les kol-3 kol-m-3">
+						<div class="thumbnail_les">
+							<img src="image/thumbnail/thumb2.jpg">
+							<i class="fas fa-play"></i>
+						</div>	
+						<div class="desc_les">
+							<h4>Gaya-IPA(Fisika) SMP-9</h4>
+							<p class="waktu_les"><i class="fas fa-calendar-alt"></i> 10 Sep 2019</p>
+						</div>
+					</div>
+
+					<div class="item_les kol-3 kol-m-3">
+						<div class="thumbnail_les">
+							<img src="image/thumbnail/thumb3.jpg">
+							<i class="fas fa-play"></i>
+						</div>	
+						<div class="desc_les">
+							<h4>Statistika-Matematika SMP-8</h4>
+							<p class="waktu_les"> <i class="fas fa-calendar-alt"></i> 4 Sep 2019</p>
+						</div>
+					</div>
+
+					<div class="item_les kol-3 kol-m-3">
+						<div class="thumbnail_les">
+							<img src="image/thumbnail/thumb2.jpg">
+							<i class="fas fa-play"></i>
+						</div>	
+						<div class="desc_les">
+							<h4>Pencernaan-IPA(Biologi) SMP-8</h4>
+							<p class="waktu_les"><i class="fas fa-calendar-alt"></i> 27 Agu 2019</p>
+						</div>
+					</div>
+
+					<div class="item_les kol-3 kol-m-3">
+						<div class="thumbnail_les">
+							<img src="image/thumbnail/thumb4.jpg">
+							<i class="fas fa-play"></i>
+						</div>	
+						<div class="desc_les">
+							<h4>Cerpen-B.Indonesia SMP-7</h4>
+							<p class="waktu_les"><i class="fas fa-calendar-alt"></i> 14 Agu 2019</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="layanan_user">
+				<div class="judul_layanan">
+					<a href="#" class="btn btn_link"><h2>Pesan Tutor</h2></a>
+					<a href="#" class="btn btn_sukses">+</a>
+				</div>
+				
+				<div class="baris">
+					<a href="#" class="link_layanan">
+						<div class="item_tutor kol-3 kol-m-3">
+							<div class="pelajaran_tutor">
+								<h4>Matematika</h4>
+							</div>
+
+							<div class="ket_tutor baris">
+								<div class="tgl_tutor kol-5">
+									<h4>10 Jul</h4>
+								</div>
+
+								<div class="jml_tutor kol-5">
+									<h4>4x</h4>
+								</div>
+							</div>
+						</div>
+						<!-- <div class="item_tutor kol-3 kol-m-3">
+							<table>
+								<tr>
+									<td colspan="2">Matematika</td>
+								</tr>
+								<tr>
+									<td>10 Jul</td>
+									<td>4X</td>
+								</tr>
+							</table>
+						</div> -->
+					</a>
+					<a href="#" class="link_layanan">
+						<div class="item_tutor kol-3 kol-m-3">
+							<div class="pelajaran_tutor">
+								<h4>Fisika</h4>
+							</div>
+
+							<div class="ket_tutor baris">
+								<div class="tgl_tutor kol-5">
+									<h4>3 Sep</h4>
+								</div>
+
+								<div class="jml_tutor kol-5">
+									<h4>3x</h4>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="foot-col">
+			<div class="foot-col-in">
+				<h3>Tentang Backtoschool</h3>
+				<li><a href="#">Tentang kami</a></li>
+				<li><a href="#">Kontak kami</a></li>
+			</div>
+			
+			<div class="foot-col-in">
+				<h3>Layanan Kami</h3>
+				<li><a href="#">Les Streaming</a></li>
+				<li><a href="#">Pesan Tutor</a></li>
+				
+			</div>
+		</div>
+		
+		<div class="foot-col">
+			<div class="foot-col-in">
+				<h3>Lainnya</h3>
+				<li><a href="#">Syarat dan Ketentuan</a></li>
+				<li><a href="#">Kebijakan Privasi</a></li>
+			</div>
+
+			<div class="foot-col-in">
+				<h3>Ikuti kami di</h3>
+				<div id="social_media">
+					<a href="#"><i class="fab fa-facebook"></i></a>&ensp;
+					<a href="#"><i class="fab fa-twitter"></i></a>&ensp;
+					<a href="#"><i class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="bottom-line">
+		<b>&copy; 2019 Backtoschool All Right Reserved</b>
+	</div>
+
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/top_menu.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("a.btn_side_dropdown").click(function(event) {
+				var dropdwon = $(this).next("div");
+				if (dropdwon.css('display') == "block") {
+					dropdwon.css('display', "none");
+				} else {
+					dropdwon.css('display', "block");
+				}
+			});
+
+			$("#btn_openSide").click(function(event) {
+				// $(".sidebar").width(250);
+				$(".sidebar").show();
+				// $(".main-content").css('margin-left', '250px');
+				$(this).parent("#open_sideMenu").hide();
+			});
+
+			$("#btn_closeSide").click(function(event) {
+				// $(".sidebar").width(0);
+				$(".sidebar").hide();
+				// $(".main-content").css('margin-left', '0px');
+				$("#open_sideMenu").show();
+			});
+		});
+	</script>
+</body>
+</html>
