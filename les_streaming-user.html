@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Dashboard | Back to School</title>
+	<title>Les Streaming Saya | Back to School</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" type="text/css" href="css/top_menu.css">
@@ -22,9 +22,71 @@
 			width: 100%;
 		}
 
+		.judul_layanan{
+			margin-bottom: 5px;
+		}
+
 		.btn_sukses{
 			padding: 4px 8px;
 			font-size: 20px;
+		}
+
+		.cari_sorting{
+			margin-bottom: 20px;
+		}
+
+		#cari_input{
+			display: flex;
+			padding: 5px;
+			overflow: hidden;
+			float: right;
+			/*margin-right: 15px;*/
+		}
+
+		#cari_input input{
+			padding: 8px;
+			border: none;
+		}
+
+		#cari_input i{
+			padding: 8px;
+			text-align: center;
+			background-color: white;
+		}
+
+		#btn_cari{
+			border: none;
+			background-color: white;
+			cursor: pointer;
+			margin-left: -10px;
+		}
+
+		#sorting{
+			float: right;
+			overflow: hidden;
+			padding: 5px;
+		}
+
+		#sorting select{
+			padding: 8px;
+			min-width: 50%;
+			border: none;
+		}
+
+		@media only screen and (max-width: 850px){
+			#cari_input input{
+				width: 100%;
+				padding: 4px;
+			}
+
+			#cari_input i{
+				padding: 4px;
+			}
+
+			#sorting select{
+				width: 100%;
+				padding: 4px;
+			}
 		}
 	</style>
 </head>
@@ -71,9 +133,10 @@
 			</div>
 
 			<div class="side-menu">
-				<a href="dashboard.html" class="side_active">Dashboard</a>
-				<a href="les_streaming-user.html">Les Streaming Saya</a>
+				<a href="dashboard.html">Dashboard</a>
+				<a href="les_streaming-user.html" class="side_active">Les Streaming Saya</a>
 				<a href="#">Pesan Tutor Saya</a>	
+
 				<a href="#" class="single_link">Pembayaran</a>
 				<a href="#">Profil</a>
 				<a href="#" class="btn_side_dropdown" id="btn_side_dropdown_2">Layanan <i class="fas fa-caret-down"></i></a>
@@ -87,9 +150,31 @@
 
 		<div class="main-content">
 			<div class="layanan_user">
-				<div class="judul_layanan">
-					<a href="les_streaming-user.html" class="btn btn_link"><h2>Les Streaming</h2></a> 
-					<a href="#" class="btn btn_sukses">+</a>	
+				<div class="judul_layanan baris">
+					<a href="#" class="btn btn_link"><h2>Les Streaming Saya</h2></a> 
+					<a href="#" id="btn_add" class="btn btn_sukses">Tambah +</a>
+				</div>
+
+				<div class="cari_sorting baris">
+					<div class="" id="cari_input">
+						<input type="text" name="cari_les" placeholder="Cari...">
+						<i class="fas fa-search"></i>
+						<!-- <button type="button" id="btn_cari"></button> -->
+					</div>
+
+					<div class="" id="sorting">
+						<!-- <p><b>Mata Pelajaran</b></p> -->
+						<select>
+							<option value=""> --Pilih Mata Pelajaran-- </option>
+							<option value=""> --Pilih-- </option>
+							<option value=""> --Pilih-- </option>
+							<option value=""> --Pilih-- </option>
+							<option value=""> --Pilih-- </option>
+							<option value=""> --Pilih-- </option>
+							<option value=""> --Pilih-- </option>
+							<option value=""> --Pilih-- </option>
+						</select>
+					</div>
 				</div>
 				
 				<div class="baris">
@@ -154,61 +239,6 @@
 							<div class="desc_les">
 								<h4>Cerpen-B.Indonesia SMP-7</h4>
 								<p class="waktu_les"><i class="fas fa-calendar-alt"></i> 14 Agu 2019</p>
-							</div>
-						</div>
-					</a>
-				</div>
-			</div>
-
-			<div class="layanan_user">
-				<div class="judul_layanan">
-					<a href="#" class="btn btn_link"><h2>Pesan Tutor</h2></a>
-					<a href="#" class="btn btn_sukses">+</a>
-				</div>
-				
-				<div class="baris">
-					<a href="#" class="link_layanan">
-						<div class="item_tutor kol-3 kol-m-3">
-							<div class="pelajaran_tutor">
-								<h4>Matematika</h4>
-							</div>
-
-							<div class="ket_tutor baris">
-								<div class="tgl_tutor kol-8">
-									<h4>10 Jul</h4>
-								</div>
-
-								<div class="jml_tutor kol-4">
-									<h4>4x</h4>
-								</div>
-							</div>
-						</div>
-						<!-- <div class="item_tutor kol-3 kol-m-3">
-							<table>
-								<tr>
-									<td colspan="2">Matematika</td>
-								</tr>
-								<tr>
-									<td>10 Jul</td>
-									<td>4X</td>
-								</tr>
-							</table>
-						</div> -->
-					</a>
-					<a href="#" class="link_layanan">
-						<div class="item_tutor kol-3 kol-m-3">
-							<div class="pelajaran_tutor">
-								<h4>Fisika</h4>
-							</div>
-
-							<div class="ket_tutor baris">
-								<div class="tgl_tutor kol-8">
-									<h4>3 Sep</h4>
-								</div>
-
-								<div class="jml_tutor kol-4">
-									<h4>3x</h4>
-								</div>
 							</div>
 						</div>
 					</a>
