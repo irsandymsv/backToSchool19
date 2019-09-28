@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pesan Tutor Saya | Back to School</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="css/top_menu.css">
+	<link rel="stylesheet" type="text/css" href="css/main_style.css">
+	<link rel="stylesheet" type="text/css" href="css/footer.css"></ink>
+	<link rel="stylesheet" type="text/css" href="css/sidebar.css"></ink>
+	<!-- Style card layanan (streaming dan tutor) -->
+	<link rel="stylesheet" type="text/css" href="css/layanan_style.css"></ink>
+
+	<!-- FontAwesome CSS -->
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/fontawesome.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/solid.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/brands.css">
+
+	<style type="text/css">
+		.main-body{
+			display: table;
+			width: 100%;
+		}
+
+		.judul_layanan{
+			margin-bottom: 5px;
+		}
+
+		.btn_sukses{
+			padding: 4px 8px;
+			font-size: 20px;
+		}
+
+		.cari_sorting{
+			margin-bottom: 20px;
+		}
+
+		#cari_input{
+			display: flex;
+			padding: 5px;
+			overflow: hidden;
+			float: right;
+			/*margin-right: 15px;*/
+		}
+
+		#cari_input input{
+			padding: 8px;
+			border: none;
+		}
+
+		#cari_input i{
+			padding: 8px;
+			text-align: center;
+			background-color: white;
+		}
+
+		#btn_cari{
+			border: none;
+			background-color: white;
+			cursor: pointer;
+			margin-left: -10px;
+		}
+
+		#sorting{
+			float: right;
+			overflow: hidden;
+			padding: 5px;
+		}
+
+		#sorting select{
+			padding: 8px;
+			min-width: 50%;
+			border: none;
+		}
+
+		@media only screen and (max-width: 850px){
+			#cari_input input{
+				width: 100%;
+				padding: 4px;
+			}
+
+			#cari_input i{
+				padding: 4px;
+			}
+
+			#sorting select{
+				width: 100%;
+				padding: 4px;
+			}
+		}
+	</style>
+</head>
+<body>
+
+	<div class="top-menu" id="menu-atas">
+		<a href="home.html" id="logo" title="Backtoschool">
+			<div id="img_logo"> 
+				<img src="image/LOGO.png">
+			</div>
+		</a>
+		<a href="javascript:void(0);" id="menu-icon"><i class="fas fa-bars"></i></a>
+		<div class="mainMenu" id="main_menu">
+			<a href="home.html">Beranda</a>	
+			<div id="drop">
+				<button id="btn_dropdown">Layanan <i class="fas fa-caret-down"></i></button>
+				<div id="isi_dropdown">
+					<a href="les_streaming-intro.html">Les Straming</a>
+					<a href="pesan_tutor-intro.html">Pesan Tutor (Privat)</a>
+				</div>	
+			</div>
+			<a href="about.html">Tentang Kami </a>
+			<a href="home.html"><i class="fas fa-sign-out-alt"></i></a>
+		</div>	
+	</div>
+
+	<div class="main-body">
+		<div id="open_sideMenu">
+			<button id="btn_openSide" class="btn btn_utama"><i class="fas fa-bars"></i></button>
+		</div>
+
+		<div class="sidebar">
+			<div id="close_side">
+				<a href="javascript:void(0)" id="btn_closeSide">&times;</a>
+			</div>
+
+			<div class="user_avatar baris">
+				<div id="avatar_pic" class="kol-4 kol-m-4">
+					<img src="image/emot_file.jpg">
+				</div>
+				<div id="username" class="kol-7 kol-m-7">
+					<h3>User</h3>
+				</div>
+			</div>
+
+			<div class="side-menu">
+				<a href="dashboard.html">Dashboard</a>
+				<a href="les_streaming-user.html" >Les Streaming Saya</a>
+				<a href="pesan_tutor-user.html" class="side_active">Pesan Tutor Saya</a>	
+
+				<a href="#" class="single_link">Pembayaran</a>
+				<a href="#">Profil</a>
+				<a href="#" class="btn_side_dropdown" id="btn_side_dropdown_2">Layanan <i class="fas fa-caret-down"></i></a>
+				<div class="isi_side_dropdown">
+					<a href="#">Tambah Les Streaming</a>
+					<a href="#">Pesan Tutor</a>	
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="main-content">
+			<div class="layanan_user">
+				<div class="judul_layanan baris">
+					<a href="#" class="btn btn_link"><h2>Pesan Tutor Saya</h2></a> 
+					<a href="#" id="btn_add" class="btn btn_sukses">Tambah +</a>
+				</div>
+
+				<div class="cari_sorting baris">
+					<div class="" id="cari_input">
+						<input type="text" name="cari_les" placeholder="Cari...">
+						<i class="fas fa-search"></i>
+						<!-- <button type="button" id="btn_cari"></button> -->
+					</div>
+
+					<div class="" id="sorting">
+						<!-- <p><b>Mata Pelajaran</b></p> -->
+						<select>
+							<option value=""> --Pilih Mata Pelajaran-- </option>
+							<option value=""> B.Indonesia </option>
+							<option value=""> Matematika </option>
+							<option value=""> IPA </option>
+							<option value=""> B.Inggris </option>
+							<option value=""> IPA(Biologi) </option>
+							<option value=""> IPA(Fisika) </option>
+							<option value=""> IPA(Kimia) </option>
+						</select>
+					</div>
+				</div>
+				
+				<div class="baris">
+					<a href="#" class="link_layanan">
+						<div class="item_tutor kol-3 kol-m-3">
+							<div class="pelajaran_tutor">
+								<h4>Matematika</h4>
+							</div>
+
+							<div class="ket_tutor baris">
+								<div class="tgl_tutor kol-8">
+									<h4>3 Sep</h4>
+								</div>
+
+								<div class="jml_tutor kol-4">
+									<h4>4x</h4>
+								</div>
+							</div>
+						</div>
+					</a>
+
+					<a href="#" class="link_layanan">
+						<div class="item_tutor kol-3 kol-m-3">
+							<div class="pelajaran_tutor">
+								<h4>Fisika</h4>
+							</div>
+
+							<div class="ket_tutor baris">
+								<div class="tgl_tutor kol-8">
+									<h4>25 Agu</h4>
+								</div>
+
+								<div class="jml_tutor kol-4">
+									<h4>4x</h4>
+								</div>
+							</div>
+						</div>
+					</a>
+
+					<a href="#" class="link_layanan">
+						<div class="item_tutor kol-3 kol-m-3">
+							<div class="pelajaran_tutor">
+								<h4>B.Inggris</h4>
+							</div>
+
+							<div class="ket_tutor baris">
+								<div class="tgl_tutor kol-8">
+									<h4>18 Jul</h4>
+								</div>
+
+								<div class="jml_tutor kol-4">
+									<h4>2x</h4>
+								</div>
+							</div>
+						</div>
+					</a>
+
+					<a href="#" class="link_layanan">
+						<div class="item_tutor kol-3 kol-m-3">
+							<div class="pelajaran_tutor">
+								<h4>Biologi</h4>
+							</div>
+
+							<div class="ket_tutor baris">
+								<div class="tgl_tutor kol-8">
+									<h4>1 Jul</h4>
+								</div>
+
+								<div class="jml_tutor kol-4">
+									<h4>2x</h4>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="foot-col">
+			<div class="foot-col-in">
+				<h3>Tentang Backtoschool</h3>
+				<li><a href="#">Tentang kami</a></li>
+				<li><a href="#">Kontak kami</a></li>
+			</div>
+			
+			<div class="foot-col-in">
+				<h3>Layanan Kami</h3>
+				<li><a href="#">Les Streaming</a></li>
+				<li><a href="#">Pesan Tutor</a></li>
+				
+			</div>
+		</div>
+		
+		<div class="foot-col">
+			<div class="foot-col-in">
+				<h3>Lainnya</h3>
+				<li><a href="#">Syarat dan Ketentuan</a></li>
+				<li><a href="#">Kebijakan Privasi</a></li>
+			</div>
+
+			<div class="foot-col-in">
+				<h3>Ikuti kami di</h3>
+				<div id="social_media">
+					<a href="#"><i class="fab fa-facebook"></i></a>&ensp;
+					<a href="#"><i class="fab fa-twitter"></i></a>&ensp;
+					<a href="#"><i class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="bottom-line">
+		<b>&copy; 2019 Backtoschool All Right Reserved</b>
+	</div>
+
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/top_menu.js"></script>
+	<script src="js/sidebar.js"></script>
+</body>
+</html>
