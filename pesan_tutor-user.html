@@ -61,13 +61,13 @@
 			margin-left: -10px;
 		}
 
-		#sorting{
+		.select_option{
 			float: right;
 			overflow: hidden;
 			padding: 5px;
 		}
 
-		#sorting select{
+		.select_option select{
 			padding: 8px;
 			min-width: 50%;
 			border: none;
@@ -83,7 +83,7 @@
 				padding: 4px;
 			}
 
-			#sorting select{
+			#mapel select{
 				width: 100%;
 				padding: 4px;
 			}
@@ -141,7 +141,7 @@
 				<a href="#">Profil</a>
 				<a href="#" class="btn_side_dropdown" id="btn_side_dropdown_2">Layanan <i class="fas fa-caret-down"></i></a>
 				<div class="isi_side_dropdown">
-					<a href="#">Tambah Les Streaming</a>
+					<a href="les_streaming-tambah.html">Tambah Les Streaming</a>
 					<a href="#">Pesan Tutor</a>	
 				</div>
 			</div>
@@ -162,17 +162,13 @@
 						<!-- <button type="button" id="btn_cari"></button> -->
 					</div>
 
-					<div class="" id="sorting">
-						<!-- <p><b>Mata Pelajaran</b></p> -->
+					<div class="select_option" id="mapel">
 						<select>
-							<option value=""> --Pilih Mata Pelajaran-- </option>
-							<option value=""> B.Indonesia </option>
+							<option value=""> --Cari Mata Pelajaran-- </option>
 							<option value=""> Matematika </option>
-							<option value=""> IPA </option>
 							<option value=""> B.Inggris </option>
 							<option value=""> IPA(Biologi) </option>
 							<option value=""> IPA(Fisika) </option>
-							<option value=""> IPA(Kimia) </option>
 						</select>
 					</div>
 				</div>

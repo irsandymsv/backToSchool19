@@ -61,13 +61,13 @@
 			margin-left: -10px;
 		}
 
-		#sorting{
+		.select_option{
 			float: right;
 			overflow: hidden;
 			padding: 5px;
 		}
 
-		#sorting select{
+		.select_option select{
 			padding: 8px;
 			min-width: 50%;
 			border: none;
@@ -83,7 +83,7 @@
 				padding: 4px;
 			}
 
-			#sorting select{
+			#mapel select{
 				width: 100%;
 				padding: 4px;
 			}
@@ -135,13 +135,13 @@
 			<div class="side-menu">
 				<a href="dashboard.html">Dashboard</a>
 				<a href="les_streaming-user.html" class="side_active">Les Streaming Saya</a>
-				<a href="#">Pesan Tutor Saya</a>	
+				<a href="pesan_tutor-user.html">Pesan Tutor Saya</a>	
 
 				<a href="#" class="single_link">Pembayaran</a>
 				<a href="#">Profil</a>
 				<a href="#" class="btn_side_dropdown" id="btn_side_dropdown_2">Layanan <i class="fas fa-caret-down"></i></a>
 				<div class="isi_side_dropdown">
-					<a href="#">Tambah Les Streaming</a>
+					<a href="les_streaming-tambah.html">Tambah Les Streaming</a>
 					<a href="#">Pesan Tutor</a>	
 				</div>
 			</div>
@@ -152,33 +152,54 @@
 			<div class="layanan_user">
 				<div class="judul_layanan baris">
 					<a href="#" class="btn btn_link"><h2>Les Streaming Saya</h2></a> 
-					<a href="#" id="btn_add" class="btn btn_sukses">Tambah +</a>
+					<a href="les_streaming-tambah.html" id="btn_add" class="btn btn_sukses">Tambah +</a>
 				</div>
 
-				<div class="cari_sorting baris">
+				<div class="cari_select baris">
 					<div class="" id="cari_input">
 						<input type="text" name="cari_les" placeholder="Cari...">
 						<i class="fas fa-search"></i>
 						<!-- <button type="button" id="btn_cari"></button> -->
 					</div>
 
-					<div class="" id="sorting">
-						<!-- <p><b>Mata Pelajaran</b></p> -->
+					<div class="select_option" id="mapel">
 						<select>
 							<option value=""> --Pilih Mata Pelajaran-- </option>
-							<option value=""> --Pilih-- </option>
-							<option value=""> --Pilih-- </option>
-							<option value=""> --Pilih-- </option>
-							<option value=""> --Pilih-- </option>
-							<option value=""> --Pilih-- </option>
-							<option value=""> --Pilih-- </option>
-							<option value=""> --Pilih-- </option>
+							<option value="Matematika">Matematika</option>
+							<option value="B.Indonesia">B.Indonesia</option>
+							<option value="B.Inggris">B.Inggris</option>
+							<option value="IPA">IPA</option>
+							<option value="IPA (FISIKA)">IPA (FISIKA)</option>
+							<option value="IPA (Biologi)">IPA (Biologi)</option>
+							<option value="IPA (Kimia)">IPA (Kimia)</option>
+							<option value="Ekonomi">Ekonomi</option>
+							<option value="Sejarah">Sejarah</option>
+							<option value="Sosiologi">Sosiologi</option>
+							<option value="Geografi">Geografi</option>
+						</select>
+					</div>
+
+					<div class="select_option" id="jenjang">
+						<select>
+							<option value="">-- Pilih Jenjang --</option>
+							<option value="">SD Kelas 4</option>
+							<option value="">SD Kelas 5</option>
+							<option value="">SD Kelas 6</option>
+							<option value="">SMP Kelas 7</option>
+							<option value="">SMP Kelas 8</option>
+							<option value="">SMP Kelas 9</option>
+							<option value="">SMA IPA Kelas 10</option>
+							<option value="">SMA IPA Kelas 11</option>
+							<option value="">SMA IPA Kelas 12</option>
+							<option value="">SMA IPS Kelas 10</option>
+							<option value="">SMA IPS Kelas 11</option>
+							<option value="">SMA IPS Kelas 12</option>
 						</select>
 					</div>
 				</div>
 				
 				<div class="baris">
-					<a href="#" class="link_layanan">
+					<a href="les_streaming-show(user).html" class="link_layanan">
 						<div class="item_les kol-3 kol-m-3">
 							<div class="thumbnail_les">
 								<img src="image/thumbnail/thumb3.jpg">
@@ -191,7 +212,7 @@
 						</div>
 					</a>
 					
-					<a href="#" class="link_layanan">
+					<a href="les_streaming-show(user).html" class="link_layanan">
 						<div class="item_les kol-3 kol-m-3">
 							<div class="thumbnail_les">
 								<img src="image/thumbnail/thumb2.jpg">
@@ -204,7 +225,7 @@
 						</div>
 					</a>
 
-					<a href="#" class="link_layanan">
+					<a href="les_streaming-show(user).html" class="link_layanan">
 						<div class="item_les kol-3 kol-m-3">
 							<div class="thumbnail_les">
 								<img src="image/thumbnail/thumb3.jpg">
@@ -215,9 +236,9 @@
 								<p class="waktu_les"> <i class="fas fa-calendar-alt"></i> 4 Sep 2019</p>
 							</div>
 						</div>
-					<a href="#" class="link_layanan">
+					</a>
 
-					<a href="#" class="link_layanan">
+					<a href="les_streaming-show(user).html" class="link_layanan">
 						<div class="item_les kol-3 kol-m-3">
 							<div class="thumbnail_les">
 								<img src="image/thumbnail/thumb2.jpg">
@@ -230,7 +251,7 @@
 						</div>
 					</a>
 
-					<a href="#" class="link_layanan">
+					<a href="les_streaming-show(user).html" class="link_layanan">
 						<div class="item_les kol-3 kol-m-3">
 							<div class="thumbnail_les">
 								<img src="image/thumbnail/thumb4.jpg">

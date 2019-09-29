@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Geometri - Matematika SMA-10 | Back to School</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="css/top_menu.css">
+	<link rel="stylesheet" type="text/css" href="css/main_style.css">
+	<link rel="stylesheet" type="text/css" href="css/footer.css"></ink>
+	<link rel="stylesheet" type="text/css" href="css/sidebar.css"></ink>
+	<!-- Style card layanan (streaming dan tutor) -->
+	<link rel="stylesheet" type="text/css" href="css/layanan_style.css"></ink>
+
+	<!-- FontAwesome CSS -->
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/fontawesome.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/solid.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/brands.css">
+
+	<style type="text/css">
+		.main-body{
+			display: table;
+			width: 100%;
+		}
+
+		#wrapper{
+			padding: 10px;
+		}
+
+		#judul_atas{
+			color: navy;
+			font-size: 1.3vw;
+		}
+
+		#video_wrapper{
+			margin-top: 30px;
+		}
+
+		#video_wrapper div{
+			width: 80%;
+			padding: 8px;
+			margin: auto;
+			background-color: lightgrey;
+			overflow: hidden;
+		}
+
+		#video_wrapper div video{
+			width: 100%;
+			height: auto;
+		}
+
+		#judul_wrap{
+			margin-top: 25px;
+		}
+
+		#judul_les{
+			float: left;
+		}
+
+		#btn_beliLes{
+			float: right;
+			margin-top: 10px;
+		}
+
+		#keterangan_video{
+			font-size: 15px;
+			width: 95%;
+			margin: auto;
+		}
+
+		#ket1{
+			float: left;
+		}
+
+		#ket2{
+			float: right;
+		}
+
+		#keterangan_video table {
+			border-collapse: collapse; 
+		}
+
+		#keterangan_video table tr td {
+			padding: 5px;
+		}
+
+		#komentar{
+			padding: 15px;
+		}
+
+		#new_comment{
+			width: 100%;	
+			/*margin: auto;*/
+		}
+
+		#new_comment div.baris{
+			width: 60%;
+			margin: auto;
+		}
+
+		.comment_avatar{
+			width: 70px;
+			height: 70px;
+		}
+
+		.comment_avatar img{
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+			border-radius: 50%;
+		}
+
+		#input_comment{
+			margin-left: 20px;
+		}
+
+		#input_comment textarea{
+			width: 100%;
+		}
+
+		#btn_post{
+			float: right;
+		}
+
+		#btn_post button{
+			padding: 8px 12px;
+		}
+
+		#list_comment{
+			margin-top: 10px;
+			margin-left: -20px;
+		}
+
+		#list_comment ul li{
+			list-style: none;
+			padding: 5px;
+			margin-top: 20px;
+			background-color: white;
+			border-radius: 10px;
+		}
+
+		.comment_body{
+			margin-left: 15px;
+		}
+
+		.comment_time{
+			color: grey;
+			font-size: 11px;
+		}
+
+		@media only screen and (max-width: 768px){
+			#btn_beliLes a{
+				padding: 8px 12px;
+			}
+		}
+	</style>
+</head>
+<body>
+
+	<div class="top-menu" id="menu-atas">
+		<a href="home.html" id="logo" title="Backtoschool">
+			<div id="img_logo"> 
+				<img src="image/LOGO.png">
+			</div>
+		</a>
+		<a href="javascript:void(0);" id="menu-icon"><i class="fas fa-bars"></i></a>
+		<div class="mainMenu" id="main_menu">
+			<a href="home.html">Beranda</a>	
+			<div id="drop">
+				<button id="btn_dropdown">Layanan <i class="fas fa-caret-down"></i></button>
+				<div id="isi_dropdown">
+					<a href="les_streaming-intro.html">Les Straming</a>
+					<a href="pesan_tutor-intro.html">Pesan Tutor (Privat)</a>
+				</div>	
+			</div>
+			<a href="about.html">Tentang Kami </a>
+			<a href="home.html"><i class="fas fa-sign-out-alt"></i></a>
+		</div>	
+	</div>
+
+	<div class="main-body">
+		<div id="open_sideMenu">
+			<button id="btn_openSide" class="btn btn_utama"><i class="fas fa-bars"></i></button>
+		</div>
+
+		<div class="sidebar">
+			<div id="close_side">
+				<a href="javascript:void(0)" id="btn_closeSide">&times;</a>
+			</div>
+
+			<div class="user_avatar baris">
+				<div id="avatar_pic" class="kol-4 kol-m-4">
+					<img src="image/emot_file.jpg">
+				</div>
+				<div id="username" class="kol-7 kol-m-7">
+					<h3>User</h3>
+				</div>
+			</div>
+
+			<div class="side-menu">
+				<a href="dashboard.html" class="side_active">Dashboard</a>
+				<a href="les_streaming-user.html">Les Streaming Saya</a>
+				<a href="pesan_tutor-user.html">Pesan Tutor Saya</a>	
+				<a href="#" class="single_link">Pembayaran</a>
+				<a href="#">Profil</a>
+				<a href="#" class="btn_side_dropdown" id="btn_side_dropdown_2">Layanan <i class="fas fa-caret-down"></i></a>
+				<div class="isi_side_dropdown">
+					<a href="les_streaming-tambah.html">Tambah Les Streaming</a>
+					<a href="#">Pesan Tutor</a>	
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="main-content">
+			<div id="wrapper">
+				<div id="judul_atas">
+					<h1>Les Streaming</h1>
+				</div>
+
+				<div id="video_wrapper">
+					<div>
+						<video src="#" controls="" ></video>
+					</div>
+				</div>
+
+				<div class="baris" id="judul_wrap">
+					<div class="" id="judul_les">
+						<h3>Geometri - Matematika SMA 10</h3>
+					</div>
+
+					<div class="" id="btn_beliLes">
+						<a href="#" class="btn btn_sukses"><i class="fas fa-plus"></i> Beli</a>
+					</div>
+				</div>
+
+				<hr>
+				<div class="baris" id="keterangan_video">
+					<div class="kol-4 kol-m-4" id="ket1">
+						<table>
+							<tr>
+								<td>Mata Pelajaran</td>
+								<td>: Matematika</td>
+							</tr>
+							<tr>
+								<td>Kelas</td>
+								<td>: SMP 8</td>
+							</tr>
+							<tr>
+								<td>Tanggal</td>
+								<td>: 16 September 2019</td>
+							</tr>
+						</table>
+					</div>
+
+					<div class="kol-4 kol-m-4" id="ket2">
+						<table>
+							<tr>
+								<td>Materi</td>
+								<td>: Geometri</td>
+							</tr>
+							<tr>
+								<td>Pengajar</td>
+								<td>: Indah Suyati</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<hr>
+
+				<div id="komentar">
+					<div id="judul_komentar">
+						<h3>Komentar</h3>
+					</div>
+					<div id="new_comment">
+						<div class="baris">
+							<div class="comment_avatar kol-3 kol-m-3">
+								<img src="image/emot_file.jpg">
+							</div>
+
+							<div id="input_comment" class="kol-9 kol-m-9">
+								<textarea placeholder="Tulis komentar" rows="4" id="text_komen"></textarea>
+
+								<div id="btn_post">
+									<button class="btn btn_utama" id="post">Post</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="list_comment">
+						<ul id="ul_comment">
+
+							<li>
+								<div class="comments baris">
+									<div class="comment_avatar kol-3 kol-m-3">
+										<img src="image/emot_file.jpg">
+									</div>
+
+									<div class="comment_body kol-8 kol-m-8">
+										<div class="comment_author">
+											<h4>
+												Budi Pratama
+												<small class="comment_time">1 minggu yang lalu</small>
+											</h4>
+										</div>
+
+										<div class="comment_content">
+											<P>Ntaps! paham skrg</P>
+										</div>
+									</div>
+								</div>
+							</li>
+
+							<li>
+								<div class="comments baris">
+									<div class="comment_avatar kol-3 kol-m-3">
+										<img src="image/emot_file.jpg">
+									</div>
+
+									<div class="comment_body kol-8 kol-m-8">
+										<div class="comment_author">
+											<h4>
+												Dewi Pratiwi 
+												<small class="comment_time">2 hari yang lalu</small>
+											</h4>
+										</div>
+
+										<div class="comment_content">
+											<P>Makasih ilmunya bu</P>
+										</div>
+									</div>
+								</div>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="foot-col">
+			<div class="foot-col-in">
+				<h3>Tentang Backtoschool</h3>
+				<li><a href="#">Tentang kami</a></li>
+				<li><a href="#">Kontak kami</a></li>
+			</div>
+			
+			<div class="foot-col-in">
+				<h3>Layanan Kami</h3>
+				<li><a href="#">Les Streaming</a></li>
+				<li><a href="#">Pesan Tutor</a></li>
+				
+			</div>
+		</div>
+		
+		<div class="foot-col">
+			<div class="foot-col-in">
+				<h3>Lainnya</h3>
+				<li><a href="#">Syarat dan Ketentuan</a></li>
+				<li><a href="#">Kebijakan Privasi</a></li>
+			</div>
+
+			<div class="foot-col-in">
+				<h3>Ikuti kami di</h3>
+				<div id="social_media">
+					<a href="#"><i class="fab fa-facebook"></i></a>&ensp;
+					<a href="#"><i class="fab fa-twitter"></i></a>&ensp;
+					<a href="#"><i class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="bottom-line">
+		<b>&copy; 2019 Backtoschool All Right Reserved</b>
+	</div>
+
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/top_menu.js"></script>
+	<script src="js/sidebar.js"></script>
+	<script type="text/javascript">
+		$("button#post").click(function(event) {
+			var komen = $("#text_komen").val();
+			if(komen != ""){
+				$("#ul_comment").append(''+
+					'<li>'+
+						'<div class="comments baris">'+
+							'<div class="comment_avatar kol-3 kol-m-3">'+
+								'<img src="image/emot_file.jpg">'+
+							'</div>'+
+
+							'<div class="comment_body kol-8 kol-m-8">'+
+								'<div class="comment_author">'+
+									'<h4>User <small class="comment_time">5 detik yang lalu</small></h4>'+
+								'</div>'+
+
+								'<div class="comment_content">'+
+									'<P>'+komen+'</P>'+
+								'</div>'+
+							'</div>'+
+						'</div>'+
+					'</li>'
+				);
+			}
+			$("#text_komen").val("");
+		});
+	</script>
+</body>
+</html>
