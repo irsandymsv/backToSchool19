@@ -1,6 +1,6 @@
 body{
 	margin: 0;
-	font-family: Verdana, sans-serif, Arial;
+	font-family:  Verdana, sans-serif;
 }
 
 .baris:after{
@@ -16,7 +16,7 @@ body{
 
 
 .btn {
-	padding: 12px 18px;
+	padding: 12px 16px;
 	font-size: 16px;
 	text-decoration: none;
 	border: none;
@@ -65,7 +65,6 @@ body{
 
 .main-body{
 	/*background-color: #dfe4ea;*/
-	/*background-color: #f9ca24;*/
 	background-color: #ffdb4d;
 	overflow: hidden;
 	/*padding: 0px;*/
@@ -84,6 +83,11 @@ body{
 	margin-bottom: 40px;
 	background-color: rgba(225, 225, 225, 0.5);
 	overflow: hidden;
+}
+
+.judul_atas{
+	color: navy;
+	font-size: 1.3vw;
 }
 
 

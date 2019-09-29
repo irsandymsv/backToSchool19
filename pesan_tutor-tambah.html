@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Pesan Tutor Saya | Back to School</title>
+	<title>Pesan Tutor | Back to School</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" type="text/css" href="css/top_menu.css">
@@ -22,70 +22,47 @@
 			width: 100%;
 		}
 
-		.judul_layanan{
-			margin-bottom: 5px;
+		.wrapper{
+			padding: 10px;
 		}
 
-		.btn_sukses{
-			padding: 4px 8px;
-			font-size: 20px;
+		#form_wrap{
+			width: 100%;
+			margin-top: 25px;
 		}
 
-		.cari_sorting{
-			margin-bottom: 20px;
-		}
-
-		#cari_input{
-			display: flex;
-			padding: 5px;
+		#form_pesan{
+			width: 50%;
+			margin: auto;
+			padding: 15px;
 			overflow: hidden;
-			float: right;
-			/*margin-right: 15px;*/
+			background-color: rgba(245, 245, 245, 0.6);
+			box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.3);
 		}
 
-		#cari_input input{
-			padding: 8px;
-			border: none;
-		}
-
-		#cari_input i{
-			padding: 8px;
-			text-align: center;
-			background-color: white;
-		}
-
-		#btn_cari{
-			border: none;
-			background-color: white;
-			cursor: pointer;
-			margin-left: -10px;
-		}
-
-		.select_option{
-			float: right;
-			overflow: hidden;
+		table{
+			width: 100%;
 			padding: 5px;
 		}
 
-		.select_option select{
-			padding: 8px;
-			min-width: 50%;
+		td{
+			padding: 10px;
+		}
+
+		td input, td select, td textarea{
+			padding: 5px;
+			width: 100%;
 			border: none;
 		}
 
-		@media only screen and (max-width: 850px){
-			#cari_input input{
-				width: 100%;
-				padding: 4px;
-			}
+		#btn_submit{
+			float: right;
+			margin-top: 20px;
+		}
 
-			#cari_input i{
-				padding: 4px;
-			}
-
-			#mapel select{
-				width: 100%;
-				padding: 4px;
+		@media only screen and (max-width: 800px){
+			#form_pesan{
+				width: 90%;
 			}
 		}
 	</style>
@@ -135,117 +112,105 @@
 			<div class="side-menu">
 				<a href="dashboard.html">Dashboard</a>
 				<a href="les_streaming-user.html" >Les Streaming Saya</a>
-				<a href="pesan_tutor-user.html" class="side_active">Pesan Tutor Saya</a>	
+				<a href="pesan_tutor-user.html">Pesan Tutor Saya</a>	
 
 				<a href="#" class="single_link">Pembayaran</a>
 				<a href="#">Profil</a>
 				<a href="#" class="btn_side_dropdown" id="btn_side_dropdown_2">Layanan <i class="fas fa-caret-down"></i></a>
 				<div class="isi_side_dropdown">
 					<a href="les_streaming-tambah.html">Tambah Les Streaming</a>
-					<a href="pesan_tutor-tambah.html">Pesan Tutor</a>	
+					<a href="pesan_tutor-tambah.html" class="side_active">Pesan Tutor</a>	
 				</div>
 			</div>
 			
 		</div>
 
 		<div class="main-content">
-			<div class="layanan_user">
-				<div class="judul_layanan baris">
-					<a href="#" class="btn btn_link"><h2>Pesan Tutor Saya</h2></a> 
-					<a href="pesan_tutor-tambah.html" id="btn_add" class="btn btn_sukses">Tambah +</a>
+			<div class="wrapper">
+
+				<div class="judul_atas">
+					<h1>Pesan Tutor Baru</h1>
 				</div>
 
-				<div class="cari_sorting baris">
-					<div class="" id="cari_input">
-						<input type="text" name="cari_les" placeholder="Cari...">
-						<i class="fas fa-search"></i>
-						<!-- <button type="button" id="btn_cari"></button> -->
-					</div>
+				<div id="form_wrap">
+					<form id="form_pesan" action="#" method="post">
+						<table>
+							<tr>
+								<td>Jenjang</td>
+								<td>
+									<select>
+										<option> --Pilih-- </option>
+										<option value="">SD Kelas 4</option>
+										<option value="">SD Kelas 5</option>
+										<option value="">SD Kelas 6</option>
+										<option value="">SMP Kelas 7</option>
+										<option value="">SMP Kelas 8</option>
+										<option value="">SMP Kelas 9</option>
+										<option value="">SMA IPA Kelas 10</option>
+										<option value="">SMA IPA Kelas 11</option>
+										<option value="">SMA IPA Kelas 12</option>
+										<option value="">SMA IPS Kelas 10</option>
+										<option value="">SMA IPS Kelas 11</option>
+										<option value="">SMA IPS Kelas 12</option>
+									</select>
+								</td>
+							</tr>
 
-					<div class="select_option" id="mapel">
-						<select>
-							<option value=""> --Cari Mata Pelajaran-- </option>
-							<option value=""> Matematika </option>
-							<option value=""> B.Inggris </option>
-							<option value=""> IPA(Biologi) </option>
-							<option value=""> IPA(Fisika) </option>
-						</select>
-					</div>
+							<tr>
+								<td>mata Pelajaran</td>
+								<td>
+									<select>
+										<option> --Pilih-- </option>
+										<option value="Matematika">Matematika</option>
+										<option value="B.Indonesia">B.Indonesia</option>
+										<option value="B.Inggris">B.Inggris</option>
+										<option value="IPA">IPA</option>
+										<option value="IPA (FISIKA)">IPA (FISIKA)</option>
+										<option value="IPA (Biologi)">IPA (Biologi)</option>
+										<option value="IPA (Kimia)">IPA (Kimia)</option>
+										<option value="Ekonomi">Ekonomi</option>
+										<option value="Sejarah">Sejarah</option>
+										<option value="Sosiologi">Sosiologi</option>
+										<option value="Geografi">Geografi</option>
+									</select>
+								</td>
+							</tr>
+
+							<tr>
+								<td>Jumlah pertemuan</td>
+								<td>
+									<input type="number" name="jml_pertemuan" min="1">
+								</td>
+							</tr>
+
+							<tr>
+								<td>Durasi (menit)</td>
+								<td>
+									<input type="number" name="durasi">
+								</td>
+							</tr>
+
+							<tr>
+								<td>Tempat</td>
+								<td>
+									<textarea name="tempat" rows="2"></textarea>
+								</td>
+							</tr>
+
+							<tr>
+								<td>Tanggal Mulai</td>
+								<td>
+									<input type="date" name="tgl_mulai">
+								</td>
+							</tr>
+						</table>
+
+						<div id="btn_submit">
+							<button type="submit" class="btn btn_utama">Pesan</button>
+						</div>
+					</form>
 				</div>
-				
-				<div class="baris">
-					<a href="pesan_tutor-show.html" class="link_layanan">
-						<div class="item_tutor kol-3 kol-m-3">
-							<div class="pelajaran_tutor">
-								<h4>Matematika</h4>
-							</div>
 
-							<div class="ket_tutor baris">
-								<div class="tgl_tutor kol-8">
-									<h4>3 Sep</h4>
-								</div>
-
-								<div class="jml_tutor kol-4">
-									<h4>4x</h4>
-								</div>
-							</div>
-						</div>
-					</a>
-
-					<a href="pesan_tutor-show.html" class="link_layanan">
-						<div class="item_tutor kol-3 kol-m-3">
-							<div class="pelajaran_tutor">
-								<h4>Fisika</h4>
-							</div>
-
-							<div class="ket_tutor baris">
-								<div class="tgl_tutor kol-8">
-									<h4>25 Agu</h4>
-								</div>
-
-								<div class="jml_tutor kol-4">
-									<h4>4x</h4>
-								</div>
-							</div>
-						</div>
-					</a>
-
-					<a href="pesan_tutor-show.html" class="link_layanan">
-						<div class="item_tutor kol-3 kol-m-3">
-							<div class="pelajaran_tutor">
-								<h4>B.Inggris</h4>
-							</div>
-
-							<div class="ket_tutor baris">
-								<div class="tgl_tutor kol-8">
-									<h4>18 Jul</h4>
-								</div>
-
-								<div class="jml_tutor kol-4">
-									<h4>2x</h4>
-								</div>
-							</div>
-						</div>
-					</a>
-
-					<a href="pesan_tutor-show.html" class="link_layanan">
-						<div class="item_tutor kol-3 kol-m-3">
-							<div class="pelajaran_tutor">
-								<h4>Biologi</h4>
-							</div>
-
-							<div class="ket_tutor baris">
-								<div class="tgl_tutor kol-8">
-									<h4>1 Jul</h4>
-								</div>
-
-								<div class="jml_tutor kol-4">
-									<h4>2x</h4>
-								</div>
-							</div>
-						</div>
-					</a>
-				</div>
 			</div>
 		</div>
 	</div>
