@@ -1,5 +1,6 @@
 $(function() {
 	$("a.btn_side_dropdown").click(function(event) {
+		event.preventDefault();
 		var dropdwon = $(this).next("div");
 		if (dropdwon.css('display') == "block") {
 			dropdwon.css('display', "none");
