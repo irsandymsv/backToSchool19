@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Pesan Tutor | Back to School</title>
+	<title>Pembayaran | Back to School</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" type="text/css" href="css/top_menu.css">
@@ -22,47 +22,63 @@
 			width: 100%;
 		}
 
+		.main-content{
+			display: block;
+		}
+
 		.wrapper{
 			padding: 10px;
 		}
-
-		#form_wrap{
-			width: 100%;
-			margin-top: 25px;
-		}
-
-		#form_pesan{
-			width: 50%;
-			margin: auto;
-			padding: 15px;
+		
+		#cari_input{
+			display: flex;
+			padding: 5px;
 			overflow: hidden;
-			background-color: rgba(245, 245, 245, 0.6);
-			box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.3);
 		}
 
-		table{
-			width: 100%;
-			padding: 5px;
-		}
-
-		td{
-			padding: 10px;
-		}
-
-		td input, td select, td textarea{
-			padding: 5px;
-			width: 100%;
+		#cari_input input{
+			padding: 8px;
 			border: none;
 		}
 
-		#btn_submit{
-			float: right;
-			margin-top: 20px;
+		#cari_input i{
+			padding: 8px;
+			text-align: center;
+			background-color: white;
+		}
+
+		#tbl_pembayaran{
+			border-collapse: collapse;
+			border: 1px solid black;
+			background-color: white;
+			width: 100%;
+		}
+
+		#tbl_pembayaran th, #tbl_pembayaran td{
+			border: 1px solid black;
+			padding: 10px;
+		}
+
+		td:first-child, td:last-child{
+			text-align: center;
+		}
+
+		.btn_sukses{
+			padding: 6px 10px;
 		}
 
 		@media only screen and (max-width: 800px){
-			#form_pesan{
-				width: 90%;
+			#cari_input input{
+				width: 100%;
+				padding: 4px;
+			}
+
+			#cari_input i{
+				padding: 4px;
+			}
+
+			#tbl_pembayaran{
+				width: 100%;
 			}
 		}
 	</style>
@@ -114,12 +130,12 @@
 				<a href="les_streaming-user.html" >Les Streaming Saya</a>
 				<a href="pesan_tutor-user.html">Pesan Tutor Saya</a>	
 
-				<a href="pembayaran.html" class="single_link">Pembayaran</a>
+				<a href="pembayaran.html" class="single_link side_active">Pembayaran</a>
 				<a href="profile.html">Profil</a>
 				<a href="#" class="btn_side_dropdown" id="btn_side_dropdown_2">Layanan <i class="fas fa-caret-down"></i></a>
 				<div class="isi_side_dropdown">
 					<a href="les_streaming-tambah.html">Tambah Les Streaming</a>
-					<a href="pesan_tutor-tambah.html" class="side_active">Pesan Tutor</a>	
+					<a href="pesan_tutor-tambah.html">Pesan Tutor</a>	
 				</div>
 			</div>
 			
@@ -127,89 +143,84 @@
 
 		<div class="main-content">
 			<div class="wrapper">
-
 				<div class="judul_atas">
-					<h1>Pesan Tutor Baru</h1>
+					<h1>Pembayaran</h1>
 				</div>
 
-				<div id="form_wrap">
-					<form id="form_pesan" action="konfirmasi_pesan_tutor.html" method="post">
-						<table>
-							<tr>
-								<td>Jenjang</td>
-								<td>
-									<select>
-										<option> --Pilih-- </option>
-										<option value="">SD Kelas 4</option>
-										<option value="">SD Kelas 5</option>
-										<option value="">SD Kelas 6</option>
-										<option value="">SMP Kelas 7</option>
-										<option value="">SMP Kelas 8</option>
-										<option value="">SMP Kelas 9</option>
-										<option value="">SMA IPA Kelas 10</option>
-										<option value="">SMA IPA Kelas 11</option>
-										<option value="">SMA IPA Kelas 12</option>
-										<option value="">SMA IPS Kelas 10</option>
-										<option value="">SMA IPS Kelas 11</option>
-										<option value="">SMA IPS Kelas 12</option>
-									</select>
-								</td>
-							</tr>
-
-							<tr>
-								<td>mata Pelajaran</td>
-								<td>
-									<select>
-										<option> --Pilih-- </option>
-										<option value="Matematika">Matematika</option>
-										<option value="B.Indonesia">B.Indonesia</option>
-										<option value="B.Inggris">B.Inggris</option>
-										<option value="IPA">IPA</option>
-										<option value="IPA (FISIKA)">IPA (FISIKA)</option>
-										<option value="IPA (Biologi)">IPA (Biologi)</option>
-										<option value="IPA (Kimia)">IPA (Kimia)</option>
-										<option value="Ekonomi">Ekonomi</option>
-										<option value="Sejarah">Sejarah</option>
-										<option value="Sosiologi">Sosiologi</option>
-										<option value="Geografi">Geografi</option>
-									</select>
-								</td>
-							</tr>
-
-							<tr>
-								<td>Jumlah pertemuan</td>
-								<td>
-									<input type="number" name="jml_pertemuan" min="1">
-								</td>
-							</tr>
-
-							<tr>
-								<td>Durasi (menit)</td>
-								<td>
-									<input type="number" name="durasi">
-								</td>
-							</tr>
-
-							<tr>
-								<td>Tempat</td>
-								<td>
-									<textarea name="tempat" rows="2"></textarea>
-								</td>
-							</tr>
-
-							<tr>
-								<td>Tanggal Mulai</td>
-								<td>
-									<input type="date" name="tgl_mulai">
-								</td>
-							</tr>
-						</table>
-
-						<div id="btn_submit">
-							<button type="submit" class="btn btn_utama">Pesan</button>
-						</div>
-					</form>
+				<div class="" id="cari_input">
+					<input type="text" name="cari_les" placeholder="Cari...">
+					<i class="fas fa-search"></i>
 				</div>
+				<br>
+
+				<div id="tbl_wrap">
+					<table id="tbl_pembayaran">
+						<tr>
+							<th>No</th>
+							<th>Jenis Layanan</th>
+							<th>Tanggal Pemesanan</th>
+							<th>Harga</th>
+							<th>Status</th>
+							<th>Aksi</th>
+						</tr>
+
+						<tr>
+							<td>1</td>
+							<td>Les Streaming</td>
+							<td>26 September 2019</td>
+							<td>Rp 50.000</td>
+							<td>belum Lunas</td>
+							<td>
+								<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>2</td>
+							<td>Les Streaming</td>
+							<td>14 September 2019</td>
+							<td>Rp 50.000</td>
+							<td>Lunas</td>
+							<td>
+								<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>3</td>
+							<td>Pesan Tutor</td>
+							<td>2 September 2019</td>
+							<td>Rp 200.000</td>
+							<td>Lunas</td>
+							<td>
+								<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>4</td>
+							<td>Les Streaming</td>
+							<td>7 Agustus 2019</td>
+							<td>Rp 50.000</td>
+							<td>Lunas</td>
+							<td>
+								<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
+							</td>
+						</tr>
+
+						<tr>
+							<td>5</td>
+							<td>Pesan Tutor</td>
+							<td>28 Juli 2019</td>
+							<td>Rp 300.000</td>
+							<td>Lunas</td>
+							<td>
+								<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
+							</td>
+						</tr>
+					</table>
+				</div>
+				
 
 			</div>
 		</div>
