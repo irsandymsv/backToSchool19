@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Detail Pesan Tutor | Back to School</title>
+	<title>Detail Pembayaran | Back to School</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" type="text/css" href="css/top_menu.css">
@@ -28,13 +28,13 @@
 
 		#form_wrap{
 			width: 100%;
-			margin-top: 25px;
+			margin-top: 35px;
 		}
 
 		#detail_pesan{
 			width: 60%;
 			margin: auto;
-			padding: 15px;
+			padding: 25px;
 			overflow: hidden;
 			background-color: rgba(245, 245, 245, 0.6);
 			box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.3);
@@ -42,14 +42,13 @@
 		}
 
 		table{
-			width: 90%;
+			width: 100%;
 			margin: auto;
 			padding: 5px;
 		}
 
 		table tr td{
 			padding: 10px;
-			width: 10%;
 		}
 
 		#btn_back{
@@ -113,10 +112,10 @@
 			<div class="side-menu">
 				<a href="dashboard.html">Dashboard</a>
 				<a href="les_streaming-user.html" >Les Streaming Saya</a>
-				<a href="pesan_tutor-user.html" class="side_active">Pesan Tutor Saya</a>	
+				<a href="pesan_tutor-user.html">Pesan Tutor Saya</a>	
 
-				<a href="pembayaran.html" class="single_link">Pembayaran</a>
-				<a href="profile.html">Profil</a>
+				<a href="pembayaran.html" class="single_link side_active">Pembayaran</a>
+				<a href="#">Profil</a>
 				<a href="#" class="btn_side_dropdown" id="btn_side_dropdown_2">Layanan <i class="fas fa-caret-down"></i></a>
 				<div class="isi_side_dropdown">
 					<a href="les_streaming-tambah.html">Tambah Les Streaming</a>
@@ -130,56 +129,46 @@
 			<div class="wrapper">
 
 				<div class="judul_atas">
-					<h1>Detail Pesan Tutor</h1>
+					<h1>Detail Pembayaran</h1>
 				</div>
 
 				<div id="form_wrap">
 					<div id="detail_pesan">
 						<table>
 							<tr>
-								<td>Jenjang</td>
-								<td>: SMA 10</td>
+								<td>Jenis Layanan</td>
+								<td>: Les Streaming</td>
 							</tr>
 
 							<tr>
-								<td>Mata Pelajaran</td>
-								<td>: Matematika</td>
+								<td>Item</td>
+								<td>: Geometri - Matematika SMA 11</td>
 							</tr>
 
 							<tr>
-								<td>Jumlah Pertemuan</td>
-								<td>: 4</td>
+								<td>Harga</td>
+								<td>: Rp 50.000</td>
 							</tr>
 
 							<tr>
-								<td>Durasi</td>
-								<td>: 90 Menit</td>
+								<td>Total</td>
+								<td>: Rp 50.000</td>
 							</tr>
 
 							<tr>
-								<td>Tempat</td>
-								<td>: JL Tegal Boto NO. 37, Sumbersari, Jember
-								</td>
-							</tr>
-
-							<tr>
-								<td>Tanggal Mulai</td>
+								<td>Tanggal</td>
 								<td>: 3 September 2019</td>
 							</tr>
 
 							<tr>
-								<td>Status Pembayaran</td>
+								<td>Status</td>
 								<td>: Lunas</td>
-							</tr>
-
-							<tr>
-								<td>Status Tutoring</td>
-								<td>: Selesai</td>
 							</tr>
 						</table>
 
+						
 						<div id="btn_back">
-							<a href="pesan_tutor-user.html" class="btn btn_utama">Kembali</a>
+							<a href="pembayaran.html" class="btn btn_utama">Kembali</a>
 						</div>
 					</div>
 				</div>
