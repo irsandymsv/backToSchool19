@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kontak Kami | Back to School</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" href="css/top_menu.css">
+	<link rel="stylesheet" type="text/css" href="css/main_style.css">
+	<link rel="stylesheet" type="text/css" href="css/footer.css"></ink>
+
+	<!-- FontAwesome CSS -->
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/fontawesome.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/solid.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/brands.css">
+
+	<style type="text/css">
+		#wrapper{
+			padding: 40px;
+		}
+
+		#isi_wrapper{
+			padding: 15px;
+			width: 95%;
+			margin: auto;
+		}
+
+		.kotak_wrapper{
+			padding: 20px;
+			margin-right: 20px;
+			margin-top: 15px;
+			background-color: white;
+			box-shadow: 0 3px 6px 0 rgba(0,0,0,0.4)
+		}
+
+		.span_kontak{
+			margin-left: 20%;
+			text-align: left;
+		}
+
+		#kontak p{
+			padding: 2px;
+		}
+
+		#kontak p:not(:nth-child(4)){
+			border-bottom: 1px solid black;
+		}
+
+		#sosmed{
+			font-size: 30px;
+		}
+
+		.lbl_form:not(:first-child){
+			display: block;
+			margin-top: 20px;
+			margin-bottom: 5px;
+		}
+
+		#form_tanya{
+			padding: 10px;
+			overflow: hidden;
+		}
+
+		#form_tanya input, #form_tanya textarea{
+			padding: 7px;
+			width: 95%;
+		}
+
+		#kirim_form{
+			width: 100%;
+			margin-top: 20px;
+			font-size: 18px;
+		}
+	</style>
+	
+</head>
+<body>
+
+	<div class="top-menu" id="menu-atas">
+		<a href="home.html" id="logo" title="Backtoschool">
+			<div id="img_logo"> 
+				<img src="image/LOGO.png">
+			</div>
+		</a>
+		<a href="javascript:void(0);" id="menu-icon"><i class="fas fa-bars"></i></a>
+		<div class="mainMenu" id="main_menu">
+			<a href="home.html">Beranda</a>	
+			<div id="drop">
+				<button href="#" id="btn_dropdown">Layanan <i class="fas fa-caret-down"></i></button>
+				<div id="isi_dropdown">
+					<a href="les_streaming-intro.html">Les Straming</a>
+					<a href="pesan_tutor-intro.html">Pesan Tutor (Privat)</a>
+				</div>	
+			</div>
+			<a href="about.html">Tentang Kami </a>
+			<a href="login.html">Login</a>
+			<a href="daftar.html">Register</a>
+		</div>	
+	</div>
+
+	<div class="main-body">
+		<div id="wrapper">
+			<h1>Hubungi Kami</h1>
+
+			<div id="isi_wrapper" class="baris">
+				<div class="kol-4">
+					<div id="alamat" class="kotak_wrapper">
+						<h3>Alamat</h3>
+						<p>
+							JL Lurus no.10, Perum. Indah Jaya, Sumbersari 163002, Jember, Jawa Timur 
+						</p>
+					</div>
+
+					<div id="kontak" class="kotak_wrapper">
+						<h3>Kontak</h3>
+
+						Hubungi kami melalui:
+						<p class="baris">
+							<span class="kol-2 kol-m-2">Telepon</span> <span class="kol-6 kol-m-5 span_kontak">+6282 2041 8939</span>
+						</p>
+						<p class="baris">
+							<span class="kol-2 kol-m-2">Email</span> <span class="kol-6 kol-m-5 span_kontak">info@back2school.com</span> 
+						</p>
+						<p>
+							Sosial Media
+							<div id="sosmed">
+								<a href="https://facebook.com/back2school" target="_blank"><i class="fab fa-facebook"></i></a>&ensp;
+								<a href="https://twitter.com/back2school" target="_blank"><i class="fab fa-twitter"></i></a>&ensp;
+								<a href="https://instagram.com/back2school" target="_blank"><i class="fab fa-instagram"></i></a>
+							</div>
+						</p>
+					</div>
+				</div>
+
+				<div class="kol-8">
+					<div class="kotak_wrapper">
+						<h3>Tanyakan</h3>
+						<p>
+							Jika terdapat pertanyaan seputar BackToSchool, silahkan isi formulir di bawah ini
+						</p>
+						<form action="#" method="post" id="form_tanya">
+							<label class="lbl_form">Nama</label>
+							<input type="text" name="nama">
+
+							<label class="lbl_form">Email</label>
+							<input type="email" name="email">
+
+							<label class="lbl_form">Nomor HP</label>
+							<input type="text" name="no_hp">
+
+							<label class="lbl_form">Subjek</label>
+							<input type="text" name="subjek">
+
+							<label class="lbl_form">Pertanyaan atau Pesan</label>
+							<textarea rows="5"></textarea>
+
+							<button type="submit" class="btn btn_utama" name="submit" id="kirim_form" >Kirim</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="foot-col">
+			<div class="foot-col-in">
+				<h3>Tentang Backtoschool</h3>
+				<li><a href="about.html">Tentang kami</a></li>
+				<li><a href="kontak_kami.html">Kontak kami</a></li>
+			</div>
+			
+			<div class="foot-col-in">
+				<h3>Layanan Kami</h3>
+				<li><a href="les_streaming-intro.html">Les Streaming</a></li>
+				<li><a href="pesan_tutor-intro.html">Pesan Tutor</a></li>
+				
+			</div>
+		</div>
+		
+		<div class="foot-col">
+			<div class="foot-col-in">
+				<h3>Lainnya</h3>
+				<li><a href="syarat_ketentuan.html">Syarat dan Ketentuan</a></li>
+				<li><a href="kebijakan_privasi.html">Kebijakan Privasi</a></li>
+			</div>
+
+			<div class="foot-col-in">
+				<h3>Ikuti kami di</h3>
+				<div id="social_media">
+					<a href="https://facebook.com/backtoschool" target="_blank"><i class="fab fa-facebook"></i></a>&ensp;
+					<a href="https://twitter.com/backtoschool" target="_blank"><i class="fab fa-twitter"></i></a>&ensp;
+					<a href="https://instagram.com/backtoschool" target="_blankk"><i class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="bottom-line">
+		<b>&copy; 2019 Backtoschool All Right Reserved</b>
+	</div>
+
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/top_menu.js"></script>
+</body>
+</html>
