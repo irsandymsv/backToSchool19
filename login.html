@@ -44,6 +44,19 @@
 			padding: 10px;
 			font-size: 16px;
 		}
+
+		#eror_login{
+			display: none;
+			position: fixed;
+			width: 25%;
+			padding: 8px;
+			top: 15%;
+			left: 38%;
+			background-color: rgba(0,0,0,0.8);
+			color: white;
+			font-size: 14px;
+			text-align: center;
+		}
 	</style>
 	
 </head>
@@ -78,17 +91,21 @@
 		</div>
 
 		<div class="card">
-			<form action="dashboard.html" method="post">
+			<form>
 				<div id="judul_form">
 					<h2>Masuk</h2>
 				</div>
 				<input type="email" name="email" placeholder="Email" autofocus=""><br>
 				<input type="password" name="password" placeholder="password"><br>
-				<button type="submit" class="btn btn_utama">Masuk</button>
+				<a href="dashboard.html" id="btn_masuk" class="btn btn_utama">Masuk</a>
 			</form>
 			<div id="div_register">
 				<p>Belum punya akun? <a href="daftar.html" class="btn_link">Daftar</a></p>
 			</div>
+		</div>
+
+		<div id="eror_login">
+			<p><b>Email atau Password salah. Coba lagi</b></p>
 		</div>
 	</div>
 
@@ -132,5 +149,19 @@
 
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/top_menu.js"></script>
+	<script type="text/javascript">
+		$("#btn_masuk").click(function(event) {
+			event.preventDefault();
+			var email = $("input[name='email']").val();
+			var password = $("input[name='password']").val();
+
+			if(email == "email" && password == "password"){
+				document.location.href = "dashboard.html";
+			}else{
+				$("#eror_login").show();
+				$("#eror_login").fadeOut(1700);
+			}
+		});
+	</script>
 </body>
 </html>
