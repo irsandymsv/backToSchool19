@@ -18,16 +18,12 @@
 
 	<style type="text/css">
 		.main-body{
-			display: table;
 			width: 100%;
-		}
-
-		.main-content{
-			display: block;
 		}
 
 		.wrapper{
 			padding: 10px;
+			width: 100%;
 		}
 		
 		#cari_input{
@@ -47,15 +43,19 @@
 			background-color: white;
 		}
 
+		#tbl_wrap{
+			padding: 5px;
+		}
+
 		#tbl_pembayaran{
 			border-collapse: collapse;
-			border: 1px solid black;
+			border: 0.2px solid grey;
 			background-color: white;
 			width: 100%;
 		}
 
 		#tbl_pembayaran th, #tbl_pembayaran td{
-			border: 1px solid black;
+			border: 0.2px solid grey;;
 			padding: 10px;
 		}
 
@@ -68,6 +68,7 @@
 		}
 
 		@media only screen and (max-width: 800px){
+
 			#cari_input input{
 				width: 100%;
 				padding: 4px;
@@ -77,192 +78,194 @@
 				padding: 4px;
 			}
 
-			#tbl_pembayaran{
+			#tbl_wrap{
 				width: 100%;
+				overflow-x: scroll;
 			}
 		}
 	</style>
 </head>
 <body>
+	<div class="sidebar">
+		<div id="close_side">
+			<a href="javascript:void(0)" id="btn_closeSide">&times;</a>
+		</div>
 
-	<div class="top-menu" id="menu-atas">
-		<a href="index.html" id="logo" title="Backtoschool">
-			<div id="img_logo"> 
-				<img src="image/LOGO.png">
+		<div class="user_avatar baris">
+			<div id="avatar_pic" class="kol-4 kol-m-4">
+				<img src="image/emot_file.jpg">
 			</div>
-		</a>
-		<a href="javascript:void(0);" id="menu-icon"><i class="fas fa-bars"></i></a>
-		<div class="mainMenu" id="main_menu">
-			<a href="index.html">Beranda</a>	
-			<div id="drop">
-				<button id="btn_dropdown">Layanan <i class="fas fa-caret-down"></i></button>
-				<div id="isi_dropdown">
-					<a href="les_streaming-intro.html">Les Straming</a>
-					<a href="pesan_tutor-intro.html">Pesan Tutor (Privat)</a>
-				</div>	
+			<div id="username" class="kol-7 kol-m-7">
+				<h3>User</h3>
 			</div>
-			<a href="about.html">Tentang Kami </a>
-			<a href="index.html"><i class="fas fa-sign-out-alt"></i></a>
+		</div>
+
+		<div class="side-menu">
+			<a href="dashboard.html">Dashboard</a>
+			<a href="les_streaming-user.html" >Les Streaming Saya</a>
+			<a href="pesan_tutor-user.html">Pesan Tutor Saya</a>	
+
+			<a href="pembayaran.html" class="single_link side_active">Pembayaran</a>
+			<a href="profile.html">Profil</a>
+			<a href="#" class="btn_side_dropdown" id="btn_side_dropdown_2">Layanan <i class="fas fa-caret-down"></i></a>
+			<div class="isi_side_dropdown">
+				<a href="les_streaming-tambah.html">Tambah Les Streaming</a>
+				<a href="pesan_tutor-tambah.html">Pesan Tutor</a>	
+			</div>
 		</div>	
 	</div>
 
-	<div class="main-body">
-		<div id="open_sideMenu">
-			<button id="btn_openSide" class="btn btn_utama"><i class="fas fa-bars"></i></button>
+	<div class="content-right">
+		<div class="top-menu" id="menu-atas">
+			<a href="index.html" id="logo" title="Backtoschool">
+				<div id="img_logo"> 
+					<img src="image/LOGO.png">
+				</div>
+			</a>
+			<a href="javascript:void(0);" id="menu-icon"><i class="fas fa-bars"></i></a>
+			<div class="mainMenu" id="main_menu">
+				<a href="index.html">Beranda</a>	
+				<div id="drop">
+					<button id="btn_dropdown">Layanan <i class="fas fa-caret-down"></i></button>
+					<div id="isi_dropdown">
+						<a href="les_streaming-intro.html">Les Straming</a>
+						<a href="pesan_tutor-intro.html">Pesan Tutor (Privat)</a>
+					</div>	
+				</div>
+				<a href="about.html">Tentang Kami </a>
+				<a href="index.html"><i class="fas fa-sign-out-alt"></i></a>
+			</div>	
 		</div>
 
-		<div class="sidebar">
-			<div id="close_side">
-				<a href="javascript:void(0)" id="btn_closeSide">&times;</a>
+		<div class="main-body">
+			<div id="open_sideMenu">
+				<button id="btn_openSide" class="btn btn_utama"><i class="fas fa-bars"></i></button>
 			</div>
 
-			<div class="user_avatar baris">
-				<div id="avatar_pic" class="kol-4 kol-m-4">
-					<img src="image/emot_file.jpg">
-				</div>
-				<div id="username" class="kol-7 kol-m-7">
-					<h3>User</h3>
+			<div class="main-content">
+				<div class="wrapper">
+					<div class="judul_atas">
+						<h1>Pembayaran</h1>
+					</div>
+
+					<div class="" id="cari_input">
+						<input type="text" name="cari_les" placeholder="Cari...">
+						<i class="fas fa-search"></i>
+					</div>
+					<br>
+
+					<div id="tbl_wrap">
+						<table id="tbl_pembayaran">
+							<tr>
+								<th>No</th>
+								<th>Jenis Layanan</th>
+								<th>Tanggal Pemesanan</th>
+								<th>Harga</th>
+								<th>Status</th>
+								<th>Aksi</th>
+							</tr>
+
+							<tr>
+								<td>1</td>
+								<td>Les Streaming</td>
+								<td>26 September 2019</td>
+								<td>Rp 50.000</td>
+								<td>belum Lunas</td>
+								<td>
+									<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
+								</td>
+							</tr>
+
+							<tr>
+								<td>2</td>
+								<td>Les Streaming</td>
+								<td>14 September 2019</td>
+								<td>Rp 50.000</td>
+								<td>Lunas</td>
+								<td>
+									<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
+								</td>
+							</tr>
+
+							<tr>
+								<td>3</td>
+								<td>Pesan Tutor</td>
+								<td>2 September 2019</td>
+								<td>Rp 200.000</td>
+								<td>Lunas</td>
+								<td>
+									<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
+								</td>
+							</tr>
+
+							<tr>
+								<td>4</td>
+								<td>Les Streaming</td>
+								<td>7 Agustus 2019</td>
+								<td>Rp 50.000</td>
+								<td>Lunas</td>
+								<td>
+									<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
+								</td>
+							</tr>
+
+							<tr>
+								<td>5</td>
+								<td>Pesan Tutor</td>
+								<td>28 Juli 2019</td>
+								<td>Rp 300.000</td>
+								<td>Lunas</td>
+								<td>
+									<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
+								</td>
+							</tr>
+						</table>
+					</div>
+					
+
 				</div>
 			</div>
+		</div>
 
-			<div class="side-menu">
-				<a href="dashboard.html">Dashboard</a>
-				<a href="les_streaming-user.html" >Les Streaming Saya</a>
-				<a href="pesan_tutor-user.html">Pesan Tutor Saya</a>	
-
-				<a href="pembayaran.html" class="single_link side_active">Pembayaran</a>
-				<a href="profile.html">Profil</a>
-				<a href="#" class="btn_side_dropdown" id="btn_side_dropdown_2">Layanan <i class="fas fa-caret-down"></i></a>
-				<div class="isi_side_dropdown">
-					<a href="les_streaming-tambah.html">Tambah Les Streaming</a>
-					<a href="pesan_tutor-tambah.html">Pesan Tutor</a>	
+		<div class="footer">
+			<div class="foot-col">
+				<div class="foot-col-in">
+					<h3>Tentang Backtoschool</h3>
+					<li><a href="about.html">Tentang kami</a></li>
+					<li><a href="kontak_kami.html">Kontak kami</a></li>
+				</div>
+				
+				<div class="foot-col-in">
+					<h3>Layanan Kami</h3>
+					<li><a href="les_streaming-intro.html">Les Streaming</a></li>
+					<li><a href="pesan_tutor-intro.html">Pesan Tutor</a></li>
+					
 				</div>
 			</div>
 			
+			<div class="foot-col">
+				<div class="foot-col-in">
+					<h3>Lainnya</h3>
+					<li><a href="syarat_ketentuan.html">Syarat dan Ketentuan</a></li>
+					<li><a href="kebijakan_privasi.html">Kebijakan Privasi</a></li>
+				</div>
+
+				<div class="foot-col-in">
+					<h3>Ikuti kami di</h3>
+					<div id="social_media">
+						<a href="https://facebook.com/backtoschool" target="_blank"><i class="fab fa-facebook"></i></a>&ensp;
+						<a href="https://twitter.com/backtoschool" target="_blank"><i class="fab fa-twitter"></i></a>&ensp;
+						<a href="https://instagram.com/backtoschool" target="_blank"><i class="fab fa-instagram"></i></a>
+					</div>
+				</div>
+			</div>
 		</div>
 
-		<div class="main-content">
-			<div class="wrapper">
-				<div class="judul_atas">
-					<h1>Pembayaran</h1>
-				</div>
-
-				<div class="" id="cari_input">
-					<input type="text" name="cari_les" placeholder="Cari...">
-					<i class="fas fa-search"></i>
-				</div>
-				<br>
-
-				<div id="tbl_wrap">
-					<table id="tbl_pembayaran">
-						<tr>
-							<th>No</th>
-							<th>Jenis Layanan</th>
-							<th>Tanggal Pemesanan</th>
-							<th>Harga</th>
-							<th>Status</th>
-							<th>Aksi</th>
-						</tr>
-
-						<tr>
-							<td>1</td>
-							<td>Les Streaming</td>
-							<td>26 September 2019</td>
-							<td>Rp 50.000</td>
-							<td>belum Lunas</td>
-							<td>
-								<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
-							</td>
-						</tr>
-
-						<tr>
-							<td>2</td>
-							<td>Les Streaming</td>
-							<td>14 September 2019</td>
-							<td>Rp 50.000</td>
-							<td>Lunas</td>
-							<td>
-								<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
-							</td>
-						</tr>
-
-						<tr>
-							<td>3</td>
-							<td>Pesan Tutor</td>
-							<td>2 September 2019</td>
-							<td>Rp 200.000</td>
-							<td>Lunas</td>
-							<td>
-								<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
-							</td>
-						</tr>
-
-						<tr>
-							<td>4</td>
-							<td>Les Streaming</td>
-							<td>7 Agustus 2019</td>
-							<td>Rp 50.000</td>
-							<td>Lunas</td>
-							<td>
-								<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
-							</td>
-						</tr>
-
-						<tr>
-							<td>5</td>
-							<td>Pesan Tutor</td>
-							<td>28 Juli 2019</td>
-							<td>Rp 300.000</td>
-							<td>Lunas</td>
-							<td>
-								<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
-							</td>
-						</tr>
-					</table>
-				</div>
-				
-
-			</div>
+		<div id="bottom-line">
+			<b>&copy; 2019 Backtoschool All Right Reserved</b>
 		</div>
 	</div>
-
-	<div class="footer">
-		<div class="foot-col">
-			<div class="foot-col-in">
-				<h3>Tentang Backtoschool</h3>
-				<li><a href="about.html">Tentang kami</a></li>
-				<li><a href="kontak_kami.html">Kontak kami</a></li>
-			</div>
-			
-			<div class="foot-col-in">
-				<h3>Layanan Kami</h3>
-				<li><a href="les_streaming-intro.html">Les Streaming</a></li>
-				<li><a href="pesan_tutor-intro.html">Pesan Tutor</a></li>
-				
-			</div>
-		</div>
-		
-		<div class="foot-col">
-			<div class="foot-col-in">
-				<h3>Lainnya</h3>
-				<li><a href="syarat_ketentuan.html">Syarat dan Ketentuan</a></li>
-				<li><a href="kebijakan_privasi.html">Kebijakan Privasi</a></li>
-			</div>
-
-			<div class="foot-col-in">
-				<h3>Ikuti kami di</h3>
-				<div id="social_media">
-					<a href="https://facebook.com/backtoschool" target="_blank"><i class="fab fa-facebook"></i></a>&ensp;
-					<a href="https://twitter.com/backtoschool" target="_blank"><i class="fab fa-twitter"></i></a>&ensp;
-					<a href="https://instagram.com/backtoschool" target="_blank"><i class="fab fa-instagram"></i></a>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="bottom-line">
-		<b>&copy; 2019 Backtoschool All Right Reserved</b>
-	</div>
+	
 
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/top_menu.js"></script>

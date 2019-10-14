@@ -1,29 +1,29 @@
 .sidebar{
 	height: 100%;
 	width: 250px;
-	/*float: left;*/
-	display: table-cell;
-	/*position: absolute;*/
-	left: 0;
+	/*display: table-cell;*/
+	position: fixed;
 	z-index: 1;
-	/*padding-bottom: 100%;
-	margin-bottom: -100%;*/
+	top: 0;
+	left: 0;
 	overflow: hidden;
-	/*background-color: #24478f;*/
-	background-color: #006699;
 	overflow-x: hidden;
+	background-color: #006699;
 	transition: 0.5s;
+	padding-top: 60px;
 }
 
-.main-content{
-	padding: 40px;
-	padding-top: 0;
+.content-right{
+	/*padding: 20px;*/
+
+	/*padding-top: 0;
 	margin-top: 0;
-	display: table-cell;
+	display: table-cell;*/
+
 	/*float: left;*/
-	/*width: 70%;*/
-	/*margin-left: 250px;*/
-	/*transition: margin-left .5s;*/
+	/*width: 80%;*/
+	margin-left: 250px;
+	transition: margin-left .5s;
 }
 
 .side-menu a, .btn_side_dropdown, #close_side a{
@@ -73,9 +73,13 @@ a.side_active {
 }
 
 #close_side{
-	float: right;
+	/*float: right;
 	margin-top: 0;
-	overflow: hidden;
+	overflow: hidden;*/
+	position: absolute;
+	top: 0;
+	right: 10px;
+	margin-left: 50px;
 }
 
 #close_side a {
@@ -85,13 +89,13 @@ a.side_active {
 .user_avatar{
 	width: 100%;
 	padding: 10px;
-	margin-top: 45px;
+	/*margin-top: 45px;*/
 	/*background-color: darkblue;*/
 	margin-bottom: 10px;
 }
 
 #avatar_pic{
-	margin-right: 10px;
+	margin-right: 5px;
 }
 
 #avatar_pic img{
@@ -107,7 +111,7 @@ a.side_active {
 }
 
 #open_sideMenu{
-	display: none;
+	/*display: none;*/
 	position: absolute;
 	left: 0;
 	width: 10%;
@@ -116,5 +120,11 @@ a.side_active {
 
 #open_sideMenu button{
 	font-size: 20px;
-	padding: 10px 12px;
+	padding: 12px 18px;
+}
+
+@media only screen and (max-width: 768px){
+	/*.sidebar{
+		width: 210px;
+	}*/
 }

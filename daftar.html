@@ -99,7 +99,7 @@
 		</div>
 
 		<div class="card">
-			<form id="form_register">
+			<form id="form_register" action="dashboard.html">
 				<div id="judul_form">
 					<h2>Daftar Akun Baru</h2>
 				</div>
@@ -113,7 +113,7 @@
 				<input type="password" name="password">
 
 				<h4 class="label_daftar">Konfirmasi Password</h4>
-				<input type="password" name="kofim_password">
+				<input type="password" name="konfirm_password">
 
 				<h4 class="label_daftar">Nomor Handphone</h4>
 				<input type="text" name="no_hp">
@@ -148,11 +148,15 @@
 				</select>
 				
 				<br><br>
-				<a href="dashboard.html" class="btn btn_utama">Daftar</a>
+				<button type="submit" class="btn btn_utama" id="btn_daftar">Daftar</button>
 			</form>
 			<div id="div_register">
 				<!-- <p>Belum punya akun? <a href="#" class="btn_link">Daftar</a></p> -->
 			</div>
+		</div>
+
+		<div class="error_form">
+			<p><b></b></p>
 		</div>
 	</div>
 
@@ -196,5 +200,47 @@
 
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/top_menu.js"></script>
+	<script type="text/javascript">
+		function show_error(pesan) {
+			$(".error_form").find('b').html(pesan);
+			$(".error_form").show();
+			$(".error_form").fadeOut(2500);
+		}
+
+		$('#btn_daftar').on('click', function(event) {
+			event.preventDefault();
+			var nama = $("input[name='nama']").val();
+			var email = $("input[name='email']").val();
+			var password = $("input[name='password']").val();
+			var konfirm_password = $("input[name='konfirm_password']").val();
+			var no_hp = $("input[name='no_hp']").val();
+			var gender = $("input[name='gender']:checked").val();
+			var kelas = $("select[name='kelas']").val();
+
+			//RegEx
+			var namaReg = /^[a-zA-Z' ]+$/; //alfabet(besar atau kecil), petik ('), dan spasi saja
+			var angka = /^\d+$/; //angka saja
+			
+			if (nama == "" || email == "" || password == "" || konfirm_password == "" || no_hp == "" || gender == "" || kelas == "") {
+				show_error('Harap lengkapi data diri untuk melakukan pendaftaran');
+			}
+			else if (!namaReg.test(nama)) {
+				show_error("Nama hanya boleh menggunakan huruf dan tanda petik (')");
+			}
+			else if (password.length < 6) {
+				show_error("Password harus minimal 6 karakter");
+			}
+			else if (password != konfirm_password) {
+				show_error("Konfirmasi password tidak sesuai");
+			}
+			else if (!angka.test(no_hp)) {
+				show_error("Nomor HP hanya boleh menggunakan angka");
+			}
+			else{
+				// document.location.href = "dashboard.html";
+				$("#btn_daftar").off('click').trigger('click');
+			}
+		});
+	</script>
 </body>
 </html>

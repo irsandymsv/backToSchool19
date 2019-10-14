@@ -108,184 +108,184 @@
 	</style>
 </head>
 <body>
+	<div class="sidebar">
+		<div id="close_side">
+			<a href="javascript:void(0)" id="btn_closeSide">&times;</a>
+		</div>
 
-	<div class="top-menu" id="menu-atas">
-		<a href="index.html" id="logo" title="Backtoschool">
-			<div id="img_logo"> 
-				<img src="image/LOGO.png">
+		<div class="user_avatar baris">
+			<div id="avatar_pic" class="kol-4 kol-m-4">
+				<img src="image/emot_file.jpg">
 			</div>
-		</a>
-		<a href="javascript:void(0);" id="menu-icon"><i class="fas fa-bars"></i></a>
-		<div class="mainMenu" id="main_menu">
-			<a href="index.html">Beranda</a>	
-			<div id="drop">
-				<button id="btn_dropdown">Layanan <i class="fas fa-caret-down"></i></button>
-				<div id="isi_dropdown">
-					<a href="les_streaming-intro.html">Les Straming</a>
-					<a href="pesan_tutor-intro.html">Pesan Tutor (Privat)</a>
-				</div>	
+			<div id="username" class="kol-7 kol-m-7">
+				<h3>User</h3>
 			</div>
-			<a href="about.html">Tentang Kami </a>
-			<a href="index.html"><i class="fas fa-sign-out-alt"></i></a>
-		</div>	
+		</div>
+
+		<div class="side-menu">
+			<a href="dashboard.html">Dashboard</a>
+			<a href="les_streaming-user.html" >Les Streaming Saya</a>
+			<a href="pesan_tutor-user.html">Pesan Tutor Saya</a>	
+
+			<a href="pembayaran.html" class="single_link">Pembayaran</a>
+			<a href="profile.html" class="side_active">Profil</a>
+			<a href="#" class="btn_side_dropdown" id="btn_side_dropdown_2">Layanan <i class="fas fa-caret-down"></i></a>
+			<div class="isi_side_dropdown">
+				<a href="les_streaming-tambah.html">Tambah Les Streaming</a>
+				<a href="pesan_tutor-tambah.html" >Pesan Tutor</a>	
+			</div>
+		</div>
 	</div>
 
-	<div class="main-body">
-		<div id="open_sideMenu">
-			<button id="btn_openSide" class="btn btn_utama"><i class="fas fa-bars"></i></button>
+	<div class="content-right">
+		<div class="top-menu" id="menu-atas">
+			<a href="index.html" id="logo" title="Backtoschool">
+				<div id="img_logo"> 
+					<img src="image/LOGO.png">
+				</div>
+			</a>
+			<a href="javascript:void(0);" id="menu-icon"><i class="fas fa-bars"></i></a>
+			<div class="mainMenu" id="main_menu">
+				<a href="index.html">Beranda</a>	
+				<div id="drop">
+					<button id="btn_dropdown">Layanan <i class="fas fa-caret-down"></i></button>
+					<div id="isi_dropdown">
+						<a href="les_streaming-intro.html">Les Straming</a>
+						<a href="pesan_tutor-intro.html">Pesan Tutor (Privat)</a>
+					</div>	
+				</div>
+				<a href="about.html">Tentang Kami </a>
+				<a href="index.html"><i class="fas fa-sign-out-alt"></i></a>
+			</div>	
 		</div>
 
-		<div class="sidebar">
-			<div id="close_side">
-				<a href="javascript:void(0)" id="btn_closeSide">&times;</a>
+		<div class="main-body">
+			<div id="open_sideMenu">
+				<button id="btn_openSide" class="btn btn_utama"><i class="fas fa-caret-right"></i></button>
 			</div>
 
-			<div class="user_avatar baris">
-				<div id="avatar_pic" class="kol-4 kol-m-4">
-					<img src="image/emot_file.jpg">
-				</div>
-				<div id="username" class="kol-7 kol-m-7">
-					<h3>User</h3>
-				</div>
-			</div>
+			<div class="main-content">
+				<div class="wrapper">
 
-			<div class="side-menu">
-				<a href="dashboard.html">Dashboard</a>
-				<a href="les_streaming-user.html" >Les Streaming Saya</a>
-				<a href="pesan_tutor-user.html">Pesan Tutor Saya</a>	
+					<div class="judul_atas">
+						<h1>Profile</h1>
+					</div>
 
-				<a href="pembayaran.html" class="single_link">Pembayaran</a>
-				<a href="profile.html" class="side_active">Profil</a>
-				<a href="#" class="btn_side_dropdown" id="btn_side_dropdown_2">Layanan <i class="fas fa-caret-down"></i></a>
-				<div class="isi_side_dropdown">
-					<a href="les_streaming-tambah.html">Tambah Les Streaming</a>
-					<a href="pesan_tutor-tambah.html" >Pesan Tutor</a>	
-				</div>
-			</div>
-			
-		</div>
-
-		<div class="main-content">
-			<div class="wrapper">
-
-				<div class="judul_atas">
-					<h1>Profile</h1>
-				</div>
-
-				<div id="form_wrap">
-					<form>
-						<div id="upload_avatar" class="baris">
-							<div id="avatar_wrap" class="kol-5 kol-m-5">
-								<img id="avatar_img" src="image/emot_file.jpg">
+					<div id="form_wrap">
+						<form>
+							<div id="upload_avatar" class="baris">
+								<div id="avatar_wrap" class="kol-5 kol-m-5">
+									<img id="avatar_img" src="image/emot_file.jpg">
+								</div>
+								<div id="upload_btn" class="kol-5 kol-m-5">
+									<input type="file" name="avatar" id="btn_file" value="Choose File">
+								</div>	
 							</div>
-							<div id="upload_btn" class="kol-5 kol-m-5">
-								<input type="file" name="avatar" id="btn_file" value="Choose File">
-							</div>	
-						</div>
-						
-						<table>
-							<tr>
-								<td>Nama</td>
-								<td>
-									<input type="text" name="nama" value="User">
-								</td>
-							</tr>
+							
+							<table>
+								<tr>
+									<td>Nama</td>
+									<td>
+										<input type="text" name="nama" value="User">
+									</td>
+								</tr>
 
-							<tr>
-								<td>Email</td>
-								<td>
-									<input type="email" name="email" value="user@emails.com">
-								</td>
-							</tr>
+								<tr>
+									<td>Email</td>
+									<td>
+										<input type="email" name="email" value="user@emails.com">
+									</td>
+								</tr>
 
-							<tr>
-								<td>Nomor HP</td>
-								<td>
-									<input type="text" name="no_hp" min="1" value="08974345678">
-								</td>
-							</tr>
+								<tr>
+									<td>Nomor HP</td>
+									<td>
+										<input type="text" name="no_hp" min="1" value="08974345678">
+									</td>
+								</tr>
 
-							<tr>
-								<td>Jenis Kelamin</td>
-								<td>
-									<label class="input_gender">
-										<input type="radio" name="gender" value="Laki-laki" checked="">Laki-laki
-									</label>
+								<tr>
+									<td>Jenis Kelamin</td>
+									<td>
+										<label class="input_gender">
+											<input type="radio" name="gender" value="Laki-laki" checked="">Laki-laki
+										</label>
 
-									<label class="input_gender">
-										<input type="radio" name="gender" value="Perempuan">Perempuan
-									</label>
-								</td>
-							</tr>
+										<label class="input_gender">
+											<input type="radio" name="gender" value="Perempuan">Perempuan
+										</label>
+									</td>
+								</tr>
 
-							<tr>
-								<td>Jenjang</td>
-								<td>
-									<select name="kelas">
-										<option>-- Pilih Kelas --</option>
-										<option value="SD Kelas 4">SD Kelas 4</option>
-										<option value="SD Kelas 5">SD Kelas 5</option>
-										<option value="SD Kelas 6">SD Kelas 6</option>
-										<option value="SMP Kelas 7">SMP Kelas 7</option>
-										<option selected="" value="SMP Kelas 8">SMP Kelas 8</option>
-										<option value="SMP Kelas 9">SMP Kelas 9</option>
-										<option value="SMA Kelas 10 IPA">SMA Kelas 10 IPA</option>
-										<option value="SMA Kelas 10 IPS">SMA Kelas 10 IPS</option>
-										<option value="SMA Kelas 11 IPA">SMA Kelas 11 IPA</option>
-										<option value="SMA Kelas 11 IPS">SMA Kelas 11 IPS</option>
-										<option value="SMA Kelas 12 IPA">SMA Kelas 12 IPA</option>
-										<option value="SMA Kelas 12 IPS">SMA Kelas 12 IPS</option>
-									</select>
-								</td>
-							</tr>
-						</table>
+								<tr>
+									<td>Jenjang</td>
+									<td>
+										<select name="kelas">
+											<option>-- Pilih Kelas --</option>
+											<option value="SD Kelas 4">SD Kelas 4</option>
+											<option value="SD Kelas 5">SD Kelas 5</option>
+											<option value="SD Kelas 6">SD Kelas 6</option>
+											<option value="SMP Kelas 7">SMP Kelas 7</option>
+											<option selected="" value="SMP Kelas 8">SMP Kelas 8</option>
+											<option value="SMP Kelas 9">SMP Kelas 9</option>
+											<option value="SMA Kelas 10 IPA">SMA Kelas 10 IPA</option>
+											<option value="SMA Kelas 10 IPS">SMA Kelas 10 IPS</option>
+											<option value="SMA Kelas 11 IPA">SMA Kelas 11 IPA</option>
+											<option value="SMA Kelas 11 IPS">SMA Kelas 11 IPS</option>
+											<option value="SMA Kelas 12 IPA">SMA Kelas 12 IPA</option>
+											<option value="SMA Kelas 12 IPS">SMA Kelas 12 IPS</option>
+										</select>
+									</td>
+								</tr>
+							</table>
 
-						<div id="btn_submit">
-							<a href="profile.html" class="btn btn_utama">Update</a>
-						</div>
-					</form>
+							<div id="btn_submit">
+								<a href="profile.html" class="btn btn_utama">Update</a>
+							</div>
+						</form>
+					</div>
+
 				</div>
-
 			</div>
 		</div>
-	</div>
 
-	<div class="footer">
-		<div class="foot-col">
-			<div class="foot-col-in">
-				<h3>Tentang Backtoschool</h3>
-				<li><a href="about.html">Tentang kami</a></li>
-				<li><a href="kontak_kami.html">Kontak kami</a></li>
+		<div class="footer">
+			<div class="foot-col">
+				<div class="foot-col-in">
+					<h3>Tentang Backtoschool</h3>
+					<li><a href="about.html">Tentang kami</a></li>
+					<li><a href="kontak_kami.html">Kontak kami</a></li>
+				</div>
+				
+				<div class="foot-col-in">
+					<h3>Layanan Kami</h3>
+					<li><a href="les_streaming-intro.html">Les Streaming</a></li>
+					<li><a href="pesan_tutor-intro.html">Pesan Tutor</a></li>
+					
+				</div>
 			</div>
 			
-			<div class="foot-col-in">
-				<h3>Layanan Kami</h3>
-				<li><a href="les_streaming-intro.html">Les Streaming</a></li>
-				<li><a href="pesan_tutor-intro.html">Pesan Tutor</a></li>
-				
-			</div>
-		</div>
-		
-		<div class="foot-col">
-			<div class="foot-col-in">
-				<h3>Lainnya</h3>
-				<li><a href="syarat_ketentuan.html">Syarat dan Ketentuan</a></li>
-				<li><a href="kebijakan_privasi.html">Kebijakan Privasi</a></li>
-			</div>
+			<div class="foot-col">
+				<div class="foot-col-in">
+					<h3>Lainnya</h3>
+					<li><a href="syarat_ketentuan.html">Syarat dan Ketentuan</a></li>
+					<li><a href="kebijakan_privasi.html">Kebijakan Privasi</a></li>
+				</div>
 
-			<div class="foot-col-in">
-				<h3>Ikuti kami di</h3>
-				<div id="social_media">
-					<a href="https://facebok.com/backtoschool" target="_blank"><i class="fab fa-facebook"></i></a>&ensp;
-					<a href="https://twitter.com/backtoschool" target="_blank"><i class="fab fa-twitter"></i></a>&ensp;
-					<a href="https://instagram.com/backtoschool" target="_blank"><i class="fab fa-instagram"></i></a>
+				<div class="foot-col-in">
+					<h3>Ikuti kami di</h3>
+					<div id="social_media">
+						<a href="https://facebok.com/backtoschool" target="_blank"><i class="fab fa-facebook"></i></a>&ensp;
+						<a href="https://twitter.com/backtoschool" target="_blank"><i class="fab fa-twitter"></i></a>&ensp;
+						<a href="https://instagram.com/backtoschool" target="_blank"><i class="fab fa-instagram"></i></a>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<div id="bottom-line">
-		<b>&copy; 2019 Backtoschool All Right Reserved</b>
+		<div id="bottom-line">
+			<b>&copy; 2019 Backtoschool All Right Reserved</b>
+		</div>
 	</div>
 
 	<script src="js/jquery-3.4.1.min.js"></script>

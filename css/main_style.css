@@ -3,6 +3,11 @@ body{
 	font-family:  Verdana, sans-serif;
 }
 
+.main-content{
+	padding: 20px;
+	/*padding-left: 25px;*/
+}
+
 .baris:after{
 	content: "";
 	display: table;
@@ -78,7 +83,7 @@ body{
 
 .card{
 	width: 75%;
-	padding: 20px;
+	padding: 40px 20px;
 	margin: auto;
 	margin-bottom: 40px;
 	background-color: rgba(225, 225, 225, 0.5);
@@ -87,7 +92,20 @@ body{
 
 .judul_atas{
 	color: navy;
-	font-size: 1.3vw;
+	font-size: 12px;
+}
+
+.error_form{
+	display: none;
+	position: fixed;
+	width: 25%;
+	padding: 8px;
+	top: 15%;
+	left: 38%;
+	background-color: rgba(0,0,0,0.8);
+	color: white;
+	font-size: 14px;
+	text-align: center;
 }
 
 
@@ -109,6 +127,10 @@ body{
 	.card{
 		width: 60%;
 	}
+
+	.judul_atas{
+		font-size: 15px;
+	}
 }
 
 @media only screen and (min-width: 768px){
@@ -127,6 +149,10 @@ body{
 
 	.card{
 		width: 50%;
+	}
+
+	.judul_atas{
+		font-size: 18px;
 	}
 }
 
