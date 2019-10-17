@@ -1,0 +1,68 @@
+.menu_atas{
+	background-color: #0088cc;
+	color: white;
+	overflow: hidden;
+}
+
+.nama_halaman{
+	float: left;
+	padding: 5px 10px;
+	margin-left: 20px;
+}
+
+.btn_logout{
+	float: right;
+	margin-top: 10px;
+	padding: 5px 10px;
+	margin-right: 15px;
+}
+
+.btn_logout a{
+	font-size: 24px;
+	color: white;
+	text-shadow: 1px 1px 0 #444;
+}
+
+.btn_logout a:hover{
+	color: yellow;
+}
+
+.isi_utama{
+	padding: 50px;
+	padding-top: 40px;
+	background-color: #f6f6e9;
+}
+
+.tbl_wrapper{
+	width: 100%;
+	overflow-x: auto;
+}
+
+.tbl_admin{
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid #a6a6a6;
+}
+
+.tbl_admin thead tr{
+	background-color: #262626;
+	color: white;
+}
+
+.tbl_admin tbody tr{
+	background-color: white;
+}
+
+.tbl_admin td, .tbl_admin th{
+	padding: 5px;
+	border: 1px solid #a6a6a6;
+}
+
+.tbl_admin tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.tbl_admin tbody tr td a{
+	display: inline-block;
+	padding: 6px 10px;
+}

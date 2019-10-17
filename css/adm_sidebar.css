@@ -1,27 +1,18 @@
 .sidebar{
 	height: 100%;
 	width: 250px;
-	/*display: table-cell;*/
 	position: fixed;
 	z-index: 1;
 	top: 0;
 	left: 0;
 	overflow: hidden;
 	overflow-x: hidden;
-	background-color: #006699;
+	background-color: #1a1a1a;
 	transition: 0.5s;
 	padding-top: 60px;
 }
 
 .content-right{
-	/*padding: 20px;*/
-
-	/*padding-top: 0;
-	margin-top: 0;
-	display: table-cell;*/
-
-	/*float: left;*/
-	/*width: 80%;*/
 	margin-left: 250px;
 	transition: margin-left .5s;
 }
@@ -30,9 +21,8 @@
 	padding: 6px 8px 6px 16px;
 	text-decoration: none;
 	font-size: 18px;
-	color: white;
+	color: #818181;
 	display: block;
-	transition: 0.5s;
 	border: none;
 	background: no-repeat;
 	width: 100%;
@@ -42,8 +32,8 @@
 }
 
 .side-menu a:hover, .btn_side_dropdown:hover, #close_side a:hover{
-	/*background-color: #2e5cb8;*/
-	background-color: #0088cc;
+	color: white;
+
 }
 
 .btn_side_dropdown .fa-caret-down{
@@ -52,30 +42,19 @@
 }
 
 a.side_active {
-	/*background-color: #00a3cc;*/
-	background-color: #00ace6;
+	color: white; 
+	/*background-color: #FFD034;*/
+	background-color: #0088cc;
 }
 
 .isi_side_dropdown{
 	display: none;
-	/*background-color: #003366;*/
-	background-color: #004466;
+	background-color: #262626;
 	margin-left: 5px;
 	margin-bottom: 15px;
 }
 
-.single_link{
-	margin-top: 20px;
-}
-
-#btn_side_dropdown_2{
-	margin-top: 20px;
-}
-
 #close_side{
-	/*float: right;
-	margin-top: 0;
-	overflow: hidden;*/
 	position: absolute;
 	top: 0;
 	right: 10px;
@@ -86,32 +65,27 @@ a.side_active {
 	font-size: 24px;
 }
 
-.user_avatar{
-	width: 100%;
-	padding: 10px;
-	/*margin-top: 45px;*/
-	/*background-color: darkblue;*/
-	margin-bottom: 10px;
+#logo_web{
+	width: 40%;
+	height: auto;
+	padding: 5px;
+	margin: auto;
 }
 
-#avatar_pic{
-	margin-right: 5px;
-}
-
-#avatar_pic img{
+#logo_web img{
 	width: 100%;
 	height: auto;
 	object-fit: cover;
-	border-radius: 50%;
 }
 
 #username{
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
 	color: white;
-	/*background-color: yellow;*/
 }
 
 #open_sideMenu{
-	/*display: none;*/
 	position: absolute;
 	left: 0;
 	width: 10%;
@@ -119,6 +93,10 @@ a.side_active {
 }
 
 #open_sideMenu button{
-	font-size: 20px;
 	padding: 12px 18px;
+	background-color: black;
 }
+
+#open_sideMenu button i{
+	font-size: 22px;
+} 

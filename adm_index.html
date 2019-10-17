@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Admin| Back to School</title>
+	<link rel="stylesheet" type="text/css" href="css/main_style.css">
+	<style type="text/css">
+		#page_background{
+			background-color: #d9d9f3;
+			padding: 80px;
+		}
+
+		.card{
+			vertical-align: middle;
+			width: 40%;
+			background-color: white;
+		}
+
+		.card form{
+			padding: 10px;
+			width: 80%;
+			margin: auto;
+		}
+
+		h1, h3{
+			text-align: center;
+			margin-bottom: 30px;
+		}
+
+		input{
+			padding: 10px;
+			width: 100%;
+			display: block;
+			border: 1px solid #ccc;
+			margin: 10px 0px;
+			border-radius: 5px;
+			box-sizing: border-box;
+		}
+
+		#btn_group{
+			margin-top: 50px;
+			padding: 5px;
+			/*overflow: hidden;*/
+		}
+
+		#btn_group #home_btn{
+			display: block;
+			float: left;
+			margin-left: 30px;
+			background-color: grey;
+		}
+
+		#btn_group #home_btn:hover{
+			background-color: #a6a6a6;
+		}
+
+		#btn_group .btn_utama{
+			float: right;
+			margin-right: 30px;
+		}
+
+		@media only screen and (max-width: 950px){
+			.card{
+				width: 55%;
+			}
+		} 
+
+		@media only screen and (max-width: 768px){
+			.card{
+				width: 70%;
+			}
+		} 
+
+		@media only screen and (max-width: 600px){
+			.card{
+				width: 90%;
+			}
+
+			#btn_group{
+				margin-top: 20px;
+			}
+
+			#btn_group #home_btn{
+				width: 100%;
+				margin-left: -15px;
+				margin-bottom: 10px;
+				text-align: center;
+			}
+
+			#btn_group .btn_utama{
+				width: 100%;
+				margin-right: -15px;
+				margin-bottom: 10px;
+				text-align: center;
+			}
+		} 
+	</style>
+</head>
+<body>
+	<div id="page_background">
+		<h1><strong>Backtoschool</strong></h1>
+		<h3>Login Admin</h1>
+		<div class="card">
+			<form action="#">
+				<label for="email"><b>Email</b></label><br>
+				<input type="email" name="email" id="email" autofocus="" placeholder="Masukkan Email">
+
+				<label for="password"><b>Password</b></label><br>
+				<input type="password" name="Password" id="password" placeholder="Masukkan Password">
+
+				<div id="btn_group">
+					<a id="btn_masuk" href="adm_dashboard.html" class="btn btn_utama">Masuk</a>
+					<a href="index.html" id="home_btn" class="btn">Home</a>
+				</div>
+			</form>
+		</div>
+
+		<div class="error_form">
+			<p><b></b></p>
+		</div>
+	</div>
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		function show_error(pesan) {
+			$(".error_form").find('b').html(pesan);
+			$(".error_form").show();
+			$(".error_form").fadeOut(2500);
+		}
+
+		$("#btn_masuk").click(function(event) {
+			event.preventDefault();
+			var email = $("input[name='email']").val();
+			var password = $("input[name='password']").val();
+
+			if(email == "" || password == ""){
+				show_error('Harap isi email dan password untuk login');
+			}
+			else if (email != "email@gmail.com" && password != "password") {
+				show_error('Email atau Password salah. Coba lagi');
+			}
+			else{
+				$(this).off('click').trigger('clcik');
+			}
+		});
+	</script>
+</body>
+</html>
