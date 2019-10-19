@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Detail Les Streaming | Admin Back to School</title>
+	<link rel="stylesheet" type="text/css" href="css/main_style.css">
+	<link rel="stylesheet" type="text/css" href="css/adm_sidebar.css"></ink>
+	<link rel="stylesheet" type="text/css" href="css/adm_style.css"></ink>
+
+	<!-- FontAwesome CSS -->
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/fontawesome.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/solid.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/brands.css">
+
+	<style type="text/css">
+		#btn_edit{
+			float: right;
+		}
+
+		#video_les{
+			width: 60%;
+			/*padding: 2px;*/
+			margin: 20px auto; 
+			border: 5px solid midnightblue;
+			overflow: hidden;
+		}
+
+		#video_les video{
+			width: 100%;
+			height: auto;
+		}
+
+		.tbl_wrapper{
+			width: 70%;
+			margin: auto;
+		}
+
+		@media only screen and (max-width: 600px) {
+			#btn_edit{
+				float: none;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="sidebar">
+		<div id="close_side">
+			<a href="javascript:void(0)" id="btn_closeSide">&times;</a>
+		</div>
+
+		<div id="logo_web">
+			<a href="index.html">
+				<img src="image/LOGO.png">
+			</a>
+		</div>
+
+		<div id="username">
+			<h3>Admin</h3>
+		</div>
+
+		<div class="side-menu">
+			<a href="adm_dashboard.html">Dashboard</a>
+			<a href="#" class="btn_side_dropdown">Les Streaming <i class="fas fa-caret-down"></i></a>
+			<div class="isi_side_dropdown">
+				<a href="adm_les_streaming_new.html">Tambah Les Streaming</a>
+				<a href="adm_les_streaming.html" class="side_active">Lihat Semua</a>	
+			</div>
+			<a href="#">Pesan Tutor</a>
+			<a href="#">User</a>
+		</div>
+	</div>
+
+	<div class="content-right">
+		<div class="menu_atas">
+			<div class="nama_halaman">
+				<p><b>Dashboard</b></p>
+			</div>
+
+			<div class="btn_logout">
+				<a href="adm_index.html" title="Logout"><i class="fas fa-sign-out-alt"></i></a>
+			</div>
+		</div>
+
+		<div class="content_wrap">
+			<div id="open_sideMenu">
+				<button id="btn_openSide" class="btn"><i class="fas fa-caret-right"></i></button>
+			</div>
+
+			<div class="isi_utama">
+				<div class="white_wraper">
+					<div id="judul_wraper">
+						<h3>Detail Video Les</h3>
+					</div>
+					<div id="btn_edit">
+						<a href="#" class="btn btn_sukses"><i class="fas fa-edit"></i> Ubah</a>
+					</div>
+
+					<h4>Detail Video</h4>
+					<div class="tbl_wrapper">
+						<table class="tbl_admin" >
+							<tbody>
+								<tr>
+									<td>Jenjang</td>
+									<td>SMA 10</td>
+								</tr>
+								<tr>
+									<td>Mata Pelajaran</td>
+									<td>matematik</td>
+								</tr>
+								<tr>
+									<td>Materi</td>
+									<td>Integral</td>
+								</tr>
+								<tr>
+									<td>Pengajar</td>
+									<td>Indah Kusumawati</td>
+								</tr>
+								<tr>
+									<td>Durasi (menit)</td>
+									<td>20</td>
+								</tr>
+								<tr>
+									<td>Tanggal Upload</td>
+									<td>19 Oktober 2019</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<br>
+					<h4>Video Les</h4>
+					<div id="video_les">
+						<video src="video/sample-video.mp4" controls=""></video>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/sidebar.js"></script>
+</body>
+</html>

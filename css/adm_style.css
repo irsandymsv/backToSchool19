@@ -28,11 +28,22 @@
 }
 
 .isi_utama{
-	padding: 50px;
-	padding-top: 40px;
-	background-color: #f6f6e9;
+	padding: 35px;
+	min-height: 540px;
+	padding-top: 50px;
+	/*background-color: #f6f6e9;*/
+	background-color: #f2f4f6;
+	overflow: hidden;
 }
 
+.white_wraper{
+	padding: 15px;
+	background-color: white;
+	width: 100%;
+	margin: auto;
+}
+
+/*-- adm Table ---*/
 .tbl_wrapper{
 	width: 100%;
 	overflow-x: auto;
@@ -65,4 +76,46 @@
 .tbl_admin tbody tr td a{
 	display: inline-block;
 	padding: 6px 10px;
+	margin-top: 3px;
 }
+/*-- /adm Table ---*/
+
+
+/*-- paginasi --*/
+.paginasi{
+	padding: 5px;
+	float: right;
+}
+
+.paginasi ul li{
+	list-style: none;
+	float: left;
+	padding: 10px 13px;
+	border-left: 1px solid #ccc;
+	background-color: rgb(235, 235, 235);
+}
+
+.paginasi ul li:first-child{
+	border-left: none;
+}
+
+.paginasi ul li:hover{
+	cursor: pointer;
+	background-color: #0088cc;
+	color: white;
+}
+
+.paginasi ul li.page_active{
+	background-color: #0088cc;
+	color: white;
+}
+
+.paginasi ul li.page_notActive{
+	color: #ccc;
+	cursor: not-allowed;
+}
+
+.paginasi ul li.page_notActive:hover{
+	background-color: rgb(235, 235, 235);
+}
+/*-- paginasi --*/

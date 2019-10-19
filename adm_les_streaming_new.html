@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tambah Les Streaming | Admin Back to School</title>
+	<link rel="stylesheet" type="text/css" href="css/main_style.css">
+	<link rel="stylesheet" type="text/css" href="css/adm_sidebar.css"></ink>
+	<link rel="stylesheet" type="text/css" href="css/adm_style.css"></ink>
+
+	<!-- FontAwesome CSS -->
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/fontawesome.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/solid.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/brands.css">
+
+	<style type="text/css">
+		form{
+			padding: 20px;
+			/*border: 1px solid #ccc;*/
+			width: 75%;
+			margin: auto;
+			overflow: hidden;
+		}
+
+		.form_item{
+			display: block;
+			margin: auto;
+			margin-top: 20px;
+		}
+
+		.form_item label{
+			display: block;
+			margin-bottom: 5px;
+			font-weight: bold;
+		}
+
+		.form_item input, .form_item select{
+			padding: 8px;
+			width: 100%;
+		}
+
+		input[name='video_les']{
+			width: unset;
+		}
+
+		#submit_form{
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	<div class="sidebar">
+		<div id="close_side">
+			<a href="javascript:void(0)" id="btn_closeSide">&times;</a>
+		</div>
+
+		<div id="logo_web">
+			<a href="index.html">
+				<img src="image/LOGO.png">
+			</a>
+		</div>
+
+		<div id="username">
+			<h3>Admin</h3>
+		</div>
+
+		<div class="side-menu">
+			<a href="adm_dashboard.html">Dashboard</a>
+			<a href="#" class="btn_side_dropdown">Les Streaming <i class="fas fa-caret-down"></i></a>
+			<div class="isi_side_dropdown">
+				<a href="adm_les_streaming_new.html" class="side_active">Tambah Les Streaming</a>
+				<a href="adm_les_streaming.html">Lihat Semua</a>	
+			</div>
+			<a href="#">Pesan Tutor</a>
+			<a href="#">User</a>
+		</div>
+	</div>
+
+	<div class="content-right">
+		<div class="menu_atas">
+			<div class="nama_halaman">
+				<p><b>Dashboard</b></p>
+			</div>
+
+			<div class="btn_logout">
+				<a href="adm_index.html" title="Logout"><i class="fas fa-sign-out-alt"></i></a>
+			</div>
+		</div>
+
+		<div class="content_wrap">
+			<div id="open_sideMenu">
+				<button id="btn_openSide" class="btn"><i class="fas fa-caret-right"></i></button>
+			</div>
+
+			<div class="isi_utama">
+				<div class="white_wraper">
+					<h3>Tambah Video Les Baru</h3>
+
+					<form>
+						<div class="form_item">
+							<label>Jenjang</label>
+							<select name="jenjang" id="jenjang">
+								<option value="">-- Pilih Jenjang --</option>
+								<option value="SD Kelas 4">SD Kelas 4</option>
+								<option value="SD Kelas 5">SD Kelas 5</option>
+								<option value="SD Kelas 6">SD Kelas 6</option>
+								<option value="SMP Kelas 7">SMP Kelas 7</option>
+								<option value="SMP Kelas 8">SMP Kelas 8</option>
+								<option value="SMP Kelas 9">SMP Kelas 9</option>
+								<option value="SMA IPA Kelas 10">SMA IPA Kelas 10</option>
+								<option value="SMA IPA Kelas 11">SMA IPA Kelas 11</option>
+								<option value="SMA IPA Kelas 12">SMA IPA Kelas 12</option>
+								<option value="SMA IPS Kelas 10">SMA IPS Kelas 10</option>
+								<option value="SMA IPS Kelas 11">SMA IPS Kelas 11</option>
+								<option value="SMA IPS Kelas 12">SMA IPS Kelas 12</option>
+							</select>
+						</div>
+
+						<div class="form_item">
+							<label>Mata Pelaajran</label>
+							<select name="mapel">
+								<option value=""> --Pilih Mata Pelajaran-- </option>
+								<option value="Matematika">Matematika</option>
+								<option value="B.Indonesia">B.Indonesia</option>
+								<option value="B.Inggris">B.Inggris</option>
+								<option value="IPA">IPA</option>
+								<option value="IPA (FISIKA)">IPA (FISIKA)</option>
+								<option value="IPA (Biologi)">IPA (Biologi)</option>
+								<option value="IPA (Kimia)">IPA (Kimia)</option>
+								<option value="Ekonomi">Ekonomi</option>
+								<option value="Sejarah">Sejarah</option>
+								<option value="Sosiologi">Sosiologi</option>
+								<option value="Geografi">Geografi</option>
+							</select>
+						</div>
+
+						<div class="form_item">
+							<label>Materi</label>
+							<input type="text" name="materi">
+						</div>
+
+						<div class="form_item">
+							<label>Nama Pengajar</label>
+							<input type="text" name="pengajar">
+						</div>
+
+						<div class="form_item">
+							<label>Upload Video</label>
+							<input type="file" name="video_les" accept="video/*">
+						</div>
+
+						<div class="form_item" id="submit_form">
+							<a href="#" class="btn btn_utama" id="btn_simpan">Simpan</a>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="error_form">
+				<p><b></b></p>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/sidebar.js"></script>
+	<script type="text/javascript">
+		function show_error(pesan) {
+			$(".error_form").find('b').html(pesan);
+			$(".error_form").show();
+			$(".error_form").fadeOut(2500);
+		}
+
+		$("#btn_simpan").click(function(event) {
+			event.preventDefault();
+			var jenjang = $("select[name='jenjang']").val();
+			var mapel = $("select[name='mapel']").val();
+			var materi = $("input[name='materi']").val();
+			var pengajar = $("input[name='pengajar']").val();
+			var vid = $("input[name='video_les']").val();
+
+			//RegEx
+			var namaReg = /^[a-zA-Z' ]+$/; //alfabet(besar atau kecil), petik ('), dan spasi saja
+
+			if(jenjang == "" || mapel == "" || materi == "" || pengajar == "" || vid == ""){
+				show_error('Harap lengkapi data-data video les');
+			}
+			else if (!namaReg.test(materi)) {
+				show_error('Nama materi hanya boleh menggunakan huruf');
+			}
+			else if (!namaReg.test(pengajar)) {
+				show_error('Nama pengajar hanya boleh menggunakan huruf dan tanda petik');
+			}
+			else{
+				window.location.href = "adm_les_streaming_show.html";
+			}
+		});
+	</script>
+</body>
+</html>
