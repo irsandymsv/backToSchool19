@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pesan Tutor | Admin Back to School</title>
+	<link rel="stylesheet" type="text/css" href="css/main_style.css">
+	<link rel="stylesheet" type="text/css" href="css/adm_sidebar.css"></ink>
+	<link rel="stylesheet" type="text/css" href="css/adm_style.css"></ink>
+
+	<!-- FontAwesome CSS -->
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/fontawesome.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/solid.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/brands.css">
+
+	<style type="text/css">
+		#wrap1{
+			padding: 10px 0;
+			width: 100%;
+			overflow: hidden;
+		}
+
+		#add_data{
+			float: right;
+		}
+
+		#add_data a{
+			padding: 10px 12px;
+		}
+
+		.cari_wraper{
+			float: left;
+		}
+
+		.cari_wraper input{
+			padding: 7px;
+			border: 1px solid #ccc;
+		}
+
+		.cari_wraper a {
+			padding: 7px;
+			margin-top: 5px;
+			background-color: #ccc;
+			text-align: center;
+			text-decoration: none;
+			color: black;
+		}
+
+		@media only screen and (max-width: 768px){
+			#add_data{
+				float: left;
+				width: 100%;
+				margin-top: 20px;
+			}
+
+			#wrap1{
+				margin-bottom: 5px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="sidebar">
+		<div id="close_side">
+			<a href="javascript:void(0)" id="btn_closeSide">&times;</a>
+		</div>
+
+		<div id="logo_web">
+			<a href="index.html">
+				<img src="image/LOGO.png">
+			</a>
+		</div>
+
+		<div id="username">
+			<h3>Admin</h3>
+		</div>
+
+		<div class="side-menu">
+			<a href="adm_dashboard.html">Dashboard</a>
+			<a href="#" class="btn_side_dropdown">Les Streaming <i class="fas fa-caret-down"></i></a>
+			<div class="isi_side_dropdown">
+				<a href="adm_les_streaming_new.html">Tambah Les Streaming</a>
+				<a href="adm_les_streaming.html">Lihat Semua</a>	
+			</div>
+			<a href="adm_pesan_tutor.html" class="side_active">Pesan Tutor</a>
+			<a href="adm_user_index.html">User</a>
+		</div>
+	</div>
+
+	<div class="content-right">
+		<div class="menu_atas">
+			<div class="nama_halaman">
+				<p><b>Dashboard</b></p>
+			</div>
+
+			<div class="btn_logout">
+				<a href="adm_index.html" title="Logout"><i class="fas fa-sign-out-alt"></i></a>
+			</div>
+		</div>
+
+		<div class="content_wrap">
+			<div id="open_sideMenu">
+				<button id="btn_openSide" class="btn"><i class="fas fa-caret-right"></i></button>
+			</div>
+
+			<div class="isi_utama">
+				<div class="white_wraper">
+					<h3>Daftar Seluruh Pesan Tutor</h3>
+
+					<div id="wrap1">
+						<div class="cari_wraper">
+							<input type="text" name="cari_les" placeholder="Cari...">
+							<a href="#"><i class="fas fa-search"></i></a>
+						</div>
+
+						<!-- <div id="add_data">
+							<a href="#" class="btn btn_utama"><i class="fas fa-plus"></i> Tambah Video</a>	
+						</div>	 -->
+					</div>
+					
+					<div class="tbl_wrapper">
+						<table class="tbl_admin">
+							<thead>
+								<tr>
+									<th>No</th>
+									<th>Nama Pemesan</th>
+									<th>Jenjang</th>
+									<th>Mata Pelajaran</th>
+									<th>Durasi (menit)</th>
+									<th>Tanggal Mulai</th>
+									<th>status Pembayaran</th>
+									<th>Opsi</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Budi Indraya</td>
+									<td>SMP 9</td>
+									<td>B.Inggris</td>
+									<td>60</td>
+									<td>24 Oktober 2019</td>
+									<td>Belum Lunas</td>
+									<td>
+										<a href="adm_pesan_tutor_show.html" class="btn btn_utama" title="Lihat Detail"><i class="fas fa-eye"></i></a>
+									</td>
+								</tr>
+
+								<tr>
+									<td>2</td>
+									<td>Andi Wijaya</td>
+									<td>SMA 11</td>
+									<td>Matematika</td>
+									<td>90</td>
+									<td>19 Oktober 2019</td>
+									<td>Lunas</td>
+									<td>
+										<a href="adm_pesan_tutor_show.html" class="btn btn_utama" title="Lihat Detail"><i class="fas fa-eye"></i></a>
+									</td>
+								</tr>
+
+								<tr>
+									<td>3</td>
+									<td>Wulan Kusuma</td>
+									<td>SMP 8</td>
+									<td>IPA(Biologi)</td>
+									<td>60</td>
+									<td>15 Oktober 2019</td>
+									<td>Lunas</td>
+									<td>
+										<a href="adm_pesan_tutor_show.html" class="btn btn_utama" title="Lihat Detail"><i class="fas fa-eye"></i></a>
+									</td>
+								</tr>
+
+								<tr>
+									<td>4</td>
+									<td>Ari Pandana</td>
+									<td>SD 6</td>
+									<td>Matematik</td>
+									<td>60</td>
+									<td>12 Oktober 2019</td>
+									<td>Lunas</td>
+									<td>
+										<a href="adm_pesan_tutor_show.html" class="btn btn_utama" title="Lihat Detail"><i class="fas fa-eye"></i></a>
+									</td>
+								</tr>
+
+								<tr>
+									<td>5</td>
+									<td>Rudi Prima</td>
+									<td>SMP 9</td>
+									<td>IPA(Fisika)</td>
+									<td>60</td>
+									<td>9 Oktober 2019</td>
+									<td>Lunas</td>
+									<td>
+										<a href="adm_pesan_tutor_show.html" class="btn btn_utama" title="Lihat Detail"><i class="fas fa-eye"></i></a>
+									</td>
+								</tr>
+
+								<tr>
+									<td>6</td>
+									<td>Indah Kartika</td>
+									<td>SMP 7</td>
+									<td>B. Indonesia</td>
+									<td>90</td>
+									<td>7 Oktober 2019</td>
+									<td>Lunas</td>
+									<td>
+										<a href="adm_pesan_tutor_show.html" class="btn btn_utama" title="Lihat Detail"><i class="fas fa-eye"></i></a>
+									</td>
+								</tr>
+
+								<tr>
+									<td>7</td>
+									<td>Putri Wardani</td>
+									<td>SD 6</td>
+									<td>IPA</td>
+									<td>45</td>
+									<td>4 Oktober 2019</td>
+									<td>Lunas</td>
+									<td>
+										<a href="adm_pesan_tutor_show.html" class="btn btn_utama" title="Lihat Detail"><i class="fas fa-eye"></i></a>
+									</td>
+								</tr>
+
+								<tr>
+									<td>8</td>
+									<td>Wildan Damar</td>
+									<td>SMA 12</td>
+									<td>Matematika</td>
+									<td>120</td>
+									<td>3 Oktober 2019</td>
+									<td>Lunas</td>
+									<td>
+										<a href="adm_pesan_tutor_show.html" class="btn btn_utama" title="Lihat Detail"><i class="fas fa-eye"></i></a>
+									</td>
+								</tr>
+
+								<tr>
+									<td>9</td>
+									<td>Yulia Ayu</td>
+									<td>SMA 10</td>
+									<td>B. Indonesia</td>
+									<td>90</td>
+									<td>25 September 2019</td>
+									<td>Lunas</td>
+									<td>
+										<a href="adm_pesan_tutor_show.html" class="btn btn_utama" title="Lihat Detail"><i class="fas fa-eye"></i></a>
+									</td>
+								</tr>
+
+								<tr>
+									<td>10</td>
+									<td>Nur Laila</td>
+									<td>SMA 10</td>
+									<td>Matematika</td>
+									<td>60</td>
+									<td>20 September 2019</td>
+									<td>Lunas</td>
+									<td>
+										<a href="adm_pesan_tutor_show.html" class="btn btn_utama" title="Lihat Detail"><i class="fas fa-eye"></i></a>
+									</td>
+								</tr>
+
+							</tbody>
+						</table>
+
+						<div class="paginasi">
+							<ul>
+								<li class="page_notActive"><i class="fas  fa-chevron-left"></i></li>
+								<li class="page_active">1</li>
+								<li>2</li>
+								<li>3</li>
+								<li><i class="fas  fa-chevron-right"></i></li>
+							</ul>
+						</div>
+					</div>
+
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/sidebar.js"></script>
+</body>
+</html>

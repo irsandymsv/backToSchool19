@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Detail Pesan Tutor | Admin Back to School</title>
+	<link rel="stylesheet" type="text/css" href="css/main_style.css">
+	<link rel="stylesheet" type="text/css" href="css/adm_sidebar.css"></ink>
+	<link rel="stylesheet" type="text/css" href="css/adm_style.css"></ink>
+
+	<!-- FontAwesome CSS -->
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/fontawesome.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/solid.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/brands.css">
+
+	<style type="text/css">
+		#btn_submit{
+			float: right;
+			margin-top: 20px;
+		}
+
+		form{
+			padding: 15px;
+			width: 80%;
+			margin: auto;
+			overflow: hidden;
+		}
+
+		form input{
+			padding: 7px;
+			width: 90%;
+		}
+	</style>
+</head>
+<body>
+	<div class="sidebar">
+		<div id="close_side">
+			<a href="javascript:void(0)" id="btn_closeSide">&times;</a>
+		</div>
+
+		<div id="logo_web">
+			<a href="index.html">
+				<img src="image/LOGO.png">
+			</a>
+		</div>
+
+		<div id="username">
+			<h3>Admin</h3>
+		</div>
+
+		<div class="side-menu">
+			<a href="adm_dashboard.html">Dashboard</a>
+			<a href="#" class="btn_side_dropdown">Les Streaming <i class="fas fa-caret-down"></i></a>
+			<div class="isi_side_dropdown">
+				<a href="adm_les_streaming_new.html">Tambah Les Streaming</a>
+				<a href="adm_les_streaming.html">Lihat Semua</a>	
+			</div>
+			<a href="adm_pesan_tutor.html" class="side_active">Pesan Tutor</a>
+			<a href="adm_user_index.html">User</a>
+		</div>
+	</div>
+
+	<div class="content-right">
+		<div class="menu_atas">
+			<div class="nama_halaman">
+				<p><b>Dashboard</b></p>
+			</div>
+
+			<div class="btn_logout">
+				<a href="adm_index.html" title="Logout"><i class="fas fa-sign-out-alt"></i></a>
+			</div>
+		</div>
+
+		<div class="content_wrap">
+			<div id="open_sideMenu">
+				<button id="btn_openSide" class="btn"><i class="fas fa-caret-right"></i></button>
+			</div>
+
+			<div class="isi_utama">
+				<div class="white_wraper">
+					<div id="judul_wraper">
+						<h3>Detail Pesan Tutor</h3>
+					</div>
+
+					<!-- <div id="btn_edit">
+						<a href="adm_les_streaming_edit.html" class="btn btn_sukses"><i class="fas fa-edit"></i> Ubah</a>
+					</div> -->
+
+					<form>
+						<div class="tbl_wrapper">
+							<table class="tbl_admin" >
+								<tbody>
+									<tr>
+										<td>Nama Pemesan</td>
+										<td>Budi Indraya</td>
+									</tr>
+									<tr>
+										<td>Jenjang</td>
+										<td>SMP 9</td>
+									</tr>
+									<tr>
+										<td>Mata Pelajaran</td>
+										<td>B. Inggris</td>
+									</tr>
+									<tr>
+										<td>Durasi (menit)</td>
+										<td>60</td>
+									</tr>
+									<tr>
+										<td>Tanggal Mulai</td>
+										<td>23 Oktober 2019</td>
+									</tr>
+									<tr>
+										<td>Pengajar</td>
+										<td><input type="text" name="pengajar" placeholder="Tambahkan Pengajar..."></td>
+									</tr>
+									<tr>
+										<td>Status Pembayaran</td>
+										<td>Lunas</td>
+									</tr>
+									<tr>
+										<td>Status Tutoring</td>
+										<td>On-going</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div id="btn_submit">
+							<button class="btn btn_utama" type="button" id="btn_simpan">Simpan</button>
+						</div>
+
+					</form>
+
+					<div class="error_form">
+						<p><b></b></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/sidebar.js"></script>
+	<script type="text/javascript">
+		function show_error(pesan) {
+			$(".error_form").find('b').html(pesan);
+			$(".error_form").show();
+			$(".error_form").fadeOut(2500);
+		}
+
+		$("#btn_submit").click(function(event) {
+			event.preventDefault();
+			var pengajar = $("input[name='pengajar']").val();
+
+			//RegEx
+			var namaReg = /^[a-zA-Z' ]+$/; //alfabet(besar atau kecil), petik ('), dan spasi saja
+
+			if (pengajar == "") {
+				show_error('Harap isi nama pengajar');
+			} 
+			else if (!namaReg.test(pengajar)) {
+				show_error('Nama pengajar hanya boleh menggunakan huruf dan tanda petik');
+			}
+			else{
+				window.location.href="adm_pesan_tutor_show.html";
+			}
+		});
+	</script>
+</body>
+</html>

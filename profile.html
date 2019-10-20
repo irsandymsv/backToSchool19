@@ -172,7 +172,7 @@
 					</div>
 
 					<div id="form_wrap">
-						<form>
+						<form action="profile.html">
 							<div id="upload_avatar" class="baris">
 								<div id="avatar_wrap" class="kol-5 kol-m-5">
 									<img id="avatar_img" src="image/emot_file.jpg">
@@ -221,7 +221,7 @@
 									<td>Jenjang</td>
 									<td>
 										<select name="kelas">
-											<option>-- Pilih Kelas --</option>
+											<option value="">-- Pilih Kelas --</option>
 											<option value="SD Kelas 4">SD Kelas 4</option>
 											<option value="SD Kelas 5">SD Kelas 5</option>
 											<option value="SD Kelas 6">SD Kelas 6</option>
@@ -240,11 +240,14 @@
 							</table>
 
 							<div id="btn_submit">
-								<a href="profile.html" class="btn btn_utama">Update</a>
+								<button class="btn btn_utama" type="submit" id="btn_update">Update</button>
 							</div>
 						</form>
 					</div>
 
+					<div class="error_form">
+						<p><b></b></p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -308,7 +311,41 @@
 
 	    $("#btn_file").change(function() {
 	      readURL(this);
-	    });	
+	    });
+
+	    function show_error(pesan) {
+	    	$(".error_form").find('b').html(pesan);
+	    	$(".error_form").show();
+	    	$(".error_form").fadeOut(2500);
+	    }
+
+	    $("#btn_update").click(function(event) {
+	    	event.preventDefault();
+
+	    	var nama = $("input[name='nama']").val();
+	    	var no_hp = $("input[name='no_hp']").val();
+	    	var email = $("input[name='email']").val();
+	    	var gender = $("input[name='gender']:checked").val();
+	    	var kelas = $("select[name='kelas']").val();
+
+	    	//RegEx
+			var namaReg = /^[a-zA-Z' ]+$/; //alfabet(besar atau kecil), petik ('), dan spasi saja
+			var angka = /^\d+$/; //angka saja
+
+	    	if (nama == "" || email == "" || no_hp == "" || gender == "" || kelas == "") {
+	    		show_error("Harap lengkapi data profil");
+	    	} 
+	    	else if (!namaReg.test(nama)) {
+	    		show_error("Nama hanya boleh menggunakan huruf dan tanda petik (')");
+	    	}
+	    	else if (!angka.test(no_hp)) {
+				show_error("Nomor HP hanya boleh menggunakan angka");
+			}
+	    	else {
+	    		$('#btn_update').off('click').trigger('click');
+	    	}
+	    });
+
 	</script>
 </body>
 </html>

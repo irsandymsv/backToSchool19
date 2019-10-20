@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tambah Les Streaming | Admin Back to School</title>
+	<title>Edit Les Streaming | Admin Back to School</title>
 	<link rel="stylesheet" type="text/css" href="css/main_style.css">
 	<link rel="stylesheet" type="text/css" href="css/adm_sidebar.css"></ink>
 	<link rel="stylesheet" type="text/css" href="css/adm_style.css"></ink>
@@ -43,6 +43,7 @@
 
 		#submit_form{
 			float: right;
+			margin-top: 50px;
 		}
 	</style>
 </head>
@@ -92,7 +93,7 @@
 
 			<div class="isi_utama">
 				<div class="white_wraper">
-					<h3>Tambah Video Les Baru</h3>
+					<h3>Ubah Informasi Video Les</h3>
 
 					<form>
 						<div class="form_item">
@@ -105,7 +106,7 @@
 								<option value="SMP Kelas 7">SMP Kelas 7</option>
 								<option value="SMP Kelas 8">SMP Kelas 8</option>
 								<option value="SMP Kelas 9">SMP Kelas 9</option>
-								<option value="SMA IPA Kelas 10">SMA IPA Kelas 10</option>
+								<option value="SMA IPA Kelas 10" selected="">SMA IPA Kelas 10</option>
 								<option value="SMA IPA Kelas 11">SMA IPA Kelas 11</option>
 								<option value="SMA IPA Kelas 12">SMA IPA Kelas 12</option>
 								<option value="SMA IPS Kelas 10">SMA IPS Kelas 10</option>
@@ -123,7 +124,7 @@
 								<option value="B.Inggris">B.Inggris</option>
 								<option value="IPA">IPA</option>
 								<option value="IPA (FISIKA)">IPA (FISIKA)</option>
-								<option value="IPA (Biologi)">IPA (Biologi)</option>
+								<option value="IPA (Biologi)" selected="">IPA (Biologi)</option>
 								<option value="IPA (Kimia)">IPA (Kimia)</option>
 								<option value="Ekonomi">Ekonomi</option>
 								<option value="Sejarah">Sejarah</option>
@@ -134,17 +135,12 @@
 
 						<div class="form_item">
 							<label>Materi</label>
-							<input type="text" name="materi">
+							<input type="text" name="materi" value="Pencernaan">
 						</div>
 
 						<div class="form_item">
 							<label>Nama Pengajar</label>
-							<input type="text" name="pengajar">
-						</div>
-
-						<div class="form_item">
-							<label>Upload Video</label>
-							<input type="file" name="video_les" accept="video/*">
+							<input type="text" name="pengajar" value="Nanik Irmaya">
 						</div>
 
 						<div class="form_item" id="submit_form">
