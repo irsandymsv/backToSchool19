@@ -10,8 +10,8 @@ $(function() {
 	});
 
 	$("#btn_openSide").click(function(event) {
-		$(".sidebar").css('width', '250px');
-		$(".content-right").css('margin-left', '250px');
+		$(".sidebar").css('width', '230px');
+		$(".content-right").css('margin-left', '230px');
 		// $(".sidebar").css('display', 'table-cell');
 		// $("#open_sideMenu").hide();
 	});

@@ -1,6 +1,6 @@
 .sidebar{
 	height: 100%;
-	width: 250px;
+	width: 230px;
 	position: fixed;
 	z-index: 1;
 	top: 0;
@@ -13,7 +13,7 @@
 }
 
 .content-right{
-	margin-left: 250px;
+	margin-left: 230px;
 	transition: margin-left .5s;
 }
 
@@ -99,4 +99,14 @@ a.side_active {
 
 #open_sideMenu button i{
 	font-size: 22px;
+}
+
+@media only screen and (max-width: 768px){
+	.sidebar {
+		width: 0;
+	}
+
+	.content-right{
+		margin-left: 0;
+	}
 } 
