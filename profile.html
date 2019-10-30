@@ -73,11 +73,6 @@
 			border-radius: 50%;
 		}
 
-		#upload_btn{
-			margin-left: 15px;
-			margin-top: 40px;
-		}
-
 		.radio_label{
 			cursor: pointer;
 			margin-right: 25px;
@@ -93,6 +88,15 @@
 			width: initial;
 		}
 
+		#file_info{
+			margin-left: 15px;
+			font-size: 14px;
+		}
+
+		#upload_btn{
+			margin-top: 20px;
+		}
+
 		@media only screen and (max-width: 800px){
 			#form_wrap form{
 				width: 90%;
@@ -103,6 +107,10 @@
 			#upload_btn{
 				margin-left: 0px;
 				margin-top: 10px;
+			}
+
+			#file_info{
+				margin-left: 0;
 			}
 		}
 	</style>
@@ -174,12 +182,18 @@
 					<div id="form_wrap">
 						<form action="profile.html">
 							<div id="upload_avatar" class="baris">
-								<div id="avatar_wrap" class="kol-5 kol-m-5">
+								<div id="avatar_wrap" class="kol-m-4">
 									<img id="avatar_img" src="image/emot_file.jpg">
 								</div>
-								<div id="upload_btn" class="kol-5 kol-m-5">
-									<input type="file" name="avatar" id="btn_file" value="Choose File">
+
+								<div id="file_info" class="kol-m-7">
+									
 								</div>	
+							</div>
+
+							<div id="upload_btn">
+								<label for="btn_file" class="uploadIcon">Choose File</label>
+								<input type="file" name="avatar" id="btn_file" value="Choose File" accept="image/*">
 							</div>
 							
 							<table>
@@ -295,31 +309,98 @@
 	<script src="js/top_menu.js"></script>
 	<script src="js/sidebar.js"></script>
 	<script type="text/javascript">
-		function readURL(input) {
+		$.fn.uploadGambar = function () { //extending jquery
+			this.change(function(event) {
+		    	if(this.files.length > 0){
+		    		console.log(this.files[0]);
+	    			var name = this.files[0].name;
+	    			var size = this.files[0].size;
 
-	      if (input.files && input.files[0]) {
-	        var reader = new FileReader();
+	    			var ukuran = "";
+	    			if (size >= 1000000 ) { //MB
+	    				size = Math.ceil(size/1000000); 
+	    				ukuran = size + "MB"; 
+	    			} 
+	    			else if (size >= 1000) { //KB
+	    				size = Math.ceil(size/1000);
+	    				ukuran = size + "KB";
+	    			}
+	    			else if(size < 1000){
+	    				ukuran = size + "Byte";
+	    			}
+	    			
+	    			$("#file_info").html(`
+	    				<p>Nama File : `+name+`</p>
+	    				<p>Ukuran File : `+ukuran+`</p>
+	    				`
+	    			);
+		    		
+		    		if (this.files && this.files[0]) {
+		    		  var reader = new FileReader();
 
-	        reader.onload = function(e) {
-	          $('#avatar_img').show();
-	          $('#avatar_img').attr('src', e.target.result);
-	        }
+		    		  reader.onload = function(e) {
+		    		    $('#avatar_img').show();
+		    		    $('#avatar_img').attr('src', e.target.result);
+		    		  }
 
-	        reader.readAsDataURL(input.files[0]);
-	      }
-	    }
+		    		  reader.readAsDataURL(this.files[0]);
+		    		}
+		    	}
+			});
+		}
 
-	    $("#btn_file").change(function() {
-	      readURL(this);
-	    });
+		$("#btn_file").uploadGambar();
 
-	    function show_error(pesan) {
+		// function readURL(input) {
+
+	 //      if (input.files && input.files[0]) {
+	 //        var reader = new FileReader();
+
+	 //        reader.onload = function(e) {
+	 //          $('#avatar_img').show();
+	 //          $('#avatar_img').attr('src', e.target.result);
+	 //        }
+
+	 //        reader.readAsDataURL(input.files[0]);
+	 //      }
+	 //   }
+
+	   // $("#btn_file").change(function() {
+	   //  	if(this.files.length > 0){
+	   //  		console.log(this.files[0]);
+    // 			var name = this.files[0].name;
+    // 			var size = this.files[0].size;
+
+    // 			var ukuran = "";
+    // 			if (size >= 1000000 ) { //MB
+    // 				size = Math.ceil(size/1000000); 
+    // 				ukuran = size + "MB"; 
+    // 			} 
+    // 			else if (size >= 1000) { //KB
+    // 				size = Math.ceil(size/1000);
+    // 				ukuran = size + "KB";
+    // 			}
+    // 			else if(size < 1000){
+    // 				ukuran = size + "Byte";
+    // 			}
+    			
+    // 			$("#file_info").html(`
+    // 				<p>Nama File : `+name+`</p>
+    // 				<p>Ukuran File : `+ukuran+`</p>
+    // 				`
+    // 			);
+	    		
+	   //  		readURL(this);
+	   //  	}
+	   // });
+
+	   function show_error(pesan) {
 	    	$(".error_form").find('b').html(pesan);
 	    	$(".error_form").show();
 	    	$(".error_form").fadeOut(2500);
-	    }
+	   }
 
-	    $("#btn_update").click(function(event) {
+	   $("#btn_update").click(function(event) {
 	    	event.preventDefault();
 
 	    	var nama = $("input[name='nama']").val();
@@ -344,7 +425,7 @@
 	    	else {
 	    		$('#btn_update').off('click').trigger('click');
 	    	}
-	    });
+	   });
 
 	</script>
 </body>

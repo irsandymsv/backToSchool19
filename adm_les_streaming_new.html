@@ -15,7 +15,6 @@
 	<style type="text/css">
 		form{
 			padding: 20px;
-			/*border: 1px solid #ccc;*/
 			width: 75%;
 			margin: auto;
 			overflow: hidden;
@@ -38,13 +37,27 @@
 			width: 100%;
 		}
 
-		input[name='video_les']{
-			width: unset;
+		.uploadIcon{
+			margin-top: 15px;
+			width: 110px;
 		}
 
 		#submit_form{
 			float: right;
+			margin-top: 30px;
 		}
+
+		#preview_vid{
+			margin: auto;
+			padding: 10px;
+			border: 1px solid #ccc;
+		}
+
+		#preview_vid video{
+			width: 100%;
+			height: auto;
+		}
+
 	</style>
 </head>
 <body>
@@ -145,7 +158,14 @@
 
 						<div class="form_item">
 							<label>Upload Video</label>
-							<input type="file" name="video_les" accept="video/*">
+							<label for="btn_file" class="uploadIcon">Choose File</label>
+							<input type="file" name="video_les" id="btn_file" accept="video/*">
+							<div id="preview_vid">
+								<span>No File Choosed</span>
+							</div>
+							<div id="file_info">
+								
+							</div>
 						</div>
 
 						<div class="form_item" id="submit_form">
@@ -164,6 +184,46 @@
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/sidebar.js"></script>
 	<script type="text/javascript">
+		$.fn.uplaodVideo = function () {
+			this.change(function() {
+				if(this.files.length > 0){
+					var url =  window.URL.createObjectURL(this.files[0]);
+					$("#preview_vid").html(`
+						<video src="`+url+`" controls="" autoplay=""></video>
+						`
+					);
+					var new_vid = $("#preview_vid video");
+					new_vid.onload = function () {
+						window.URL.revokeObjectURL(url);
+					};
+
+					var name = this.files[0].name;
+					var size = this.files[0].size;
+
+					var ukuran = "";
+					if (size >= 1000000 ) { //MB
+						size = Math.ceil(size/1000000); 
+						ukuran = size + "MB"; 
+					} 
+					else if (size >= 1000) { //KB
+						size = Math.ceil(size/1000);
+						ukuran = size + "KB";
+					}
+					else if(size < 1000){
+						ukuran = size + "Byte";
+					}
+					
+					$("#file_info").html(`
+						<p>Nama File : `+name+`</p>
+						<p>Ukuran File : `+ukuran+`</p>
+						`
+					);
+				}
+			});
+		}
+
+		$("#btn_file").uplaodVideo();
+
 		function show_error(pesan) {
 			$(".error_form").find('b').html(pesan);
 			$(".error_form").show();
