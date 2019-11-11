@@ -103,7 +103,7 @@
 		<h1><strong>Backtoschool</strong></h1>
 		<h3>Login Admin</h1>
 		<div class="card">
-			<form action="#">
+			<form action="adm_dashboard.html">
 				<label for="email"><b>Email</b></label><br>
 				<input type="email" name="email" id="email" autofocus="" placeholder="Masukkan Email">
 
@@ -111,7 +111,7 @@
 				<input type="password" name="Password" id="password" placeholder="Masukkan Password">
 
 				<div id="btn_group">
-					<a id="btn_masuk" href="#" class="btn btn_utama">Masuk</a>
+					<button id="btn_masuk" type="submit" class="btn btn_utama">Masuk</button>
 					<a href="index.html" id="home_btn" class="btn">Home</a>
 				</div>
 			</form>
@@ -122,14 +122,10 @@
 		</div>
 	</div>
 	<script src="js/jquery-3.4.1.min.js"></script>
-	<script type="text/javascript">
-		function show_error(pesan) {
-			$(".error_form").find('b').html(pesan);
-			$(".error_form").show();
-			$(".error_form").fadeOut(2500);
-		}
+	<script src="js/main_script.js"></script>
 
-		$("#btn_masuk").click(function(event) {
+	<script type="text/javascript">
+		$("form").on("submit", function(event) {
 			event.preventDefault();
 			var email = $("input[name='email']").val();
 			var password = $("input[name='password']").val();
@@ -141,8 +137,8 @@
 				show_error('Email atau Password salah. Coba lagi');
 			}
 			else{
-				// $(this).off('click').trigger('clcik');
-				window.location.href="adm_dashboard.html";
+				$(this).off('submit').trigger('submit');
+				// window.location.href="adm_dashboard.html";
 			}
 		});
 	</script>

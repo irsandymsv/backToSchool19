@@ -78,14 +78,14 @@
 		</div>
 
 		<div class="card">
-			<form>
+			<form action="dashboard.html">
 				<div id="judul_form">
 					<h2>Masuk</h2>
 				</div>
 				<input type="email" name="email" placeholder="Email" autofocus=""><br>
 				<input type="password" name="password" placeholder="password">
 				<br><br>
-				<a href="dashboard.html" id="btn_masuk" class="btn btn_utama">Masuk</a>
+				<button type="submit" id="btn_masuk" class="btn btn_utama">Masuk</button>
 			</form>
 			<div id="div_register">
 				<p>Belum punya akun? <a href="daftar.html" class="btn_link">Daftar</a></p>
@@ -137,28 +137,11 @@
 
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/top_menu.js"></script>
+	<script src="js/main_script.js"></script>
+
 	<script type="text/javascript">
-		function show_error(pesan) {
-			$(".error_form").find('b').html(pesan);
-			$(".error_form").show();
-			$(".error_form").fadeOut(2500);
-		}
 
-		$("#btn_masuk").click(function(event) {
-			event.preventDefault();
-			var email = $("input[name='email']").val();
-			var password = $("input[name='password']").val();
-
-			if(email == "" || password == ""){
-				show_error('Harap isi email dan password untuk login');
-			}
-			else if (email != "email" && password != "password") {
-				show_error('Email atau Password salah. Coba lagi');
-			}
-			else{
-				document.location.href = "dashboard.html";
-			}
-		});
+		$("form").validasiLogin();
 	</script>
 </body>
 </html>

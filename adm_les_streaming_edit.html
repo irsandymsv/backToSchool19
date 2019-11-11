@@ -96,7 +96,7 @@
 				<div class="white_wraper">
 					<h3>Ubah Informasi Video Les</h3>
 
-					<form>
+					<form action="adm_les_streaming_show.html">
 						<div class="form_item">
 							<label>Jenjang</label>
 							<select name="jenjang" id="jenjang">
@@ -145,7 +145,7 @@
 						</div>
 
 						<div class="form_item" id="submit_form">
-							<a href="#" class="btn btn_utama" id="btn_simpan">Simpan</a>
+							<button type="submit" class="btn btn_utama" id="btn_simpan">Simpan</button>
 						</div>
 					</form>
 				</div>
@@ -159,14 +159,11 @@
 
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/sidebar.js"></script>
-	<script type="text/javascript">
-		function show_error(pesan) {
-			$(".error_form").find('b').html(pesan);
-			$(".error_form").show();
-			$(".error_form").fadeOut(2500);
-		}
+	<script src="js/main_script.js"></script>
 
-		$("#btn_simpan").click(function(event) {
+	<script type="text/javascript">
+
+		$("form").on("submit", function(event) {
 			event.preventDefault();
 			var jenjang = $("select[name='jenjang']").val();
 			var mapel = $("select[name='mapel']").val();
@@ -187,7 +184,8 @@
 				show_error('Nama pengajar hanya boleh menggunakan huruf dan tanda petik');
 			}
 			else{
-				window.location.href = "adm_les_streaming_show.html";
+				// window.location.href = "adm_les_streaming_show.html";
+				$(this).off("submit").trigger('submit');
 			}
 		});
 	</script>

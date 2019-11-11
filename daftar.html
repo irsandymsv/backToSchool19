@@ -200,47 +200,10 @@
 
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/top_menu.js"></script>
+	<script src="js/main_script.js"></script>
+
 	<script type="text/javascript">
-		function show_error(pesan) {
-			$(".error_form").find('b').html(pesan);
-			$(".error_form").show();
-			$(".error_form").fadeOut(2500);
-		}
-
-		$('#btn_daftar').on('click', function(event) {
-			event.preventDefault();
-			var nama = $("input[name='nama']").val();
-			var email = $("input[name='email']").val();
-			var password = $("input[name='password']").val();
-			var konfirm_password = $("input[name='konfirm_password']").val();
-			var no_hp = $("input[name='no_hp']").val();
-			var gender = $("input[name='gender']:checked").val();
-			var kelas = $("select[name='kelas']").val();
-
-			//RegEx
-			var namaReg = /^[a-zA-Z' ]+$/; //alfabet(besar atau kecil), petik ('), dan spasi saja
-			var angka = /^\d+$/; //angka saja
-			
-			if (nama == "" || email == "" || password == "" || konfirm_password == "" || no_hp == "" || gender == "" || kelas == "") {
-				show_error('Harap lengkapi data diri untuk melakukan pendaftaran');
-			}
-			else if (!namaReg.test(nama)) {
-				show_error("Nama hanya boleh menggunakan huruf dan tanda petik (')");
-			}
-			else if (password.length < 6) {
-				show_error("Password harus minimal 6 karakter");
-			}
-			else if (password != konfirm_password) {
-				show_error("Konfirmasi password tidak sesuai");
-			}
-			else if (!angka.test(no_hp)) {
-				show_error("Nomor HP hanya boleh menggunakan angka");
-			}
-			else{
-				// document.location.href = "dashboard.html";
-				$("#btn_daftar").off('click').trigger('click');
-			}
-		});
+		$('form').validasiRegister();
 	</script>
 </body>
 </html>

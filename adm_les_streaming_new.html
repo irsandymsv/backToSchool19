@@ -108,7 +108,7 @@
 				<div class="white_wraper">
 					<h3>Tambah Video Les Baru</h3>
 
-					<form>
+					<form action="adm_les_streaming_show.html">
 						<div class="form_item">
 							<label>Jenjang</label>
 							<select name="jenjang" id="jenjang">
@@ -169,7 +169,7 @@
 						</div>
 
 						<div class="form_item" id="submit_form">
-							<a href="#" class="btn btn_utama" id="btn_simpan">Simpan</a>
+							<button type="submit" class="btn btn_utama" id="btn_simpan">Simpan</button>
 						</div>
 					</form>
 				</div>
@@ -183,77 +183,12 @@
 
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/sidebar.js"></script>
+	<script src="js/main_script.js"></script>
+
 	<script type="text/javascript">
-		$.fn.uplaodVideo = function () {
-			this.change(function() {
-				if(this.files.length > 0){
-					var url =  window.URL.createObjectURL(this.files[0]);
-					$("#preview_vid").html(`
-						<video src="`+url+`" controls="" autoplay=""></video>
-						`
-					);
-					var new_vid = $("#preview_vid video");
-					new_vid.onload = function () {
-						window.URL.revokeObjectURL(url);
-					};
+		$("#btn_file").uploadVideo();
 
-					var name = this.files[0].name;
-					var size = this.files[0].size;
-
-					var ukuran = "";
-					if (size >= 1000000 ) { //MB
-						size = Math.ceil(size/1000000); 
-						ukuran = size + "MB"; 
-					} 
-					else if (size >= 1000) { //KB
-						size = Math.ceil(size/1000);
-						ukuran = size + "KB";
-					}
-					else if(size < 1000){
-						ukuran = size + "Byte";
-					}
-					
-					$("#file_info").html(`
-						<p>Nama File : `+name+`</p>
-						<p>Ukuran File : `+ukuran+`</p>
-						`
-					);
-				}
-			});
-		}
-
-		$("#btn_file").uplaodVideo();
-
-		function show_error(pesan) {
-			$(".error_form").find('b').html(pesan);
-			$(".error_form").show();
-			$(".error_form").fadeOut(2500);
-		}
-
-		$("#btn_simpan").click(function(event) {
-			event.preventDefault();
-			var jenjang = $("select[name='jenjang']").val();
-			var mapel = $("select[name='mapel']").val();
-			var materi = $("input[name='materi']").val();
-			var pengajar = $("input[name='pengajar']").val();
-			var vid = $("input[name='video_les']").val();
-
-			//RegEx
-			var namaReg = /^[a-zA-Z' ]+$/; //alfabet(besar atau kecil), petik ('), dan spasi saja
-
-			if(jenjang == "" || mapel == "" || materi == "" || pengajar == "" || vid == ""){
-				show_error('Harap lengkapi data-data video les');
-			}
-			else if (!namaReg.test(materi)) {
-				show_error('Nama materi hanya boleh menggunakan huruf');
-			}
-			else if (!namaReg.test(pengajar)) {
-				show_error('Nama pengajar hanya boleh menggunakan huruf dan tanda petik');
-			}
-			else{
-				window.location.href = "adm_les_streaming_show.html";
-			}
-		});
+		$("form").validasiNewVideo();
 	</script>
 </body>
 </html>

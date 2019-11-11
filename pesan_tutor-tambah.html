@@ -138,13 +138,13 @@
 					</div>
 
 					<div id="form_wrap">
-						<form id="form_pesan">
+						<form id="form_pesan" action="konfirmasi_pesan_tutor.html">
 							<table>
 								<tr>
 									<td>Jenjang</td>
 									<td>
 										<select name="jenjang">
-											<option> --Pilih-- </option>
+											<option value=""> --Pilih-- </option>
 											<option value="sd4">SD Kelas 4</option>
 											<option value="sd5">SD Kelas 5</option>
 											<option value="sd6">SD Kelas 6</option>
@@ -165,7 +165,7 @@
 									<td>mata Pelajaran</td>
 									<td>
 										<select name="mata_pelajaran">
-											<option> --Pilih-- </option>
+											<option value=""> --Pilih-- </option>
 											<option value="Matematika">Matematika</option>
 											<option value="B.Indonesia">B.Indonesia</option>
 											<option value="B.Inggris">B.Inggris</option>
@@ -211,7 +211,7 @@
 							</table>
 
 							<div id="btn_submit">
-								<a href="konfirmasi_pesan_tutor.html" class="btn btn_utama" id="submit_pesan">Pesan</a>
+								<button type="submit" class="btn btn_utama" id="submit_pesan">Pesan</button>
 							</div>
 						</form>
 					</div>
@@ -266,29 +266,10 @@
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/top_menu.js"></script>
 	<script src="js/sidebar.js"></script>
-	<script type="text/javascript">
-		function show_error(pesan) {
-			$(".error_form").find('b').html(pesan);
-			$(".error_form").show();
-			$(".error_form").fadeOut(2500);
-		}
+	<script src="js/main_script.js"></script>
 
-		$("#submit_pesan").click(function(event) {
-			event.preventDefault();
-			var jenjang = $("select[name='jenjang']").val();
-			var mapel = $("select[name='mata_pelajaran']").val();
-			var jml_pertemuan = $("input[name='jml_pertemuan']").val();
-			var durasi = $("input[name='durasi']").val();
-			var tempat = $("input[name='tempat']").val();
-			var tgl_mulai = $("input[name='tgl_mulai']").val();
-			
-			if (jenjang == "" || mapel == "" || jml_pertemuan == "" || durasi == "" || tempat == "" || tgl_mulai == "") {
-				show_error('Harap lengkapi semua data untuk melakukan pemesanan')
-			}
-			else {
-				document.location.href = "konfirmasi_pesan_tutor.html";
-			}
-		});
+	<script type="text/javascript">
+		$("form").validateEmpty();
 	</script>
 </body>
 </html>

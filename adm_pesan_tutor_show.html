@@ -85,7 +85,7 @@
 						<a href="adm_les_streaming_edit.html" class="btn btn_sukses"><i class="fas fa-edit"></i> Ubah</a>
 					</div> -->
 
-					<form>
+					<form action="adm_pesan_tutor_show.html">
 						<div class="tbl_wrapper">
 							<table class="tbl_admin" >
 								<tbody>
@@ -126,7 +126,7 @@
 						</div>
 
 						<div id="btn_submit">
-							<button class="btn btn_utama" type="button" id="btn_simpan">Simpan</button>
+							<button class="btn btn_utama" type="submit" id="btn_simpan">Simpan</button>
 						</div>
 
 					</form>
@@ -141,30 +141,9 @@
 
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/sidebar.js"></script>
+	<script src="js/main_script.js"></script>
 	<script type="text/javascript">
-		function show_error(pesan) {
-			$(".error_form").find('b').html(pesan);
-			$(".error_form").show();
-			$(".error_form").fadeOut(2500);
-		}
-
-		$("#btn_submit").click(function(event) {
-			event.preventDefault();
-			var pengajar = $("input[name='pengajar']").val();
-
-			//RegEx
-			var namaReg = /^[a-zA-Z' ]+$/; //alfabet(besar atau kecil), petik ('), dan spasi saja
-
-			if (pengajar == "") {
-				show_error('Harap isi nama pengajar');
-			} 
-			else if (!namaReg.test(pengajar)) {
-				show_error('Nama pengajar hanya boleh menggunakan huruf dan tanda petik');
-			}
-			else{
-				window.location.href="adm_pesan_tutor_show.html";
-			}
-		});
+		$("form").validateEmpty();
 	</script>
 </body>
 </html>

@@ -129,12 +129,12 @@
 					<h3>HARGA</h3>
 					<h2>Rp 100K/<small>pertemuan</small></h2>
 
-					<form>
+					<form action="login.html">
 						<table>
 							<tr>
 								<td>Jenjang/Kelas</td>
 								<td>
-									<select>
+									<select name="jenjang">
 										<option value="">-- Pilih --</option>
 										<option value="SD Kelas 4">SD Kelas 4</option>
 										<option value="SD Kelas 5">SD Kelas 5</option>
@@ -154,7 +154,7 @@
 							<tr>
 								<td>Mata Pelajaran</td>
 								<td>
-									<select>
+									<select name="mapel">
 										<option value="">-- Pilih --</option>
 										<option value="Matematika">Matematika</option>
 										<option value="IPA">IPA</option>
@@ -173,10 +173,14 @@
 								</td>
 							</tr>
 						</table>
-						<a href="login.html" class="btn btn_kedua" type="submit" id="btn_submit">PESAN</a>
+						<button type="submit" class="btn btn_kedua" id="btn_submit">PESAN</buttton>
 					</form>
 				</div>
 			</div>
+		</div>
+
+		<div class="error_form">
+			<p><b></b></p>
 		</div>
 	</div>
 
@@ -220,5 +224,10 @@
 
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/top_menu.js"></script>
+	<script src="js/main_script.js"></script>
+	
+	<script type="text/javascript">
+		$("form").validateEmpty();
+	</script>
 </body>
 </html>
