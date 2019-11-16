@@ -156,24 +156,31 @@
 
 					<div class="cari_sorting baris">
 						<div class="" id="cari_input">
-							<input type="text" name="cari_les" placeholder="Cari...">
+							<input type="text" id="search_field" name="cari_tutor" placeholder="Cari...">
 							<i class="fas fa-search"></i>
 							<!-- <button type="button" id="btn_cari"></button> -->
 						</div>
 
 						<div class="select_option" id="mapel">
-							<select>
-								<option value=""> --Cari Mata Pelajaran-- </option>
-								<option value=""> Matematika </option>
-								<option value=""> B.Inggris </option>
-								<option value=""> IPA(Biologi) </option>
-								<option value=""> IPA(Fisika) </option>
+							<select name="mapel">
+								<option value=""> --Semua Mata Pelajaran-- </option>
+								<option value="Matematika">Matematika</option>
+								<option value="B.Indonesia">B.Indonesia</option>
+								<option value="B.Inggris">B.Inggris</option>
+								<option value="IPA">IPA</option>
+								<option value="Fisika">IPA (FISIKA)</option>
+								<option value="Biologi">IPA (Biologi)</option>
+								<option value="Kimia">IPA (Kimia)</option>
+								<option value="Ekonomi">Ekonomi</option>
+								<option value="Sejarah">Sejarah</option>
+								<option value="Sosiologi">Sosiologi</option>
+								<option value="Geografi">Geografi</option>
 							</select>
 						</div>
 					</div>
 					
 					<div class="baris">
-						<a href="pesan_tutor-show.html" class="link_layanan">
+						<a href="pesan_tutor-show.html" class="link_layanan" mapel="Matematika">
 							<div class="item_tutor kol-3 kol-m-3">
 								<div class="pelajaran_tutor">
 									<h4>Matematika</h4>
@@ -191,7 +198,7 @@
 							</div>
 						</a>
 
-						<a href="pesan_tutor-show.html" class="link_layanan">
+						<a href="pesan_tutor-show.html" class="link_layanan" mapel="Fisika">
 							<div class="item_tutor kol-3 kol-m-3">
 								<div class="pelajaran_tutor">
 									<h4>Fisika</h4>
@@ -209,7 +216,7 @@
 							</div>
 						</a>
 
-						<a href="pesan_tutor-show.html" class="link_layanan">
+						<a href="pesan_tutor-show.html" class="link_layanan" mapel="B.Inggris">
 							<div class="item_tutor kol-3 kol-m-3">
 								<div class="pelajaran_tutor">
 									<h4>B.Inggris</h4>
@@ -227,7 +234,7 @@
 							</div>
 						</a>
 
-						<a href="pesan_tutor-show.html" class="link_layanan">
+						<a href="pesan_tutor-show.html" class="link_layanan" mapel="Biologi">
 							<div class="item_tutor kol-3 kol-m-3">
 								<div class="pelajaran_tutor">
 									<h4>Biologi</h4>
@@ -291,5 +298,42 @@
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/top_menu.js"></script>
 	<script src="js/sidebar.js"></script>
+	<script type="text/javascript">
+		filter_tutor();
+		cariTutor();
+
+		function filter_tutor() {
+			$("select[name='mapel'],select[name='jenjang']").change(function(event) {
+				var mapel = $("select[name='mapel']").val();
+
+				console.log('mapel= '+mapel);
+
+				if (mapel != "") {
+					$(".link_layanan").hide();
+					$(".link_layanan").each(function(index, el) {
+						if ($(el).attr('mapel').toLowerCase() == mapel.toLowerCase()) {
+							$(el).show();
+						}
+					});
+					cariTutor();
+				}
+				else {
+					$(".link_layanan").show();
+					cariTutor();
+				}
+				
+			});
+		}
+
+		
+		function cariTutor() {
+			$("#cari_tutor").on("keyup", function() {
+			   var value = $(this).val().toLowerCase();
+			   	$(".link_layanan").filter(function() {
+			      	$(this).toggle($(this).find("h4").text().toLowerCase().indexOf(value) > -1)
+			   });
+			});
+		}
+	</script>
 </body>
 </html>

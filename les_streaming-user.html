@@ -18,7 +18,7 @@
 
 	<style type="text/css">
 		.main-body{
-			display: table;
+			/*display: table;*/
 			width: 100%;
 		}
 
@@ -156,21 +156,21 @@
 
 					<div class="cari_select baris">
 						<div class="" id="cari_input">
-							<input type="text" name="cari_les" placeholder="Cari...">
+							<input type="text" id="search_field" name="cari_les" placeholder="Cari...">
 							<i class="fas fa-search"></i>
 							<!-- <button type="button" id="btn_cari"></button> -->
 						</div>
 
 						<div class="select_option" id="mapel">
-							<select>
-								<option value=""> --Pilih Mata Pelajaran-- </option>
+							<select name="mapel">
+								<option value=""> --Semua Mata Pelajaran-- </option>
 								<option value="Matematika">Matematika</option>
 								<option value="B.Indonesia">B.Indonesia</option>
 								<option value="B.Inggris">B.Inggris</option>
 								<option value="IPA">IPA</option>
-								<option value="IPA (FISIKA)">IPA (FISIKA)</option>
-								<option value="IPA (Biologi)">IPA (Biologi)</option>
-								<option value="IPA (Kimia)">IPA (Kimia)</option>
+								<option value="Fisika">IPA (FISIKA)</option>
+								<option value="Biologi">IPA (Biologi)</option>
+								<option value="Kimia">IPA (Kimia)</option>
 								<option value="Ekonomi">Ekonomi</option>
 								<option value="Sejarah">Sejarah</option>
 								<option value="Sosiologi">Sosiologi</option>
@@ -179,26 +179,26 @@
 						</div>
 
 						<div class="select_option" id="jenjang">
-							<select>
-								<option value="">-- Pilih Jenjang --</option>
-								<option value="">SD Kelas 4</option>
-								<option value="">SD Kelas 5</option>
-								<option value="">SD Kelas 6</option>
-								<option value="">SMP Kelas 7</option>
-								<option value="">SMP Kelas 8</option>
-								<option value="">SMP Kelas 9</option>
-								<option value="">SMA IPA Kelas 10</option>
-								<option value="">SMA IPA Kelas 11</option>
-								<option value="">SMA IPA Kelas 12</option>
-								<option value="">SMA IPS Kelas 10</option>
-								<option value="">SMA IPS Kelas 11</option>
-								<option value="">SMA IPS Kelas 12</option>
+							<select name="jenjang">
+								<option value="">-- Semua Jenjang --</option>
+								<option value="SD-4">SD Kelas 4</option>
+								<option value="SD-5">SD Kelas 5</option>
+								<option value="SD-6">SD Kelas 6</option>
+								<option value="SMP-7">SMP Kelas 7</option>
+								<option value="SMP-8">SMP Kelas 8</option>
+								<option value="SMP-9">SMP Kelas 9</option>
+								<option value="SMA-10-IPA">SMA IPA Kelas 10</option>
+								<option value="SMA-11-IPA">SMA IPA Kelas 11</option>
+								<option value="SMA-12-IPA">SMA IPA Kelas 12</option>
+								<option value="SMA-10-IPS">SMA IPS Kelas 10</option>
+								<option value="SMA-11-IPS">SMA IPS Kelas 11</option>
+								<option value="SMA-12-IPS">SMA IPS Kelas 12</option>
 							</select>
 						</div>
 					</div>
 					
 					<div class="baris">
-						<a href="les_streaming-show(user).html" class="link_layanan">
+						<a href="les_streaming-show(user).html" class="link_layanan" jenjang="SMA-10-IPA" mapel="Matematika">
 							<div class="item_les kol-3 kol-m-3">
 								<div class="thumbnail_les">
 									<img src="image/thumbnail/thumb3.jpg">
@@ -211,7 +211,7 @@
 							</div>
 						</a>
 						
-						<a href="les_streaming-show(user).html" class="link_layanan">
+						<a href="les_streaming-show(user).html" class="link_layanan" jenjang="SMP-9" mapel="Fisika">
 							<div class="item_les kol-3 kol-m-3">
 								<div class="thumbnail_les">
 									<img src="image/thumbnail/thumb2.jpg">
@@ -224,7 +224,7 @@
 							</div>
 						</a>
 
-						<a href="les_streaming-show(user).html" class="link_layanan">
+						<a href="les_streaming-show(user).html" class="link_layanan" jenjang="SMP-8" mapel="Matematika">
 							<div class="item_les kol-3 kol-m-3">
 								<div class="thumbnail_les">
 									<img src="image/thumbnail/thumb3.jpg">
@@ -237,7 +237,7 @@
 							</div>
 						</a>
 
-						<a href="les_streaming-show(user).html" class="link_layanan">
+						<a href="les_streaming-show(user).html" class="link_layanan" jenjang="SMP-8" mapel="Biologi">
 							<div class="item_les kol-3 kol-m-3">
 								<div class="thumbnail_les">
 									<img src="image/thumbnail/thumb2.jpg">
@@ -250,7 +250,7 @@
 							</div>
 						</a>
 
-						<a href="les_streaming-show(user).html" class="link_layanan">
+						<a href="les_streaming-show(user).html" class="link_layanan" jenjang="SMP-7" mapel="B.Indonesia">
 							<div class="item_les kol-3 kol-m-3">
 								<div class="thumbnail_les">
 									<img src="image/thumbnail/thumb4.jpg">
@@ -309,5 +309,10 @@
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/top_menu.js"></script>
 	<script src="js/sidebar.js"></script>
+	<script src="js/main_script.js"></script>
+	<script type="text/javascript">
+		filter_les();
+		cariVideo();
+	</script>
 </body>
 </html>

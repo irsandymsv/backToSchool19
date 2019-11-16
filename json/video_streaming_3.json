@@ -1,0 +1,44 @@
+[
+	{
+		"img": "image/thumbnail/thumb3.jpg",
+		"judul": "Puisi-B.Indonesia SD-5",
+		"tanggal": "4 Sep 2019",
+		"mapel": "B.Indonesia",
+		"jenjang": "SD-5"
+	},
+	{
+		"img": "image/thumbnail/thumb1.jpg",
+		"judul": "Termokimia-Kimia SMA-11",
+		"tanggal": "1 Sep 2019",
+		"mapel": "Kimia",
+		"jenjang": "SMA-11-IPA"
+	},
+	{
+		"img": "image/thumbnail/thumb4.jpg",
+		"judul": "Preposition-B.Inggris SMP-9",
+		"tanggal": "29 Agu 2019",
+		"mapel": "B.Inggris",
+		"jenjang": "SMP-9"
+	},
+	{
+		"img": "image/thumbnail/thumb1.jpg",
+		"judul": "Gaya Tekan-IPA(Fisika) SMP-8",
+		"tanggal": "26 Agu 2019",
+		"mapel": "Fisika",
+		"jenjang": "SMP-8"
+	},
+	{
+		"img": "image/thumbnail/thumb2.jpg",
+		"judul": "Virus-Biologi SMA-10",
+		"tanggal": "22 Agu 2019",
+		"mapel": "Biologi",
+		"jenjang": "SMA-10-IPA"
+	},
+	{
+		"img": "image/thumbnail/thumb3.jpg",
+		"judul": "Sifat Operasi Hitung-Matematika SD-4",
+		"tanggal": "16 Agu 2019",
+		"mapel": "Matematika",
+		"jenjang": "SD-4"
+	}
+]

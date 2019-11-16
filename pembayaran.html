@@ -149,76 +149,80 @@
 					</div>
 
 					<div class="" id="cari_input">
-						<input type="text" name="cari_les" placeholder="Cari...">
+						<input type="text" id="search_field" name="cari_pembayaran" placeholder="Cari...">
 						<i class="fas fa-search"></i>
 					</div>
 					<br>
 
 					<div id="tbl_wrap">
 						<table id="tbl_pembayaran">
-							<tr>
-								<th>No</th>
-								<th>Jenis Layanan</th>
-								<th>Tanggal Pemesanan</th>
-								<th>Harga</th>
-								<th>Status</th>
-								<th>Aksi</th>
-							</tr>
+							<thead>
+								<tr>
+									<th>No</th>
+									<th>Jenis Layanan</th>
+									<th>Tanggal Pemesanan</th>
+									<th>Harga</th>
+									<th>Status</th>
+									<th>Aksi</th>
+								</tr>
+							</thead>
 
-							<tr>
-								<td>1</td>
-								<td>Les Streaming</td>
-								<td>26 September 2019</td>
-								<td>Rp 50.000</td>
-								<td>belum Lunas</td>
-								<td>
-									<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
-								</td>
-							</tr>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Les Streaming</td>
+									<td>26 September 2019</td>
+									<td>Rp 50.000</td>
+									<td>belum Lunas</td>
+									<td>
+										<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
+									</td>
+								</tr>
 
-							<tr>
-								<td>2</td>
-								<td>Les Streaming</td>
-								<td>14 September 2019</td>
-								<td>Rp 50.000</td>
-								<td>Lunas</td>
-								<td>
-									<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
-								</td>
-							</tr>
+								<tr>
+									<td>2</td>
+									<td>Les Streaming</td>
+									<td>14 September 2019</td>
+									<td>Rp 50.000</td>
+									<td>Lunas</td>
+									<td>
+										<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
+									</td>
+								</tr>
 
-							<tr>
-								<td>3</td>
-								<td>Pesan Tutor</td>
-								<td>2 September 2019</td>
-								<td>Rp 200.000</td>
-								<td>Lunas</td>
-								<td>
-									<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
-								</td>
-							</tr>
+								<tr>
+									<td>3</td>
+									<td>Pesan Tutor</td>
+									<td>2 September 2019</td>
+									<td>Rp 200.000</td>
+									<td>Lunas</td>
+									<td>
+										<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
+									</td>
+								</tr>
 
-							<tr>
-								<td>4</td>
-								<td>Les Streaming</td>
-								<td>7 Agustus 2019</td>
-								<td>Rp 50.000</td>
-								<td>Lunas</td>
-								<td>
-									<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
-								</td>
-							</tr>
+								<tr>
+									<td>4</td>
+									<td>Les Streaming</td>
+									<td>7 Agustus 2019</td>
+									<td>Rp 50.000</td>
+									<td>Lunas</td>
+									<td>
+										<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
+									</td>
+								</tr>
 
-							<tr>
-								<td>5</td>
-								<td>Pesan Tutor</td>
-								<td>28 Juli 2019</td>
-								<td>Rp 300.000</td>
-								<td>Lunas</td>
-								<td>
-									<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
-								</td>
-							</tr>
+								<tr>
+									<td>5</td>
+									<td>Pesan Tutor</td>
+									<td>28 Juli 2019</td>
+									<td>Rp 300.000</td>
+									<td>Lunas</td>
+									<td>
+										<a href="detail_pembayaran.html" class="btn btn_sukses"> <i class="fas fa-eye"></i> </a>
+									</td>
+								</tr>
+							</tbody>
 						</table>
 					</div>
 					
@@ -270,5 +274,9 @@
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/top_menu.js"></script>
 	<script src="js/sidebar.js"></script>
+	<script src="js/main_script.js"></script>
+	<script type="text/javascript">
+		cariTabel();
+	</script>
 </body>
 </html>

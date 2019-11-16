@@ -8,6 +8,7 @@
 }
 
 .item_les{
+	/*height: 270px;*/
 	margin-right: 15px;
 	margin-top: 15px;
 	padding: 7px;
@@ -16,6 +17,7 @@
 	background-color: white;
 	color: black;
 	box-shadow: 0 2px 4px 0 rgba(20, 20, 20, 0.2);
+
 }
 
 .item_les:hover{
@@ -35,7 +37,7 @@
 
 .thumbnail_les img{
 	width: 100%;
-	height: 100%;
+	/*height: auto;*/
 	object-fit: cover;
 }
 
@@ -108,6 +110,7 @@
 
 	.item_les{
 		font-size: 1.5vw;
+		height: auto;
 	}
 }
 
@@ -125,6 +128,7 @@
 		width: 90%;
 		margin: auto;
 		margin-top: 15px;
+		height: auto;
 	}
 
 	.thumbnail_les{

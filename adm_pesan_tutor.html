@@ -36,15 +36,6 @@
 			border: 1px solid #ccc;
 		}
 
-		.cari_wraper a {
-			padding: 7px;
-			margin-top: 5px;
-			background-color: #ccc;
-			text-align: center;
-			text-decoration: none;
-			color: black;
-		}
-
 		@media only screen and (max-width: 768px){
 			#add_data{
 				float: left;
@@ -108,8 +99,7 @@
 
 					<div id="wrap1">
 						<div class="cari_wraper">
-							<input type="text" name="cari_les" placeholder="Cari...">
-							<a href="#"><i class="fas fa-search"></i></a>
+							<input type="text" id="search_field" name="cari_tutor" placeholder="Cari...">
 						</div>
 
 						<!-- <div id="add_data">
@@ -284,5 +274,9 @@
 
 	<script src="js/jquery-3.4.1.min.js"></script>
 	<script src="js/sidebar.js"></script>
+	<script src="js/main_script.js"></script>
+	<script type="text/javascript">
+		cariTabel();
+	</script>
 </body>
 </html>
