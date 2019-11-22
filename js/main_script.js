@@ -288,9 +288,158 @@ function cariVideo() {
 //Table Search
 function cariTabel() {
 	$("#search_field").on("keyup", function() {
+		$(".paginasi").hide();
 	   var value = $(this).val().toLowerCase();
 	   	$("tbody tr").filter(function() {
-	      	$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-	   });
+	      	// $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+	      	if ($(this).text().toLowerCase().indexOf(value) > -1) {
+	      		if(value == ""){
+	      			$(".paginasi").show();
+	      			paginasi();
+	      		}
+	      		else{
+	      			$(this).removeClass('hilang');
+	      		}
+	      	}
+	      	else{
+	      		$(this).attr('class','hilang');
+	      	}
+	   	});
 	});
+}
+
+//Table Pagination
+function paginasi() {
+	var total = $("tbody tr").length;
+  	var limit = 5;
+  	var jml_page = Math.ceil(total / limit);
+  	// console.log(jml_page);
+
+  	var gabung = `<li class="page_notActive page_prev"><i class="fas  fa-chevron-left"></i>`;
+  	for (var i = 1; i <= jml_page; i++) {
+   	gabung += '<li class="page" id="pg'+i+'">'+i+'</li>';
+  	}
+  	gabung += `<li class="page_next"><i class="fas fa-chevron-right"></i></li>`;
+  	$('.paginasi ul').html(gabung);
+
+  	$('.paginasi ul li:nth-child(2)').addClass('page_active');
+  
+  	$('tbody tr').attr('class','hilang');
+  	for (var i = 1; i <= limit; i++) {
+   	$('tbody tr:nth-child('+i+')').removeClass('hilang');
+  	}
+
+
+  	$('.page').click(function(event) {
+   	var hal = $(this).text();
+   	hal = Number(hal);
+   	// console.log(hal);
+
+   	if (hal == 1) {
+   		$(".paginasi ul li.page_prev").addClass('page_notActive');	
+   	}
+   	else{
+   		$(".paginasi ul li.page_prev").removeClass('page_notActive');
+   	}
+
+   	if (hal == jml_page ) {
+   		$(".paginasi ul li.page_next").addClass('page_notActive');
+   	}
+   	else{
+   		$(".paginasi ul li.page_next").removeClass('page_notActive');	
+   	}
+
+   	var offset = (hal-1)*limit;
+   	// console.log('offset= '+offset);
+
+   	$('li.page_active').removeClass('page_active');
+   	$(this).addClass('page_active');
+
+   	$('tbody tr').attr('class','hilang');
+   	if ((total-offset) < limit) {
+      	for (var i = offset+1; i <= total; i++) {
+       		$('tbody tr:nth-child('+i+')').removeClass('hilang');
+      	}
+    	}
+    	else{
+      	for (var i = offset+1; i <= offset+limit; i++) {
+        		$('tbody tr:nth-child('+i+')').removeClass('hilang');
+      	} 
+    	}
+  	}); 
+
+  	$("li.page_prev").click(function(event) {
+  		if (! $(this).hasClass('page_notActive')) {
+	  		var hal_aktif = $('li.page_active').text();
+	  		var hal_aktif = Number(hal_aktif);
+	  		var hal_baru = hal_aktif - 1;
+
+	  		$('li.page_active').removeClass('page_active');
+	  		$('li#pg'+hal_baru).addClass('page_active');
+	  		if (hal_baru == 1) {
+	  			$(".paginasi ul li.page_prev").addClass('page_notActive');
+	  		}
+	  		else{
+	  			$(".paginasi ul li.page_prev").removeClass('page_notActive');
+	  		}
+
+	  		$(".paginasi ul li.page_next").removeClass('page_notActive');
+
+
+  			var offset = (hal_baru-1)*limit;
+  			console.log('offset= '+offset);
+
+  			$('tbody tr').attr('class','hilang');
+  			// var newLimit = 0;
+  			if ((total-offset) < limit) {
+  		   	// newLimit = total-offset;
+  		   	for (var i = offset+1; i <= total; i++) {
+  		    		$('tbody tr:nth-child('+i+')').removeClass('hilang');
+  		   	}
+  		 	}
+  		 	else{
+  		   	for (var i = offset+1; i <= offset+limit; i++) {
+  		     		$('tbody tr:nth-child('+i+')').removeClass('hilang');
+  		   	} 
+  		 	}
+
+  		}
+  	});
+
+  	$("li.page_next").click(function(event) {
+  		if (! $(this).hasClass('page_notActive')) {
+	  		var hal_aktif = $('li.page_active').text();
+	  		var hal_aktif = Number(hal_aktif);
+	  		var hal_baru = hal_aktif + 1;
+
+	  		$('li.page_active').removeClass('page_active');
+	  		$('li#pg'+hal_baru).addClass('page_active');
+	  		if (hal_baru == jml_page ) {
+	   		$(".paginasi ul li.page_next").addClass('page_notActive');
+	   	}
+	   	else{
+	   		$(".paginasi ul li.page_next").removeClass('page_notActive');	
+	   	}
+
+	   	$(".paginasi ul li.page_prev").removeClass('page_notActive');
+	  		
+
+  			var offset = (hal_baru-1)*limit;
+  			console.log('offset= '+offset);
+
+  			$('tbody tr').attr('class','hilang');
+  			// var newLimit = 0;
+  			if ((total-offset) < limit) {
+  		   	// newLimit = total-offset;
+  		   	for (var i = offset+1; i <= total; i++) {
+  		    		$('tbody tr:nth-child('+i+')').removeClass('hilang');
+  		   	}
+  		 	}
+  		 	else{
+  		   	for (var i = offset+1; i <= offset+limit; i++) {
+  		     		$('tbody tr:nth-child('+i+')').removeClass('hilang');
+  		   	} 
+  		 	}
+  		}
+  	});
 }
