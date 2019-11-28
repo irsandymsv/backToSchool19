@@ -4,8 +4,8 @@
 	<title>Profile | Back to School</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" type="text/css" href="css/top_menu.css">
 	<link rel="stylesheet" type="text/css" href="css/main_style.css">
+	<link rel="stylesheet" type="text/css" href="css/top_menu.css">
 	<link rel="stylesheet" type="text/css" href="css/footer.css"></ink>
 	<link rel="stylesheet" type="text/css" href="css/sidebar.css"></ink>
 	<!-- Style card layanan (streaming dan tutor) -->
@@ -26,13 +26,13 @@
 			padding: 10px;
 		}
 
-		#form_wrap{
+		/*#form_wrap{
 			width: 100%;
 			margin-top: 25px;
-		}
+		}*/
 
-		#form_wrap form{
-			width: 60%;
+		#form_wrap {
+			width: 70%;
 			margin: auto;
 			padding: 20px;
 			overflow: hidden;
@@ -40,30 +40,23 @@
 			box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.3);
 		}
 
-		table{
+		#table_profile{
 			width: 100%;
 			margin-top: 10px;
 		}
 
-		td{
+		#table_profile td{
 			padding: 10px;
-		}
-
-		td input, td select, td textarea{
-			padding: 5px;
-			width: 100%;
-			border: none;
-			font-size: 16px;
 		}
 
 		#btn_submit{
 			float: right;
-			margin-top: 20px;
+			margin-top: 10px;
 		}
 
 		#avatar_wrap{
-			height: 100px;
-			width: 100px;
+			height: 110px;
+			width: 110px;
 		}
 
 		#avatar_wrap img{
@@ -71,6 +64,31 @@
 			height: 100%;
 			object-fit: cover;
 			border-radius: 50%;
+		}
+
+		#table-form{
+			width: 100%;
+		}
+
+		#table-form td{
+			padding: 5px;
+		}
+
+		#table-form tr td:first-child{
+			width: 10%;
+		}
+
+		#table-form tr td:nth-child(2){
+			padding: 0;
+			margin: 0;
+		}
+
+		.input_form, #table-form td select{
+			padding: 5px;
+			width: 100%;
+			border: none;
+			background-color: #ddd;
+			font-size: 16px;
 		}
 
 		.radio_label{
@@ -98,7 +116,7 @@
 		}
 
 		@media only screen and (max-width: 800px){
-			#form_wrap form{
+			#form_wrap{
 				width: 90%;
 			}
 		}
@@ -113,6 +131,7 @@
 				margin-left: 0;
 			}
 		}
+
 	</style>
 </head>
 <body>
@@ -179,88 +198,155 @@
 						<h1>Profile</h1>
 					</div>
 
-					<div id="form_wrap">
-						<form action="profile.html">
-							<div id="upload_avatar" class="baris">
-								<div id="avatar_wrap" class="kol-m-4">
-									<img id="avatar_img" src="image/emot_file.jpg">
-								</div>
-
-								<div id="file_info" class="kol-m-7">
-									
-								</div>	
+					<div id="form_wrap" class="baris">
+						<div class="kol-3">
+							<div id="avatar_wrap">
+								<img id="avatar_user" src="image/emot_file.jpg">
 							</div>
-
-							<div id="upload_btn">
-								<label for="btn_file" class="uploadIcon">Choose File</label>
-								<input type="file" name="avatar" id="btn_file" value="Choose File" accept="image/*">
-							</div>
-							
-							<table>
+						</div>
+						<div class="kol-9">
+							<table id="table_profile">
 								<tr>
 									<td>Nama</td>
-									<td>
-										<input type="text" name="nama" value="User">
-									</td>
+									<td>:</td>
+									<td id="nama_user">User</td>
 								</tr>
 
 								<tr>
 									<td>Email</td>
-									<td>
-										<input type="email" name="email" value="user@emails.com">
-									</td>
+									<td>:</td>
+									<td id="email_user">user@email.com</td>
 								</tr>
 
 								<tr>
 									<td>Nomor HP</td>
-									<td>
-										<input type="text" name="no_hp" min="1" value="08974345678">
-									</td>
+									<td>:</td>
+									<td id="noHP_user">08974345678</td>
 								</tr>
 
 								<tr>
 									<td>Jenis Kelamin</td>
-									<td>
-										<label class="input_gender">
-											<input type="radio" name="gender" value="Laki-laki" checked="">Laki-laki
-										</label>
-
-										<label class="input_gender">
-											<input type="radio" name="gender" value="Perempuan">Perempuan
-										</label>
-									</td>
+									<td>:</td>
+									<td id="gender_user">Laki-laki</td>
 								</tr>
 
 								<tr>
 									<td>Jenjang</td>
-									<td>
-										<select name="kelas">
-											<option value="">-- Pilih Kelas --</option>
-											<option value="SD Kelas 4">SD Kelas 4</option>
-											<option value="SD Kelas 5">SD Kelas 5</option>
-											<option value="SD Kelas 6">SD Kelas 6</option>
-											<option value="SMP Kelas 7">SMP Kelas 7</option>
-											<option selected="" value="SMP Kelas 8">SMP Kelas 8</option>
-											<option value="SMP Kelas 9">SMP Kelas 9</option>
-											<option value="SMA Kelas 10 IPA">SMA Kelas 10 IPA</option>
-											<option value="SMA Kelas 10 IPS">SMA Kelas 10 IPS</option>
-											<option value="SMA Kelas 11 IPA">SMA Kelas 11 IPA</option>
-											<option value="SMA Kelas 11 IPS">SMA Kelas 11 IPS</option>
-											<option value="SMA Kelas 12 IPA">SMA Kelas 12 IPA</option>
-											<option value="SMA Kelas 12 IPS">SMA Kelas 12 IPS</option>
-										</select>
-									</td>
+									<td>:</td>
+									<td id="jenjang_user">SMP Kelas 8</td>
 								</tr>
 							</table>
+						</div>
 
-							<div id="btn_submit">
-								<button class="btn btn_utama" type="submit" id="btn_update">Update</button>
+						<button class="btn btn_utama" type="button" id="btn_ubah">Ubah</button>
+					</div>
+
+					<div class="modal" id="id_modal">
+						<form action="#" class="modal-content">
+							<div class="modal-top">
+								<span class="modal-close"><i class="fa fa-times"></i></span>
+								<h3>Ubah Data Profile</h3>
+							</div>
+
+							<div class="modal-middle">
+								<div id="upload_avatar" class="baris">
+									<div id="avatar_wrap" class="kol-m-4">
+										<img id="avatar_img" src="image/emot_file.jpg">
+									</div>
+
+									<div id="file_info" class="kol-m-7">
+										
+									</div>	
+								</div>
+
+								<div id="upload_btn">
+									<label for="btn_file" class="uploadIcon">Choose File</label>
+									<input type="file" name="avatar" id="btn_file" value="Choose File" accept="image/*">
+								</div>
+								
+								<table id="table-form">
+									<tr>
+										<td>Nama</td>
+										<td>:</td>
+										<td>
+											<input type="text" name="nama" class="input_form" value="User">
+										</td>
+									</tr>
+
+									<tr>
+										<td>Email</td>
+										<td>:</td>
+										<td>
+											<input type="email" name="email" class="input_form" value="user@emails.com">
+										</td>
+									</tr>
+
+									<tr>
+										<td>Nomor HP</td>
+										<td>:</td>
+										<td>
+											<input type="text" name="no_hp" min="1" class="input_form" value="08974345678">
+										</td>
+									</tr>
+
+									<tr>
+										<td>Jenis Kelamin</td>
+										<td>:</td>
+										<td>
+											<label class="input_gender">
+												<input type="radio" name="gender" value="Laki-laki" checked="">Laki-laki
+											</label>
+
+											<label class="input_gender">
+												<input type="radio" name="gender" value="Perempuan">Perempuan
+											</label>
+										</td>
+									</tr>
+
+									<tr>
+										<td>Jenjang</td>
+										<td>:</td>
+										<td>
+											<select name="kelas">
+												<option value="">-- Pilih Kelas --</option>
+												<option value="SD Kelas 4">SD Kelas 4</option>
+												<option value="SD Kelas 5">SD Kelas 5</option>
+												<option value="SD Kelas 6">SD Kelas 6</option>
+												<option value="SMP Kelas 7">SMP Kelas 7</option>
+												<option selected="" value="SMP Kelas 8">SMP Kelas 8</option>
+												<option value="SMP Kelas 9">SMP Kelas 9</option>
+												<option value="SMA Kelas 10 IPA">SMA Kelas 10 IPA</option>
+												<option value="SMA Kelas 10 IPS">SMA Kelas 10 IPS</option>
+												<option value="SMA Kelas 11 IPA">SMA Kelas 11 IPA</option>
+												<option value="SMA Kelas 11 IPS">SMA Kelas 11 IPS</option>
+												<option value="SMA Kelas 12 IPA">SMA Kelas 12 IPA</option>
+												<option value="SMA Kelas 12 IPS">SMA Kelas 12 IPS</option>
+											</select>
+										</td>
+									</tr>
+								</table>
+							</div>
+
+							<div class="modal-bottom">
+								<div id="btn_submit">
+									<button class="btn btn_sukses" type="button" id="btn_update">Update</button>
+								</div>	
 							</div>
 						</form>
 					</div>
 
-					<div class="error_form">
-						<p><b></b></p>
+					<div class="error-modal" id="error_modal">
+						<div class="modal-top">
+							<h3>Peringatan</h3>
+						</div>
+
+						<div class="modal-middle">
+							<b></b>
+						</div>
+
+						<div class="modal-bottom">
+							<button class="btn btn_utama" id="close_error_form">Close</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -311,9 +397,25 @@
 	<script src="js/main_script.js"></script>
 
 	<script type="text/javascript">
+		$("#btn_ubah").click(function(event) {
+			modalShow();
+			
+			$(".modal-close").click(function(event) {
+				modalHide();
+			});
+
+			window.onclick = function(event) {
+				var modal = document.getElementById('id_modal');
+				if(event.target == modal){
+					modalHide();
+				}
+			};
+			
+		});
+		
+		$("#btn_update").updateProfile();
 		$("#btn_file").uploadGambar();
 
-	   $("form").validasiProfile();
 	</script>
 </body>
 </html>

@@ -23,7 +23,7 @@
 			margin: auto;
 		}
 
-		h1, h3{
+		.center_title{
 			text-align: center;
 			margin-bottom: 30px;
 		}
@@ -100,8 +100,8 @@
 </head>
 <body>
 	<div id="page_background">
-		<h1><strong>Backtoschool</strong></h1>
-		<h3>Login Admin</h1>
+		<h1 class="center_title"><strong>Backtoschool</strong></h1>
+		<h3 class="center_title">Login Admin</h1>
 		<div class="card">
 			<form action="adm_dashboard.html">
 				<label for="email"><b>Email</b></label><br>
@@ -117,8 +117,18 @@
 			</form>
 		</div>
 
-		<div class="error_form">
-			<p><b></b></p>
+		<div class="error-modal" id="error_modal">
+			<div class="modal-top">
+				<h3>Peringatan</h3>
+			</div>
+
+			<div class="modal-middle">
+				<b></b>
+			</div>
+
+			<div class="modal-bottom">
+				<button class="btn btn_utama" id="close_error_form">Close</button>
+			</div>
 		</div>
 	</div>
 	<script src="js/jquery-3.4.1.min.js"></script>

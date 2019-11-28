@@ -1,7 +1,26 @@
+function modalShow() {
+	$("#id_modal").show();
+	$(".modal-content:first").css('animation-name', 'show_modal');
+}
+
+function modalHide() {
+	$(".modal-content:first").css('animation-name', 'hide_modal');
+	setTimeout(function function_name() {
+		$("#id_modal").hide();
+	}, 400);
+}
+
 function show_error(pesan) {
-	$(".error_form").find('b').html(pesan);
-	$(".error_form").show();
-	$(".error_form").fadeOut(2500);
+	$("#error_modal").find('b').html(pesan);
+	$("#error_modal").show();
+
+	// $(".error_form").show();
+	// $(".error_form").fadeOut(2500);
+
+	$("#close_error_form").click(function(event) {
+		$(".error_form").hide();
+		$("#error_modal").hide();
+	});
 }
 
 //Validasi input kosong
@@ -88,10 +107,11 @@ $.fn.validasiLogin = function () {
 }
 
 //Validasi Profile
-$.fn.validasiProfile = function () {
+$.fn.updateProfile = function () {
 	var form = this;
+	var status = "";
 
-	form.on("submit", function(event) {
+	form.on("click", function(event) {
     	event.preventDefault();
 
     	var nama = $("input[name='nama']").val();
@@ -106,16 +126,37 @@ $.fn.validasiProfile = function () {
 
     	if (nama == "" || email == "" || no_hp == "" || gender == "" || kelas == "") {
     		show_error("Harap lengkapi data profil");
+    		status = false;
     	} 
     	else if (!namaReg.test(nama)) {
     		show_error("Nama hanya boleh menggunakan huruf dan tanda petik (')");
+    		status = false;
     	}
     	else if (!angka.test(no_hp)) {
 			show_error("Nomor HP hanya boleh menggunakan angka");
+			status = false;
 		}
     	else {
-    		$(this).off('submit').trigger('submit');
+    		$("td#nama_user").text(nama);
+    		$("td#email_user").text(email);
+    		$("td#noHP_user").text(no_hp);
+    		$("td#gender_user").text(gender);
+    		$("td#jenjang_user").text(kelas);
+   		$("#id_modal").hide();
     	}
+   });
+
+   $("#btn_file").change(function(event) {
+   	if (this.files && this.files[0]) {
+   	  var reader = new FileReader();
+
+   	  reader.onload = function(e) {
+   	    // $('#avatar_user').show();
+   	    $('#avatar_user').attr('src', e.target.result);
+   	  }
+
+   	  reader.readAsDataURL(this.files[0]);
+   	}	
    });
 }
 
