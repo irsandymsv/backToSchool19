@@ -1,26 +1,39 @@
 function modalShow() {
 	$("#id_modal").show();
-	$(".modal-content:first").css('animation-name', 'show_modal');
+	$("#id_modal").css('animation-name', 'show_modal');
+	// $(".modal-content:first").css('animation-name', 'show_modal');
 }
 
 function modalHide() {
-	$(".modal-content:first").css('animation-name', 'hide_modal');
+	// $(".modal-content:first").css('animation-name', 'hide_modal');
+	$("#id_modal").css('animation-name', 'hide_modal');
 	setTimeout(function function_name() {
 		$("#id_modal").hide();
-	}, 400);
+	}, 300);
 }
 
 function show_error(pesan) {
 	$("#error_modal").find('b').html(pesan);
 	$("#error_modal").show();
-
-	// $(".error_form").show();
-	// $(".error_form").fadeOut(2500);
+	$("#error_modal").css('animation-name', 'show_modal');
 
 	$("#close_error_form").click(function(event) {
-		$(".error_form").hide();
-		$("#error_modal").hide();
+		// $("#error_modal").hide();
+		$("#error_modal").css('animation-name', 'hide_modal');
+		setTimeout(function function_name() {
+			$("#error_modal").hide();
+		}, 300);
 	});
+
+	window.onclick = function(event) {
+		var modal = document.getElementById('error_modal');
+		if(event.target == modal){
+			$("#error_modal").css('animation-name', 'hide_modal');
+			setTimeout(function function_name() {
+				$("#error_modal").hide();
+			}, 300);
+		}
+	};
 }
 
 //Validasi input kosong
@@ -142,7 +155,8 @@ $.fn.updateProfile = function () {
     		$("td#noHP_user").text(no_hp);
     		$("td#gender_user").text(gender);
     		$("td#jenjang_user").text(kelas);
-   		$("#id_modal").hide();
+   		// $("#id_modal").hide();
+   		modalHide();
     	}
    });
 
