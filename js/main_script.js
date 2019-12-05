@@ -44,16 +44,19 @@ $.fn.validateEmpty = function () {
 		event.preventDefault();
 		var inputan = form.find("input,select");
 		// console.log(inputan);
-
+		var kosong = false;
 		inputan.each(function(index, el) {
 			if ($(el).val() == "") {
-				show_error("Harap lengkapi data isian");
-				return false;
-			}
-			else{
-				form.off('submit').trigger('submit');
+				kosong = true;
 			}
 		});
+
+		if(kosong){
+			show_error("Harap lengkapi data isian");
+		}
+		else{
+			form.off('submit').trigger('submit');
+		}
 	});
 }
 
